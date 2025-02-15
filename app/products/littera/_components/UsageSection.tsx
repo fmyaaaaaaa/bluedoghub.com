@@ -4,21 +4,22 @@ import { UsageCard } from "@/components/UsageCard";
 const howToReportCard = [
   {
     head: "Step 1",
-    title: "Take a photo",
-    description: "Nothing special. Just find litter on the streets and take a photo of it.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    title: "Tap a report button",
+    description:
+      "When you find litter on the streets, tap the report button to report it from the right bottom of the screen.",
+    imagePath: "/littera-how-to-report-step1.webp",
   },
   {
     head: "Step 2",
-    title: "Categorize the litter",
-    description: "Categorize the litter with just a few taps. You can choose multiple categories.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    title: "Take a photo",
+    description: "Nothing special. Just find litter on the streets and take a photo of it.",
+    imagePath: "/littera-how-to-report-step2.webp",
   },
   {
     head: "Step 3",
-    title: "Slide button to report",
-    description: "Slide the button to report the litter. It's that easy.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    title: "Categorize and Slide",
+    description: "Categorize the litter just by a few taps and slide the button to report the litter. It's that easy.",
+    imagePath: "/littera-how-to-report-step3.webp",
   },
 ];
 
@@ -28,19 +29,20 @@ const howToCollectCard = [
     title: "Check a map",
     description:
       "Check a map to see the litter on the streets around you. Time range and Distance range are adjustable from the top.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    imagePath: "/littera-how-to-collect-step1.webp",
   },
   {
     head: "Step 2",
     title: "Tap the marker",
-    description: "Tap the marker to see the detail of the litter.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    description:
+      "Tap the marker to see the detail of the litter and the collect button is available if you are within 500m of the report.",
+    imagePath: "/littera-how-to-collect-step2.webp",
   },
   {
     head: "Step 3",
-    title: "Tap button to collect",
-    description: "The collect button is available if you are within 500m of the report.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    title: "Gonna be gray",
+    description: "After you collect the litter, the marker gonna be gray and you will be a colector of the report.",
+    imagePath: "/littera-how-to-collect-step3.webp",
   },
 ];
 
@@ -50,21 +52,21 @@ const otherFeaturesCard = [
     title: "Check your activity",
     description:
       "You are able to check your activity history and the number of reports you have reported and collected.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    imagePath: "/littera-dashboard-1.webp",
   },
   {
     head: "Litter Report Statistics",
     title: "Statistics of litter categories",
     description:
       "Litter categories are categorised into 4 categories and provide a pie chart of the number of reports for each category.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    imagePath: "/littera-dashboard-2.webp",
   },
   {
     head: "Activity Ranking",
     title: "See the ranking of your activity",
     description:
       "Littera provides a ranking of user's activity. Check and see how others are doing and motivated each other.",
-    imagePath: "/littera-how-to-use-step1.webp",
+    imagePath: "/littera-dashboard-3.webp",
   },
 ];
 
