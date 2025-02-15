@@ -31,7 +31,9 @@ export default function DemoPage() {
       <section className="mb-12">
         <h2 className="text-heading-lg text-brand-900 mb-4">Body</h2>
         <div className="space-y-4">
-          <p className="text-body-xl">Body XL - This text is designed for longer paragraphs and main content sections.</p>
+          <p className="text-body-xl">
+            Body XL - This text is designed for longer paragraphs and main content sections.
+          </p>
           <p className="text-body-lg">Body LG - Perfect for important paragraphs that need slightly more emphasis.</p>
           <p className="text-body-md">Body MD - Standard text size for most content and paragraphs.</p>
           <p className="text-body-sm">Body SM - Ideal for secondary information and supporting text.</p>
@@ -100,15 +102,12 @@ export default function DemoPage() {
           <h1 className="text-display-md text-brand-500 mb-4">Product Features</h1>
           <h2 className="text-heading-lg text-brand-900 mb-2">Intuitive Design</h2>
           <p className="text-body-md mb-4">
-            With an intuitive user interface and detailed customization options,
-            anyone can master this tool with ease.
+            With an intuitive user interface and detailed customization options, anyone can master this tool with ease.
           </p>
           <div className="mb-4">
             <label className="text-label-md block mb-1">Customization Settings</label>
             <input type="text" className="border rounded px-3 py-2 w-full" />
-            <span className="text-caption-sm text-brand-600">
-              Settings are saved automatically
-            </span>
+            <span className="text-caption-sm text-brand-600">Settings are saved automatically</span>
           </div>
         </div>
       </section>

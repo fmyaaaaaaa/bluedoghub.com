@@ -1,9 +1,9 @@
+import { cn } from "@/lib/utils";
 import { SquareActivity } from "lucide-react";
 import { ClipboardPlus } from "lucide-react";
 import { MapPin } from "lucide-react";
-import { FeatureCard, FeatureCardProps } from "./FeatureCard";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { FeatureCard, FeatureCardProps } from "./FeatureCard";
 
 const features: FeatureCardProps[] = [
   {

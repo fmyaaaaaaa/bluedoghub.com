@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
+import { Card, CardContent } from "./ui/card";
 
 export default function ProfileCard() {
   return (
@@ -13,7 +13,7 @@ export default function ProfileCard() {
           height={250}
           className="rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-4"
         />
-        <h3 className="text-heading-lg text-black-900">Hello, I'm Fumiya</h3>
+        <h3 className="text-heading-lg text-black-900">Hello, I&apos;m Fumiya</h3>
         <p className="text-body-sm text-black-600">Full-Stack Software Engineer</p>
         <div className="w-full flex justify-center items-center gap-4">
           <Link href="https://www.linkedin.com/in/fumiya-nico/" target="_blank" rel="noopener noreferrer">

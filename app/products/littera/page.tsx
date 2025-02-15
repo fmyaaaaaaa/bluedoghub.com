@@ -1,9 +1,9 @@
 import { ProductIntroductionCards } from "@/components/ProductIntroductionCards";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { UsageSection } from "./_components/UsageSection";
-import { Metadata } from "next";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL
@@ -49,8 +49,8 @@ export default function Page() {
                   />
                 </div>
                 <p className="text-body-md md:text-body-lg text-black-600">
-                  Littera is Bluedog's first step towards a cleaner world. Let's tackle the global litter problem
-                  together, envisioning a future where our next generation lives in a world free of trash on the
+                  Littera is Bluedog&apos;s first step towards a cleaner world. Let&apos;s tackle the global litter
+                  problem together, envisioning a future where our next generation lives in a world free of trash on the
                   streets.
                 </p>
                 <p className="text-body-md md:text-body-lg text-black-600">
@@ -100,16 +100,16 @@ export default function Page() {
                     representing the era of litter we currently face
                   </p>
                   <p className="text-body-md text-littera-800">
-                    As human society has evolved, we've generated vast amounts of products, but many of these end up as
-                    waste after use.
+                    As human society has evolved, we&apos;ve generated vast amounts of products, but many of these end
+                    up as waste after use.
                   </p>
                   <p className="text-body-md text-littera-800">
                     Litter discarded on our streets poses serious threats to both our planet and its wildlife.
                   </p>
                   <div className="pt-4 md:pt-6">
                     <p className="text-heading-sm text-littera-800">
-                      Together, we can make a difference. Let's visualize our environmental impact and take action with
-                      Littera – for a cleaner, sustainable future.
+                      Together, we can make a difference. Let&apos;s visualize our environmental impact and take action
+                      with Littera – for a cleaner, sustainable future.
                     </p>
                   </div>
                 </div>
@@ -165,8 +165,8 @@ export default function Page() {
               <h2 className="text-display-md md:text-display-lg text-littera-900">Help Shape the Future of Littera</h2>
 
               <p className="px-1 text-body-lg text-littera-800 max-w-2xl mx-auto">
-                Littera is currently in beta, and I'm looking for passionate individuals to help me make Littera better.
-                Join me in my mission to create a cleaner world.
+                Littera is currently in beta, and I&apos;m looking for passionate individuals to help me make Littera
+                better. Join me in my mission to create a cleaner world.
               </p>
 
               <div className="grid grid-cols-3 gap-3 md:gap-6 mt-12">
