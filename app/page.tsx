@@ -1,7 +1,7 @@
 import { ProductIntroductionCards } from "@/components/ProductIntroductionCards";
 import ProfileCard from "@/components/ProfileCard";
-import { Button } from "@/components/ui/button";
 import WhatIOfferCard from "@/components/WhatIOfferCard";
+import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,15 +67,15 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-7xl flex flex-col items-center gap-4">
             <h2 className="text-display-sm md:text-display-md text-center text-black-700">Introduction of Littera</h2>
             <p className="text-body-md md:text-body-lg text-black-700 text-center mb-12 max-w-3xl mx-auto">
-              Littera is Bluedog's first step forward. I tackle the global litter problem with the vision of a future
-              where the next generation lives in a world free of trash on the streets
+              Littera is Bluedog&apos;s first step forward. I tackle the global litter problem with the vision of a
+              future where the next generation lives in a world free of trash on the streets
             </p>
 
             <ProductIntroductionCards variant="brand" />
 
             <div className="mt-10">
               <h3 className="text-body-lg text-black-900 text-center max-w-3xl mx-auto">
-                Littera is currently in beta! If you're interested in helping me test it, please reach out to{" "}
+                Littera is currently in beta! If you&apos;re interested in helping me test it, please reach out to{" "}
                 <strong>contact@bluedoghub.com</strong>. I will continue to improve Littera with regular updates,
                 expanding features, enhancing the UI/UX, and broadening my impact.
               </h3>

@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader } from "./ui/card";
 import Image from "next/image";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 export type UsageCardProps = {
   head: string;

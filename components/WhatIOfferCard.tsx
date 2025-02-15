@@ -1,7 +1,7 @@
 import { Cloud, Database, MonitorSmartphone, Server } from "lucide-react";
-import { Card, CardHeader, CardTitle } from "./ui/card";
-import { Separator } from "./ui/separator";
 import { Badge } from "./ui/badge";
+import { Card, CardTitle } from "./ui/card";
+import { Separator } from "./ui/separator";
 
 type TechStack = {
   name: string;
