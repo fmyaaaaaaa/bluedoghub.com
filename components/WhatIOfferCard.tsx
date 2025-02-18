@@ -66,7 +66,7 @@ const techStacks: TechStack[] = [
 export default function WhatIOfferCard() {
   return (
     <Card className="bg-white py-10 px-8 md:py-8 md:px-4">
-      <CardTitle>What I Offer</CardTitle>
+      <CardTitle className="text-brand-900">What I Offer</CardTitle>
       <div className="py-3 px-1 md:px-4 space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function WhatIOfferCard() {
 
       <Separator className="my-6" />
 
-      <CardTitle>Tech Stacks</CardTitle>
+      <CardTitle className="text-brand-900">Tech Stacks</CardTitle>
       <div className="flex flex-wrap py-3 px-0 md:px-4 gap-2">
         {techStacks.map((tech) => (
           <Badge
