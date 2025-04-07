@@ -3,6 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./ui/navigation-menu";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 export default function Header() {
   return (
@@ -22,9 +31,25 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" asChild>
-              <Link href="/products/littera">Products</Link>
-            </Button>
+            <NavigationMenu className="hidden md:flex">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    <span className="text-sm font-medium">Products</span>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-2 min-w-[120px]">
+                    <div className="flex flex-col gap-2">
+                      <Button variant="ghost" asChild className="text-sm font-medium w-full justify-start">
+                        <NavigationMenuLink href="/products/littera">Littera</NavigationMenuLink>
+                      </Button>
+                      <Button variant="ghost" asChild className="text-sm font-medium w-full justify-start">
+                        <NavigationMenuLink href="/products/ebira">Ebira</NavigationMenuLink>
+                      </Button>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <Button variant="ghost" asChild>
               <Link href="/#about-developer">About Me</Link>
             </Button>
@@ -42,11 +67,27 @@ export default function Header() {
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-4 mt-8">
-                  <SheetClose asChild>
-                    <Button variant="ghost" asChild>
-                      <Link href="/products/littera">Products</Link>
-                    </Button>
-                  </SheetClose>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="products" className="border-0">
+                      <AccordionTrigger className="py-1.5 px-3 hover:bg-accent hover:no-underline rounded-md text-sm font-medium flex justify-between w-full">
+                        <span className="text-center w-full">Products</span>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="flex flex-col items-center">
+                          <SheetClose asChild>
+                            <Button variant="ghost" asChild className="justify-center">
+                              <Link href="/products/littera">Littera</Link>
+                            </Button>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Button variant="ghost" asChild className="justify-center">
+                              <Link href="/products/ebira">Ebira</Link>
+                            </Button>
+                          </SheetClose>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                   <SheetClose asChild>
                     <Button variant="ghost" asChild>
                       <Link href="/#about-developer">About Me</Link>

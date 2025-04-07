@@ -79,7 +79,7 @@ export function UsageSection() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
               {howToReportCard.map((card) => (
-                <UsageCard key={card.head} {...card} />
+                <UsageCard key={card.head} {...card} variant="littera" />
               ))}
             </div>
           </div>
@@ -92,7 +92,7 @@ export function UsageSection() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
               {howToCollectCard.map((card) => (
-                <UsageCard key={card.head} {...card} />
+                <UsageCard key={card.head} {...card} variant="littera" />
               ))}
             </div>
           </div>
@@ -105,7 +105,7 @@ export function UsageSection() {
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
               {otherFeaturesCard.map((card) => (
-                <UsageCard key={card.head} {...card} />
+                <UsageCard key={card.head} {...card} variant="littera" />
               ))}
             </div>
           </div>
