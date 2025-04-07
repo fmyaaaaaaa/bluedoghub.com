@@ -25,8 +25,8 @@ export default function Page() {
                 </div>
                 <p className="text-body-md md:text-body-lg text-black-600">
                   Struggling to remember what you studied? Ebira helps you retain knowledge using spaced repetition
-                  based on the forgetting curve. Whether you're learning new vocabulary, preparing for an exam, or just
-                  trying to remember important facts, Ebira gives you the right reminders at the right time.
+                  based on the forgetting curve. Whether you&apos;re learning new vocabulary, preparing for an exam, or
+                  just trying to remember important facts, Ebira gives you the right reminders at the right time.
                 </p>
                 <Button size="lg" variant="ebira" className="w-full md:w-auto">
                   <Link href="#get-started">Get Started</Link>
@@ -70,8 +70,8 @@ export default function Page() {
                 </p>
                 <p className="text-body-md md:text-body-lg text-black-600">
                   Nowadays, AI is getting more and more powerful and there will be less and less need to memorize
-                  things. However, I think "thinking" is still important and unique to humans. Memorizing things are
-                  seeds of our thoughts.
+                  things. However, I believe &quot;thinking&quot; is still important and unique to humans. Memorizing
+                  things are seeds of our thoughts.
                 </p>
                 <p className="text-body-md md:text-body-lg text-black-600">
                   You can save your study terms that you want to memorize and Ebira will notify you at the right time to
