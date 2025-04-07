@@ -21,8 +21,9 @@ export default function Page() {
             <div className="space-y-10">
               <div>
                 <p className="text-body-md md:text-body-lg text-black-600 mb-8">
-                  Ebira ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how
-                  we collect, use, and protect your information when you use our mobile application.
+                  Ebira (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy.
+                  This Privacy Policy explains how we collect, use, and protect your information when you use our mobile
+                  application.
                 </p>
               </div>
 
@@ -62,14 +63,14 @@ export default function Page() {
                 <h2 className="text-heading-lg text-ebira-800 mb-4">4. Data Retention</h2>
                 <div className="space-y-3 text-body-md text-black-600">
                   <p>
-                    All your data remains on your device and is retained until you delete the app or clear the app's
-                    storage. We do not store any of it externally.
+                    All your data remains on your device and is retained until you delete the app or clear the
+                    app&apos;s storage. We do not store any of it externally.
                   </p>
                 </div>
               </div>
 
               <div>
-                <h2 className="text-heading-lg text-ebira-800 mb-4">5. Children's Privacy</h2>
+                <h2 className="text-heading-lg text-ebira-800 mb-4">5. Children&apos;s Privacy</h2>
                 <div className="space-y-3 text-body-md text-black-600">
                   <p>
                     Ebira is not intended for use by children under the age of 13. We do not knowingly collect personal
