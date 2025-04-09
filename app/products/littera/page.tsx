@@ -1,4 +1,4 @@
-import { ProductIntroductionCards } from "@/components/ProductIntroductionCards";
+import { ProductIntroductionCards } from "@/app/products/littera/_components/ProductIntroductionCards";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Image from "next/image";
