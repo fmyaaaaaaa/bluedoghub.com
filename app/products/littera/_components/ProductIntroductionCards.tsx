@@ -3,7 +3,7 @@ import { SquareActivity } from "lucide-react";
 import { ClipboardPlus } from "lucide-react";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import { FeatureCard, FeatureCardProps } from "./FeatureCard";
+import { FeatureCard, FeatureCardProps } from "../../../../components/FeatureCard";
 
 const features: FeatureCardProps[] = [
   {
