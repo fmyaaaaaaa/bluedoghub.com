@@ -3,6 +3,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { UsageSection } from "./_components/UsageSection";
+import { Metadata } from "next";
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3030";
+
+export const metadata: Metadata = {
+  title: "Ebira",
+  description:
+    "Ebira is a mobile app that helps you memorize terms or words for your study using the Ebbinghaus Forgetting Curve.",
+  openGraph: {
+    title: "Ebira",
+    description:
+      "Ebira is a mobile app that helps you memorize terms or words for your study using the Ebbinghaus Forgetting Curve.",
+    images: [
+      {
+        url: `${baseUrl}/ogp-ebira.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ebira Logo",
+      },
+    ],
+  },
+};
 
 export default function Page() {
   return (
@@ -100,36 +125,39 @@ export default function Page() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-40 max-w-5xl">
             <div className="text-center space-y-6">
               <div className="inline-block px-4 py-1.5 bg-ebira-600 text-white rounded-full text-label-md">
-                Beta Version
+                Now Available
               </div>
 
-              <h2 className="text-display-md md:text-display-lg text-ebira-900">Help Shape the Future of Ebira</h2>
+              <h2 className="text-display-md md:text-display-lg text-ebira-900">Download Ebira Today</h2>
 
               <p className="px-1 text-body-lg text-ebira-800 max-w-2xl mx-auto">
-                Currently in beta, and I&apos;m looking for passionate individuals to help me make Ebira better.
+                Ebira is now available on the Canada App Store. Start your journey to better memory retention today.
               </p>
+
+              <div className="mt-8 flex justify-center">
+                <Link href="https://apps.apple.com/ca/app/ebira/id6744083376" target="_blank" rel="noopener noreferrer">
+                  <Image src="/app-store-badge.svg" alt="Download on the App Store" width={200} height={60} />
+                </Link>
+              </div>
 
               <div className="grid grid-cols-3 gap-3 md:gap-6 mt-12">
                 <div className="p-3 md:p-6 bg-white rounded-lg shadow-sm">
-                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Join</div>
-                  <p className="text-body-xs md:text-body-md text-ebira-700">Early Access</p>
+                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Learn</div>
+                  <p className="text-body-xs md:text-body-md text-ebira-700">Efficiently</p>
                 </div>
                 <div className="p-3 md:p-6 bg-white rounded-lg shadow-sm">
-                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Test</div>
-                  <p className="text-body-xs md:text-body-md text-ebira-700">New Features</p>
+                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Remember</div>
+                  <p className="text-body-xs md:text-body-md text-ebira-700">Long Term</p>
                 </div>
                 <div className="p-3 md:p-6 bg-white rounded-lg shadow-sm">
-                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Shape</div>
-                  <p className="text-body-xs md:text-body-md text-ebira-700">The Future</p>
+                  <div className="text-heading-md md:text-heading-lg text-ebira-600 mb-1 md:mb-2">Achieve</div>
+                  <p className="text-body-xs md:text-body-md text-ebira-700">Your Goals</p>
                 </div>
               </div>
 
               <div className="mt-12 space-y-6">
-                <div className="text-body-lg text-littera-900 font-medium">Interested in testing or contributing?</div>
+                <div className="text-body-lg text-littera-900 font-medium">Questions or feedback?</div>
                 <div className="text-heading-md text-ebira-600">contact@bluedoghub.com</div>
-                <p className="text-body-xs md:text-body-sm text-ebira-600">
-                  Free to join • No special equipment needed • Start today
-                </p>
                 <div className="mt-4">
                   <Link
                     href="/products/ebira/privacy"
