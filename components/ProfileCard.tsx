@@ -16,7 +16,7 @@ export default function ProfileCard() {
         <h3 className="text-heading-lg text-black-900">Hello, I&apos;m Fumiya</h3>
         <p className="text-body-sm text-black-600">Software Engineer</p>
         <div className="w-full flex justify-center items-center gap-4">
-          <Link href="https://www.linkedin.com/in/fumiya-nico/" target="_blank" rel="noopener noreferrer">
+          <Link href="https://www.linkedin.com/in/fumiya-finn/" target="_blank" rel="noopener noreferrer">
             <Image
               src="/logo-linkedin.png"
               alt="LinkedIn"
