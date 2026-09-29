@@ -1,157 +1,223 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import {
+  BulletList,
+  Callout,
+  ContactBox,
+  LegalDocument,
+  LegalSection,
+  LegalSubheading,
+} from "../_components/LegalDocument";
+import { coinlyPaths } from "../_components/constants";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Coinly",
+  description: "Privacy Policy for the iOS app Coinly.",
+};
 
 export default function Page() {
   return (
-    <div className="mx-auto min-h-screen flex flex-col">
-      <main className="flex-grow">
-        {/* Header section */}
-        <section className="w-full py-12 px-4 md:py-20 bg-blue-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-4xl">
-            <div className="flex flex-col items-center gap-4 text-center">
-              <h1 className="text-display-md md:text-display-lg text-blue-900">Privacy Policy</h1>
-              <p className="text-body-md md:text-body-lg text-black-600">Effective Date: December 7, 2025</p>
-              <div className="mt-4">
-                <Link href="/products/coinly/privacy/ja" className="text-blue-600 hover:text-blue-700 underline">
-                  日本語
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+    <LegalDocument
+      lang="en"
+      title="Privacy Policy"
+      updated="Last updated: September 29, 2026"
+      note="This policy applies from the release of Coinly 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
+      otherLang={{ href: coinlyPaths.privacy.ja, label: "日本語" }}
+      intro={
+        <>
+          <Callout title="Your personal book stays on your iPhone">
+            <p>
+              Personal book data is stored only on your device and is never sent to our server. Only when you use shared
+              books do we handle the information needed to share them on our server. We use no ads, no analytics and no
+              tracking, and we never sell your data.
+            </p>
+          </Callout>
+          <p className="text-body-md text-black-600">
+            This Privacy Policy explains how Bluedog (&quot;we&quot;, &quot;us&quot;) handles information in the iOS app
+            &quot;Coinly&quot; (the &quot;App&quot;) and on the shared book invite page.
+          </p>
+        </>
+      }
+    >
+      <LegalSection id="personal-book" title="1. Personal book (on your device only)">
+        <p>
+          Your personal book data, including expenses, budgets, categories, monthly summaries and savings, is stored on
+          your device using Apple&apos;s SwiftData. Settings such as language, currency and the day your month starts
+          are also stored on your device (UserDefaults). Information shown or recorded through widgets and Siri
+          (Shortcuts) is also handled on your device.
+        </p>
+        <p>
+          This data is never sent to our server. If you only use the personal book, the App never contacts our server,
+          and every feature works without an internet connection.
+        </p>
+        <p>
+          Depending on your settings, data on your device may be included in device backups such as iCloud Backup.
+          Information Apple handles when you use Siri is subject to Apple&apos;s privacy policy.
+        </p>
+      </LegalSection>
 
-        {/* Privacy Policy Content */}
-        <section className="w-full py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-4xl">
-            <div className="space-y-10">
-              {/* Introduction */}
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <p className="text-body-lg text-blue-900 font-semibold mb-2">
-                  Your Privacy Matters
-                </p>
-                <p className="text-body-md text-black-600">
-                  Coinly does not collect, store, or transmit any of your personal data to external servers.
-                  All your financial information stays on your device.
-                </p>
-              </div>
+      <LegalSection id="shared-books" title="2. Information we handle when you use shared books">
+        <p>
+          The first time you create or join a shared book, a random user ID is created on your device and stored in the
+          iOS Keychain. There is no sign-in, and you never register a name, email address or phone number. Only when you
+          use shared books, the following information is sent to and stored on our server:
+        </p>
+        <BulletList>
+          <li>your user ID and the display name you enter;</li>
+          <li>an authentication token (our server stores only its hash, never the token itself);</li>
+          <li>
+            the content of your shared books: book name and icon, members&apos; display names, expenses (amount,
+            category, date and the member who recorded them), categories, monthly budgets and invite codes;
+          </li>
+          <li>
+            your device&apos;s push notification token (APNs), used for silent notifications (which are not shown on
+            screen) that bring other members&apos; changes to your device;
+          </li>
+          <li>
+            Coinly Plus purchase information: subscription status, App Store transaction identifiers
+            (originalTransactionId), expiry date, product and environment (production or test);
+          </li>
+          <li>
+            technical information that comes with each request, such as IP address, time and app version (used in server
+            logs and to limit request rates).
+          </li>
+        </BulletList>
+        <LegalSubheading>What we do not collect</LegalSubheading>
+        <BulletList>
+          <li>your name, email address, phone number or postal address;</li>
+          <li>your location, contacts or photos;</li>
+          <li>the advertising identifier (IDFA);</li>
+          <li>payment details such as card numbers (payments are processed by Apple);</li>
+          <li>your personal book data.</li>
+        </BulletList>
+        <p>
+          The App may use the camera to scan an invite QR code. The camera image is used on your device only to read the
+          code, and is never saved or sent.
+        </p>
+      </LegalSection>
 
-              {/* 1. Information Collection */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">1. Information Collection and Use</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinly is designed with your privacy in mind. We do not collect, store, or transmit any personal
-                    information to external servers.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="purposes" title="3. How we use information">
+        <p>We use this information only to:</p>
+        <BulletList>
+          <li>provide shared books (storage, syncing between members and invitations);</li>
+          <li>send silent notifications that bring other members&apos; changes to your device;</li>
+          <li>
+            verify Coinly Plus purchases, decide whether you can create shared books, and process App Store
+            notifications (renewals, cancellations, refunds, etc.);
+          </li>
+          <li>prevent abuse and excessive requests, handle incidents and keep the Service secure; and</li>
+          <li>respond to your inquiries.</li>
+        </BulletList>
+        <p>We do not use it for advertising, behavioral analysis or profiling.</p>
+      </LegalSection>
 
-              {/* 2. Data Storage */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">2. Data Storage</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>All your financial data, including:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Expense records</li>
-                    <li>Budget settings</li>
-                    <li>Categories</li>
-                    <li>Monthly summaries</li>
-                  </ul>
-                  <p className="mt-3">
-                    ...are stored locally on your device using Apple&apos;s SwiftData framework. This data never leaves
-                    your device.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="third-parties" title="4. Sharing and service providers">
+        <p>
+          We do not share your information with third parties without your consent, except where required by law, and we
+          never sell it. We use the following services to run the Service:
+        </p>
+        <BulletList>
+          <li>
+            <strong>Amazon Web Services (AWS)</strong>: the server infrastructure for shared books. Data is processed
+            and stored in the Tokyo region (Japan) using API Gateway, AWS Lambda and Amazon DynamoDB, and logs are
+            stored in Amazon CloudWatch Logs. The invite page is also served from AWS.
+          </li>
+          <li>
+            <strong>Apple</strong>: the App Store (purchases, payments and subscription management) and the Apple Push
+            Notification service (delivery of silent notifications). Apple&apos;s handling of information is subject to
+            Apple&apos;s privacy policy.
+          </li>
+          <li>
+            <strong>Google Fonts</strong>: only the web page shown when you open an invite link
+            (https://coinly.bluedoghub.com/join/…) loads fonts from Google Fonts. When it does, your browser sends
+            information such as your IP address and user agent to Google. The App itself does not use Google Fonts.
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 3. Settings and Preferences */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">3. Settings and Preferences</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    User preferences such as language selection, currency preference, and fiscal month start day are
-                    stored locally using UserDefaults. This information is never transmitted to external servers.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="retention" title="5. Retention">
+        <BulletList>
+          <li>
+            Shared book content: kept while the book has members, and deleted from our server when the last member
+            leaves. After a member leaves, the expenses they recorded and their display name remain until the book is
+            deleted.
+          </li>
+          <li>Invite codes: expire 48 hours after they are issued and are then deleted automatically.</li>
+          <li>
+            Rate-limit counters (which may include IP addresses): expire after about 2 hours and are deleted
+            automatically.
+          </li>
+          <li>Server logs (which include IP addresses): deleted after 30 days.</li>
+          <li>
+            User ID, display name, token hash, device token and Coinly Plus purchase information: kept as long as needed
+            to provide shared books, and deleted on request.
+          </li>
+          <li>
+            For recovery from failures, we keep database backups for up to 35 days. Deleted data may remain in these
+            backups during that period.
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 4. No Tracking or Analytics */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">4. No Tracking or Analytics</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>We do not use any:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Analytics services</li>
-                    <li>Tracking technologies</li>
-                    <li>Advertising networks</li>
-                    <li>Third-party services that collect data</li>
-                  </ul>
-                </div>
-              </div>
+      <LegalSection id="security" title="6. Security">
+        <BulletList>
+          <li>Communication between the App and our server is encrypted with TLS.</li>
+          <li>Authentication tokens are stored only as hashes.</li>
+          <li>Data stored on our server is encrypted at rest.</li>
+          <li>Each part of our server has only the minimum permissions it needs, and access is restricted.</li>
+          <li>Rate limits and similar measures protect against unauthorized access and guessing of invite codes.</li>
+        </BulletList>
+        <p>No method of transmission or storage over the internet is completely secure, however.</p>
+      </LegalSection>
 
-              {/* 5. No Internet Connection Required */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">5. No Internet Connection Required</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinly works completely offline. We do not require an internet connection, and your data is never
-                    synced to cloud services.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="your-rights" title="7. Your choices and rights">
+        <BulletList>
+          <li>If you don&apos;t use shared books, no information is sent to our server.</li>
+          <li>You can leave a shared book at any time in the App.</li>
+          <li>You can cancel Coinly Plus in iOS Settings. Your purchase history is managed by Apple.</li>
+          <li>
+            To request access to, correction of, suspension of use of, or deletion of your information that we hold,
+            contact us below. Because there are no accounts, we may ask for details such as the names of your shared
+            books and your display name to identify you and your data.
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 6. Your Control */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">6. Your Control</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>You have complete control over your data:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>All data stays on your device</li>
-                    <li>No account registration required</li>
-                    <li>No login credentials stored</li>
-                    <li>Uninstalling the app removes all data</li>
-                  </ul>
-                </div>
-              </div>
+      <LegalSection id="no-tracking" title="8. No tracking or advertising">
+        <p>The App does not use any:</p>
+        <BulletList>
+          <li>analytics services;</li>
+          <li>tracking technologies;</li>
+          <li>advertising networks.</li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 7. Children's Privacy */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">7. Children&apos;s Privacy</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinly does not collect any data from anyone, including children under the age of 13.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="children" title="9. Children's privacy">
+        <p>
+          The App is not directed to children under the age of 13. Children under 13 should use shared books only under
+          a parent&apos;s or guardian&apos;s supervision. If we learn that we handle information of a child under 13
+          without parental consent, we will delete it promptly.
+        </p>
+      </LegalSection>
 
-              {/* 8. Changes to This Policy */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">8. Changes to This Policy</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting
-                    the new Privacy Policy on this page and updating the &quot;Effective Date&quot; at the top.
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="changes" title="10. Changes to this policy">
+        <p>
+          We may update this Privacy Policy as needed. We will post the new policy on this page and update the
+          &quot;Last updated&quot; date at the top. We will also announce significant changes in the App or on this
+          website.
+        </p>
+      </LegalSection>
 
-              {/* 9. Contact Us */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">9. Contact Us</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                  <div className="bg-gray-50 p-4 rounded-lg mt-3">
-                    <p className="font-medium text-black-700">Email</p>
-                    <p className="text-blue-600 font-medium">support@bluedoghub.com</p>
-                    <p className="font-medium text-black-700 mt-3">App</p>
-                    <p className="text-black-600">Coinly - Smart Budget Tracker</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+      <LegalSection id="contact" title="11. Contact us">
+        <p>If you have any questions or requests about this Privacy Policy, please contact us:</p>
+        <ContactBox emailLabel="Email" appLabel="App" appName="Coinly - Smart Budget Tracker" />
+        <p>
+          See also:{" "}
+          <Link href={coinlyPaths.terms.en} className="text-blue-600 hover:underline">
+            Terms of Use
+          </Link>
+        </p>
+      </LegalSection>
+    </LegalDocument>
   );
 }

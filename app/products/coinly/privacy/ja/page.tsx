@@ -1,152 +1,209 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import {
+  BulletList,
+  Callout,
+  ContactBox,
+  LegalDocument,
+  LegalSection,
+  LegalSubheading,
+} from "../../_components/LegalDocument";
+import { coinlyPaths } from "../../_components/constants";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー - Coinly",
+  description: "iOSアプリ「Coinly - かんたん家計簿」のプライバシーポリシーです。",
+};
 
 export default function Page() {
   return (
-    <div className="mx-auto min-h-screen flex flex-col">
-      <main className="flex-grow">
-        {/* Header section */}
-        <section className="w-full py-12 px-4 md:py-20 bg-blue-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-4xl">
-            <div className="flex flex-col items-center gap-4 text-center">
-              <h1 className="text-display-md md:text-display-lg text-blue-900">プライバシーポリシー</h1>
-              <p className="text-body-md md:text-body-lg text-black-600">最終更新日: 2025年12月7日</p>
-              <div className="mt-4">
-                <Link href="/products/coinly/privacy" className="text-blue-600 hover:text-blue-700 underline">
-                  English
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+    <LegalDocument
+      lang="ja"
+      title="プライバシーポリシー"
+      updated="最終更新日: 2026年9月29日"
+      note="本ポリシーは、Coinly 2.0.0 の配信開始時から適用されます。"
+      otherLang={{ href: coinlyPaths.privacy.en, label: "English" }}
+      intro={
+        <>
+          <Callout title="個人の家計簿は、あなたのiPhoneの中だけに">
+            <p>
+              個人家計簿のデータは端末内にのみ保存され、運営者のサーバーに送信されることはありません。共有家計簿を使うときに限り、共有に必要な情報を運営者のサーバーで取り扱います。広告、アナリティクス、トラッキングは一切使用せず、データを販売することもありません。
+            </p>
+          </Callout>
+          <p className="text-body-md text-black-600">
+            Bluedog（以下「運営者」といいます）は、iOSアプリ「Coinly -
+            かんたん家計簿」（以下「本アプリ」といいます）および共有家計簿の招待ページにおける利用者の情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
+          </p>
+        </>
+      }
+    >
+      <LegalSection id="personal-book" title="1. 個人家計簿（端末内のみ）">
+        <p>
+          支出の記録、予算、カテゴリ、月ごとの集計、貯金など個人家計簿のデータは、Apple の SwiftData
+          を使って端末内に保存されます。言語、通貨、月の開始日などの設定も端末内（UserDefaults）に保存されます。ウィジェットやSiri（ショートカット）で表示・記録する情報も端末内で扱われます。
+        </p>
+        <p>
+          これらのデータが運営者のサーバーに送信されることはありません。個人家計簿だけを使う場合、本アプリが運営者のサーバーと通信することはなく、インターネット接続がなくてもすべての機能を利用できます。
+        </p>
+        <p>
+          なお、端末のデータは、利用者の設定によって iCloud
+          バックアップなど端末のバックアップに含まれることがあります。また、Siri の利用時に Apple
+          が取り扱う情報は、Apple のプライバシーポリシーに従います。
+        </p>
+      </LegalSection>
 
-        {/* Privacy Policy Content */}
-        <section className="w-full py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-4xl">
-            <div className="space-y-10">
-              {/* Introduction */}
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <p className="text-body-lg text-blue-900 font-semibold mb-2">
-                  あなたのプライバシーを守ります
-                </p>
-                <p className="text-body-md text-black-600">
-                  Coinlyはあなたの個人データを外部サーバーに収集、保存、送信しません。
-                  すべての財務情報はあなたのデバイスに保存されます。
-                </p>
-              </div>
+      <LegalSection id="shared-books" title="2. 共有家計簿を使うときに取り扱う情報">
+        <p>
+          共有家計簿を初めて作成または参加するときに、端末上でランダムな利用者IDが作成され、iOS
+          のキーチェーンに保存されます。サインインは不要で、氏名、メールアドレス、電話番号などを登録する必要はありません。共有家計簿を使うときに限り、次の情報を運営者のサーバーに送信・保存します。
+        </p>
+        <BulletList>
+          <li>利用者IDと、あなたが入力した表示名</li>
+          <li>認証トークン（サーバーにはハッシュ値のみを保存し、トークンそのものは保存しません）</li>
+          <li>
+            共有家計簿の内容:
+            家計簿の名前・アイコン、メンバーの表示名、支出（金額・カテゴリ・日付・記録したメンバー）、カテゴリ、月予算、招待コード
+          </li>
+          <li>
+            プッシュ通知用のデバイストークン（APNs）:
+            ほかのメンバーの変更を端末に反映するためのサイレント通知（画面に表示されない通知）に使います
+          </li>
+          <li>
+            Coinly Plus の購入情報: サブスクリプションの状態、App Store
+            のトランザクション識別子（originalTransactionId）、有効期限、購入した商品、環境（本番またはテスト）
+          </li>
+          <li>
+            通信に伴う情報:
+            IPアドレス、アクセス日時、アプリのバージョンなど（サーバーのログとアクセス回数の制限に使います）
+          </li>
+        </BulletList>
+        <LegalSubheading>取得しない情報</LegalSubheading>
+        <BulletList>
+          <li>氏名、メールアドレス、電話番号、住所</li>
+          <li>位置情報、連絡先、写真</li>
+          <li>広告識別子（IDFA）</li>
+          <li>クレジットカード番号などの支払い情報（支払いは Apple が処理します）</li>
+          <li>個人家計簿のデータ</li>
+        </BulletList>
+        <p>
+          招待用のQRコードを読み取るためにカメラを使うことがありますが、カメラの映像は端末内でQRコードの読み取りにのみ使い、保存や送信は行いません。
+        </p>
+      </LegalSection>
 
-              {/* 1. Information Collection */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">1. 情報の収集と使用</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinlyはプライバシーを重視して設計されています。個人情報を外部サーバーに収集、保存、送信することはありません。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="purposes" title="3. 利用目的">
+        <p>運営者は、取り扱う情報を次の目的にのみ利用します。</p>
+        <BulletList>
+          <li>共有家計簿の提供（保存、メンバー間の同期、招待）</li>
+          <li>ほかのメンバーの変更を端末に反映するためのサイレント通知の送信</li>
+          <li>
+            Coinly Plus の購入の確認、共有家計簿を作成できるかどうかの判定、App Store
+            からの通知（更新・解約・返金など）の処理
+          </li>
+          <li>不正利用や過剰なアクセスの防止、障害への対応、セキュリティの確保</li>
+          <li>お問い合わせへの対応</li>
+        </BulletList>
+        <p>広告の配信、利用者の行動分析やプロファイリングには利用しません。</p>
+      </LegalSection>
 
-              {/* 2. Data Storage */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">2. データの保存</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>以下を含むすべての財務データ:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>支出記録</li>
-                    <li>予算設定</li>
-                    <li>カテゴリ</li>
-                    <li>月次サマリー</li>
-                  </ul>
-                  <p className="mt-3">
-                    ...はAppleのSwiftDataフレームワークを使用してデバイス上にローカル保存されます。このデータがデバイスから離れることはありません。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="third-parties" title="4. 第三者への提供と外部サービス">
+        <p>
+          運営者は、法令に基づく場合を除き、利用者の情報を本人の同意なく第三者に提供することはありません。情報を販売することもありません。本サービスの提供のために、次の外部サービスを利用しています。
+        </p>
+        <BulletList>
+          <li>
+            <strong>Amazon Web Services（AWS）</strong>: 共有家計簿のサーバー基盤です。データは東京リージョン（日本）の
+            API Gateway、AWS Lambda、Amazon DynamoDB で処理・保存され、ログは Amazon CloudWatch Logs
+            に保存されます。招待ページも AWS から配信しています。
+          </li>
+          <li>
+            <strong>Apple</strong>: App Store（購入、決済、サブスクリプションの管理）と Apple Push Notification
+            service（サイレント通知の配信）を利用しています。Apple による情報の取扱いは、Apple
+            のプライバシーポリシーに従います。
+          </li>
+          <li>
+            <strong>Google Fonts</strong>:
+            招待リンク（https://coinly.bluedoghub.com/join/…）を開いたときに表示されるウェブページでのみ、文字の表示のために
+            Google Fonts を読み込みます。その際、お使いのブラウザから Google に IP
+            アドレスやユーザーエージェントなどが送信されます。本アプリ本体では使用しません。
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 3. Settings and Preferences */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">3. 設定と環境設定</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    言語選択、通貨設定、会計月開始日などのユーザー設定は、UserDefaultsを使用してローカルに保存されます。この情報が外部サーバーに送信されることはありません。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="retention" title="5. 保存期間">
+        <BulletList>
+          <li>
+            共有家計簿の内容:
+            メンバーがいる間保存し、最後のメンバーが抜けた時点でサーバーから削除します。メンバーが抜けた後も、そのメンバーが記録した支出と表示名は、共有家計簿が削除されるまで残ります。
+          </li>
+          <li>招待コード: 発行から48時間で無効になり、その後自動的に削除されます。</li>
+          <li>
+            アクセス回数の制限に使うカウンター（IPアドレスを含むことがあります）:
+            約2時間で期限切れとなり、自動的に削除されます。
+          </li>
+          <li>サーバーのログ（IPアドレスを含みます）: 30日後に削除されます。</li>
+          <li>
+            利用者ID、表示名、認証トークンのハッシュ値、デバイストークン、Coinly Plus の購入情報:
+            共有家計簿の機能を提供するために必要な間保存し、削除のご依頼があった場合は削除します。
+          </li>
+          <li>
+            障害からの復旧のため、データベースのバックアップを最大35日間保持しています。削除したデータも、この期間はバックアップに残ることがあります。
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 4. No Tracking or Analytics */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">4. トラッキングや分析なし</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>以下のものは一切使用していません:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>アナリティクスサービス</li>
-                    <li>トラッキング技術</li>
-                    <li>広告ネットワーク</li>
-                    <li>データを収集するサードパーティサービス</li>
-                  </ul>
-                </div>
-              </div>
+      <LegalSection id="security" title="6. 安全管理">
+        <BulletList>
+          <li>本アプリとサーバーとの通信は、TLS で暗号化しています。</li>
+          <li>認証トークンは、ハッシュ値のみを保存しています。</li>
+          <li>サーバーに保存するデータは、保存時にも暗号化されています。</li>
+          <li>サーバーの各機能には必要最小限の権限のみを与え、アクセスを制限しています。</li>
+          <li>アクセス回数の制限などにより、不正なアクセスや招待コードの推測を防いでいます。</li>
+        </BulletList>
+        <p>ただし、インターネット上の通信や保存について、完全な安全を保証することはできません。</p>
+      </LegalSection>
 
-              {/* 5. No Internet Connection Required */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">5. インターネット接続不要</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinlyは完全にオフラインで動作します。インターネット接続は必要なく、データがクラウドサービスに同期されることはありません。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="your-rights" title="7. あなたの選択と権利">
+        <BulletList>
+          <li>共有家計簿を使わなければ、運営者のサーバーに情報が送信されることはありません。</li>
+          <li>共有家計簿からは、アプリ内でいつでも抜けることができます。</li>
+          <li>Coinly Plus の解約は、iOS の「設定」から行えます。購入履歴は Apple が管理しています。</li>
+          <li>
+            運営者が保有するあなたの情報の開示、訂正、利用停止、削除をご希望の場合は、下記のお問い合わせ先までご連絡ください。アカウントがないため、ご本人の確認と対象データの特定のために、参加している共有家計簿の名前や表示名などをお伺いすることがあります。
+          </li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 6. Your Control */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">6. あなたのコントロール</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>データは完全にあなたの管理下にあります:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>すべてのデータはデバイスに保存</li>
-                    <li>アカウント登録不要</li>
-                    <li>ログイン情報の保存なし</li>
-                    <li>アプリをアンインストールするとすべてのデータが削除されます</li>
-                  </ul>
-                </div>
-              </div>
+      <LegalSection id="no-tracking" title="8. トラッキング・広告">
+        <p>本アプリでは、次のものを一切使用していません。</p>
+        <BulletList>
+          <li>アナリティクスサービス</li>
+          <li>トラッキング技術</li>
+          <li>広告ネットワーク</li>
+        </BulletList>
+      </LegalSection>
 
-              {/* 7. Children's Privacy */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">7. 子どものプライバシー</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    Coinlyは13歳未満の子どもを含む、誰からもデータを収集しません。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="children" title="9. 子どものプライバシー">
+        <p>
+          本アプリは13歳未満の子どもを対象としたものではありません。13歳未満の子どもが共有家計簿を使う場合は、保護者の管理のもとでご利用ください。保護者の同意なく13歳未満の子どもの情報を取り扱っていることが判明した場合は、速やかに削除します。
+        </p>
+      </LegalSection>
 
-              {/* 8. Changes to This Policy */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">8. ポリシーの変更</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>
-                    このプライバシーポリシーは随時更新される場合があります。変更がある場合は、このページに新しいプライバシーポリシーを掲載し、ページ上部の「最終更新日」を更新することでお知らせします。
-                  </p>
-                </div>
-              </div>
+      <LegalSection id="changes" title="10. ポリシーの変更">
+        <p>
+          本ポリシーは必要に応じて変更することがあります。変更する場合は、このページに新しいプライバシーポリシーを掲載し、ページ上部の「最終更新日」を更新します。重要な変更は、本アプリ内またはこのウェブサイトでもお知らせします。
+        </p>
+      </LegalSection>
 
-              {/* 9. Contact Us */}
-              <div>
-                <h2 className="text-heading-lg text-blue-800 mb-4">9. お問い合わせ</h2>
-                <div className="space-y-3 text-body-md text-black-600">
-                  <p>このプライバシーポリシーについてご質問がある場合は、以下までお問い合わせください:</p>
-                  <div className="bg-gray-50 p-4 rounded-lg mt-3">
-                    <p className="font-medium text-black-700">メール</p>
-                    <p className="text-blue-600 font-medium">support@bluedoghub.com</p>
-                    <p className="font-medium text-black-700 mt-3">アプリ</p>
-                    <p className="text-black-600">Coinly - かんたん家計簿</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+      <LegalSection id="contact" title="11. お問い合わせ">
+        <p>本ポリシーに関するご質問やご依頼は、以下までお問い合わせください。</p>
+        <ContactBox emailLabel="メール" appLabel="アプリ" appName="Coinly - かんたん家計簿" />
+        <p>
+          関連:{" "}
+          <Link href={coinlyPaths.terms.ja} className="text-blue-600 hover:underline">
+            利用規約
+          </Link>
+        </p>
+      </LegalSection>
+    </LegalDocument>
   );
 }
