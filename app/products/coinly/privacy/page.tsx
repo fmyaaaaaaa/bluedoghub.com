@@ -44,7 +44,14 @@ export default function Page() {
           Your personal book data, including expenses, budgets, categories, monthly summaries and savings, is stored on
           your device using Apple&apos;s SwiftData. Settings such as language, currency and the day your month starts
           are also stored on your device (UserDefaults). Information shown or recorded through widgets and Siri
-          (Shortcuts) is also handled on your device.
+          (Shortcuts) is also handled on your device. The Apple Watch app receives a summary of your books from your
+          iPhone and sends its records back to your iPhone (device-to-device via Apple&apos;s WatchConnectivity, never
+          through our server).
+        </p>
+        <p>
+          If you set up &quot;Record a payment from Apple Pay&quot;, the payment amount and merchant name are kept
+          temporarily on your iPhone and Apple Watch only, as a suggestion for your next record. They are deleted once
+          used or after 30 minutes and are never sent anywhere. The card name is received but not stored.
         </p>
         <p>
           This data is never sent to our server. If you only use the personal book, the App never contacts our server,
