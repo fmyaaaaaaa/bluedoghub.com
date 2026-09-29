@@ -240,7 +240,7 @@ export default function Page() {
           <li>These Terms are governed by and interpreted under the laws of Japan.</li>
           <li>
             Any dispute between you and us regarding the Service shall be subject to the exclusive jurisdiction of the
-            district court having jurisdiction over our location as the court of first instance.
+            Tokyo District Court as the court of first instance.
           </li>
         </NumberedList>
       </LegalSection>
