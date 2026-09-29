@@ -7,16 +7,16 @@ const baseUrl =
     : "http://localhost:3030";
 
 const description =
-  "Coinlyは、タップするだけで記録できるiPhoneの家計簿アプリ。個人の家計簿はiPhoneの中だけに。家族・部費・旅行の共有家計簿やApple Watchにも対応。";
+  "ワンコインは、タップするだけで記録できるiPhoneの家計簿アプリ。個人の家計簿はiPhoneの中だけに。家族・部費・旅行の共有家計簿やApple Watchにも対応。";
 
 export const metadata: Metadata = {
-  title: "Coinly - かんたん家計簿",
+  title: "ワンコイン - かんたん家計簿",
   description,
   openGraph: {
-    title: "Coinly - かんたん家計簿",
+    title: "ワンコイン - かんたん家計簿",
     description,
     locale: "ja_JP",
-    images: [{ url: `${baseUrl}/ogp-coinly.png`, width: 1200, height: 630, alt: "Coinly" }],
+    images: [{ url: `${baseUrl}/ogp-coinly.png`, width: 1200, height: 630, alt: "ワンコイン" }],
   },
 };
 

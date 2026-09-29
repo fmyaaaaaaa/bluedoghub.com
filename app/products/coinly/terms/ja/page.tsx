@@ -4,8 +4,8 @@ import { BulletList, ContactBox, LegalDocument, LegalSection, NumberedList } fro
 import { coinlyPaths } from "../../_components/constants";
 
 export const metadata: Metadata = {
-  title: "利用規約 - Coinly",
-  description: "iOSアプリ「Coinly - かんたん家計簿」の利用規約です。",
+  title: "利用規約 - ワンコイン",
+  description: "iOSアプリ「ワンコイン - かんたん家計簿」の利用規約です。",
 };
 
 export default function Page() {
@@ -14,12 +14,13 @@ export default function Page() {
       lang="ja"
       title="利用規約"
       updated="最終更新日: 2026年9月29日"
-      note="本規約は、Coinly 2.0.0 の配信開始日から適用されます。"
+      note="本規約は、ワンコイン 2.0.0 の配信開始日から適用されます。"
       otherLang={{ href: coinlyPaths.terms.en, label: "English" }}
       intro={
         <p className="text-body-md text-black-600">
-          この利用規約（以下「本規約」といいます）は、Bluedog（以下「運営者」といいます）が提供するiOSアプリ「Coinly -
-          かんたん家計簿」（以下「本アプリ」といいます）および本アプリに付随するサービス（共有家計簿、招待ページ、Coinly
+          この利用規約（以下「本規約」といいます）は、Bluedog（以下「運営者」といいます）が提供するiOSアプリ「ワンコイン
+          -
+          かんたん家計簿」（英語表記：Coinly。以下「本アプリ」といいます）および本アプリに付随するサービス（共有家計簿、招待ページ、ワンコイン
           Plus
           を含み、以下あわせて「本サービス」といいます）の利用条件を定めるものです。本アプリをダウンロードまたは利用した時点で、本規約に同意したものとみなされます。
         </p>
@@ -52,7 +53,7 @@ export default function Page() {
           <li>
             「記録内容」とは、家計簿の名前・アイコン、支出（金額・カテゴリ・日付・記録したメンバー）、カテゴリ、月予算その他利用者が本サービスに入力した情報をいいます。
           </li>
-          <li>「Coinly Plus」とは、共有家計簿の作成に必要な自動更新サブスクリプションをいいます。</li>
+          <li>「ワンコイン Plus」とは、共有家計簿の作成に必要な自動更新サブスクリプションをいいます。</li>
         </BulletList>
       </LegalSection>
 
@@ -61,7 +62,7 @@ export default function Page() {
           <li>
             個人家計簿は無料で利用できます。個人家計簿のデータは端末内にのみ保存され、運営者のサーバーには送信されません。
           </li>
-          <li>共有家計簿の作成には Coinly Plus が必要です。招待を受けて共有家計簿に参加することは無料です。</li>
+          <li>共有家計簿の作成にはワンコイン Plus が必要です。招待を受けて共有家計簿に参加することは無料です。</li>
           <li>
             共有家計簿の利用にはインターネット接続が必要です。アカウント登録やサインインは不要で、初めて共有家計簿を作成または参加するときに、端末上でランダムな利用者IDが作成され、利用者が入力した表示名とともに使用されます。
           </li>
@@ -103,10 +104,10 @@ export default function Page() {
         </NumberedList>
       </LegalSection>
 
-      <LegalSection title="第6条（Coinly Plus）">
+      <LegalSection title="第6条（ワンコイン Plus）">
         <NumberedList>
           <li>
-            Coinly Plus は、Apple の App Store
+            ワンコイン Plus は、Apple の App Store
             を通じて提供される自動更新サブスクリプションです。料金は月額100円または年額1,000円（いずれも税込）です。実際の料金は、購入時に
             App Store に表示される金額によります。
           </li>
@@ -119,9 +120,9 @@ export default function Page() {
             の「設定」→［ユーザ名］→「サブスクリプション」からいつでも行えます。本アプリを削除しても、サブスクリプションは解約されません。
           </li>
           <li>料金の返金は、Apple の定める方針に従い Apple が取り扱います。運営者が直接返金を行うことはできません。</li>
-          <li>Coinly Plus は、購入を行った1人の利用者（利用者ID）に対して有効となります。</li>
+          <li>ワンコイン Plus は、購入を行った1人の利用者（利用者ID）に対して有効となります。</li>
           <li>
-            Coinly Plus
+            ワンコイン Plus
             が終了した場合（解約、期限切れ、返金等）、新たに共有家計簿を作成することはできなくなりますが、作成済みの共有家計簿はそのまま利用でき、メンバーによる閲覧・記録・参加にも影響はありません。
           </li>
           <li>料金を変更する場合は、Apple の仕組みに従って事前に利用者に通知します。</li>
@@ -141,7 +142,7 @@ export default function Page() {
           <li>
             法令で認められる場合を除き、本アプリを改変、リバースエンジニアリング、逆コンパイルまたは逆アセンブルする行為
           </li>
-          <li>不正な方法で Coinly Plus を利用し、または利用させる行為</li>
+          <li>不正な方法でワンコイン Plus を利用し、または利用させる行為</li>
           <li>その他、前各号に準じる行為として運営者が合理的に不適切と判断する行為</li>
         </BulletList>
       </LegalSection>
@@ -192,8 +193,8 @@ export default function Page() {
           </li>
           <li>運営者の故意または重大な過失によって利用者に損害が生じた場合、運営者はその損害を賠償します。</li>
           <li>
-            運営者の軽過失によって利用者に損害が生じた場合、運営者は、通常生ずべき直接の損害に限り、損害発生日の前12か月間に利用者が
-            Coinly Plus のために支払った料金の総額（支払いがない場合は1,000円）を上限として賠償します。
+            運営者の軽過失によって利用者に損害が生じた場合、運営者は、通常生ずべき直接の損害に限り、損害発生日の前12か月間に利用者がワンコイン
+            Plus のために支払った料金の総額（支払いがない場合は1,000円）を上限として賠償します。
           </li>
         </NumberedList>
       </LegalSection>
@@ -230,7 +231,7 @@ export default function Page() {
 
       <LegalSection title="第15条（お問い合わせ）">
         <p>本規約に関するお問い合わせは、以下までご連絡ください。</p>
-        <ContactBox emailLabel="メール" appLabel="アプリ" appName="Coinly - かんたん家計簿" />
+        <ContactBox emailLabel="メール" appLabel="アプリ" appName="ワンコイン - かんたん家計簿" />
       </LegalSection>
     </LegalDocument>
   );

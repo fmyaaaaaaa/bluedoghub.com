@@ -24,6 +24,7 @@ import { coinlyRounded } from "./fonts";
 
 const content = {
   en: {
+    name: "Coinly",
     otherLang: { label: "日本語", href: coinlyPaths.home.ja },
     tagline: "A companion that quietly cheers you on.",
     lead: "Just tap in what you spent. Coinly keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
@@ -161,11 +162,12 @@ const content = {
     storeAlt: "Download on the App Store",
   },
   ja: {
+    name: "ワンコイン",
     otherLang: { label: "English", href: coinlyPaths.home.en },
     tagline: "記録するたび、相棒がそっと応援。",
     lead: "使った金額をタップするだけで記録できる家計簿です。個人の家計簿はiPhoneの中だけに。家族や部活、旅行の仲間と一緒につける「共有家計簿」にも対応しました。",
     cta: "くわしく見る",
-    comingSoon: "Coinly 2.0 は App Store で近日公開予定です",
+    comingSoon: "ワンコイン 2.0 は App Store で近日公開予定です",
     featuresTitle: "毎日続けられる、ちょうどいい機能",
     featuresLead: "数秒で記録できることを、いちばん大切にしています。",
     features: [
@@ -268,10 +270,10 @@ const content = {
       {
         icon: Smartphone,
         title: "iPhoneと連携して動作",
-        body: "ペアリングしたiPhoneのCoinlyと連携して動くので、サインインは不要です。",
+        body: "ペアリングしたiPhoneのワンコインと連携して動くので、サインインは不要です。",
       },
     ],
-    watchNote: "watchOS 11 以降に対応。ペアリングしたiPhoneにCoinlyが必要です。",
+    watchNote: "watchOS 11 以降に対応。ペアリングしたiPhoneにワンコインが必要です。",
     pricingTitle: "料金",
     free: {
       name: "無料",
@@ -280,17 +282,17 @@ const content = {
       items: ["個人の家計簿のすべての機能", "ウィジェットとSiri", "招待された共有家計簿への参加"],
     },
     plus: {
-      name: "Coinly Plus",
+      name: "ワンコイン Plus",
       price: "¥100",
       period: "/ 月",
       alt: "または ¥1,000 / 年",
       items: ["共有家計簿をつくれる", "QR・コード・リンクでメンバーを招待", "無料プランのすべての機能"],
     },
     pricingNote:
-      "Coinly Plus は自動更新のサブスクリプションで、Apple ID に請求されます。現在の期間が終わる24時間前までに解約しない限り自動で更新されます。管理・解約は iOS の「設定」からいつでも行えます。Plus が終了しても、作成済みの共有家計簿はそのまま使えます。",
+      "ワンコイン Plus は自動更新のサブスクリプションで、Apple ID に請求されます。現在の期間が終わる24時間前までに解約しない限り自動で更新されます。管理・解約は iOS の「設定」からいつでも行えます。Plus が終了しても、作成済みの共有家計簿はそのまま使えます。",
     privacyTitle: "個人の家計簿は、iPhoneの外に出ません",
     privacyBody:
-      "個人の家計簿だけを使う場合、Coinly がサーバーと通信することはありません。共有家計簿は、メンバー間で同期するために東京リージョン（AWS）のサーバーに保存されます。広告・アナリティクス・データの販売は一切ありません。",
+      "個人の家計簿だけを使う場合、ワンコインがサーバーと通信することはありません。共有家計簿は、メンバー間で同期するために東京リージョン（AWS）のサーバーに保存されます。広告・アナリティクス・データの販売は一切ありません。",
     privacyLink: "プライバシーポリシーを読む",
     contactTitle: "ご質問・ご意見はこちら",
     terms: "利用規約",
@@ -365,7 +367,7 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
                 <div className="flex items-center gap-3">
                   <CoinlyDog className="h-20 w-20 md:h-24 md:w-24" />
                   <p className="text-[2.5rem] font-extrabold leading-none tracking-wide text-coinly-ink md:text-6xl">
-                    Coinly
+                    {t.name}
                   </p>
                 </div>
                 <h1 className="text-balance text-display-xs font-extrabold text-coinly-ink md:text-display-md">
@@ -592,7 +594,7 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
             <a href={`mailto:${COINLY_SUPPORT_EMAIL}`} className="text-heading-md text-coinly-600 hover:underline">
               {COINLY_SUPPORT_EMAIL}
             </a>
-            <nav aria-label="Coinly" className="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-2 text-caption-lg">
+            <nav aria-label={t.name} className="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-2 text-caption-lg">
               <Link href={coinlyPaths.terms[lang]} className="text-coinly-600 hover:underline">
                 {t.terms}
               </Link>
