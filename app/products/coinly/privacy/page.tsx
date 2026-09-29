@@ -46,12 +46,15 @@ export default function Page() {
           are also stored on your device (UserDefaults). Information shown or recorded through widgets and Siri
           (Shortcuts) is also handled on your device. The Apple Watch app receives a summary of your books from your
           iPhone and sends its records back to your iPhone (device-to-device via Apple&apos;s WatchConnectivity, never
-          through our server).
+          through our server). The Apple Watch stores a summary of the book you are viewing (book and category names,
+          budget, amount spent) and records not yet delivered to your iPhone (for up to 45 days). Your iPhone keeps the
+          IDs of records received from the Apple Watch for 60 days so they are never saved twice.
         </p>
         <p>
           If you set up &quot;Record a payment from Apple Pay&quot;, the payment amount and merchant name are kept
-          temporarily on your iPhone and Apple Watch only, as a suggestion for your next record. They are deleted once
-          used or after 30 minutes and are never sent anywhere. The card name is received but not stored.
+          temporarily on your iPhone and Apple Watch only, as a suggestion for your next record. They are deleted when
+          used, or the next time Coinly runs after 30 minutes (they are no longer shown after 30 minutes), and are never
+          sent anywhere. The card name is received but not stored.
         </p>
         <p>
           This data is never sent to our server. If you only use the personal book, the App never contacts our server,
