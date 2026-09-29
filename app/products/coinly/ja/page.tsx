@@ -7,7 +7,7 @@ const baseUrl =
     : "http://localhost:3030";
 
 const description =
-  "Coinlyは、タップするだけで記録できるiPhoneの家計簿アプリ。個人の家計簿はiPhoneの中だけに。家族・部費・旅行の共有家計簿にも対応。";
+  "Coinlyは、タップするだけで記録できるiPhoneの家計簿アプリ。個人の家計簿はiPhoneの中だけに。家族・部費・旅行の共有家計簿やApple Watchにも対応。";
 
 export const metadata: Metadata = {
   title: "Coinly - かんたん家計簿",

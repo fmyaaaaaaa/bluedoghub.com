@@ -7,10 +7,10 @@ const baseUrl =
     : "http://localhost:3030";
 
 const description =
-  "Coinly is a simple household budget app for iPhone. Record in one tap, keep your personal book on your iPhone, and share a book with family, your club or travel buddies.";
+  "Coinly is a simple household budget app for iPhone. Record in one tap, keep your personal book on your iPhone, and share a book with family, your club or travel buddies. Works on Apple Watch, too.";
 
 export const metadata: Metadata = {
-  title: "Coinly - The budget app your dog loves",
+  title: "Coinly - A companion that quietly cheers you on",
   description,
   openGraph: {
     title: "Coinly",

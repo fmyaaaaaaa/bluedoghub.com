@@ -5,13 +5,16 @@ import {
   CalendarDays,
   Check,
   CircleDashed,
+  CreditCard,
   Link2,
   Lock,
   Mic,
   PenLine,
   PiggyBank,
   QrCode,
+  Smartphone,
   Users,
+  Watch,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,8 +25,8 @@ import { coinlyRounded } from "./fonts";
 const content = {
   en: {
     otherLang: { label: "日本語", href: coinlyPaths.home.ja },
-    tagline: "The budget app your dog loves",
-    lead: "Tap in what you spent, and your Maltese companion cheers you on. Coinly keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
+    tagline: "A companion that quietly cheers you on.",
+    lead: "Just tap in what you spent. Coinly keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
     cta: "See how it works",
     comingSoon: "Coinly 2.0 is coming soon to the App Store",
     featuresTitle: "Everything you need, nothing you don't",
@@ -95,6 +98,43 @@ const content = {
       { src: "/coinly-shared-home.webp", alt: "Home screen of a shared family book" },
       { src: "/coinly-shared-history.webp", alt: "Shared book history with the member who recorded each expense" },
     ],
+    watchTitle: "On Apple Watch",
+    watchLead: "Check what's left and record on the spot, right from your wrist.",
+    watchShots: [
+      { src: "/coinly-watch-face.webp", alt: "Watch face with the remaining budget complication", label: "Watch face" },
+      { src: "/coinly-watch-amount.webp", alt: "Entering an amount on the watch keypad", label: "1. Amount → Next" },
+      { src: "/coinly-watch-category.webp", alt: "Choosing a category on the watch", label: "2. Category" },
+      { src: "/coinly-watch-done.webp", alt: "The dog celebrating a recorded expense", label: "3. Recorded!" },
+    ],
+    watchStack: { src: "/coinly-watch-smart-stack-en.webp", alt: "Remaining budget in the Smart Stack" },
+    watchPoints: [
+      {
+        icon: Watch,
+        title: "Your budget on the watch face",
+        body: "Add a complication to see this month's remaining budget at a glance. It shows up in the Smart Stack, too.",
+      },
+      {
+        icon: Calculator,
+        title: "Record in a few taps",
+        body: "Enter the amount, tap Next and pick a category. Your companion celebrates every record.",
+      },
+      {
+        icon: CreditCard,
+        title: "Record right after paying with Apple Pay",
+        body: "Set up an automation once in the Shortcuts app, and the amount you just paid comes to your watch, ready to record. Availability depends on your card and payment method.",
+      },
+      {
+        icon: Mic,
+        title: "Record with Siri",
+        body: "Just ask Siri on your watch to record an expense in Coinly.",
+      },
+      {
+        icon: Smartphone,
+        title: "Works through your iPhone",
+        body: "Coinly on your watch works with Coinly on your paired iPhone. No sign-in needed.",
+      },
+    ],
+    watchNote: "Requires watchOS 11 or later and an iPhone with Coinly installed.",
     pricingTitle: "Pricing",
     free: {
       name: "Free",
@@ -122,8 +162,8 @@ const content = {
   },
   ja: {
     otherLang: { label: "English", href: coinlyPaths.home.en },
-    tagline: "記録するたび、犬がよろこぶ家計簿",
-    lead: "使った金額をタップするだけ。マルチーズがそっと応援してくれます。個人の家計簿はiPhoneの中だけに。家族や部活、旅行の仲間と一緒につける「共有家計簿」にも対応しました。",
+    tagline: "記録するたび、相棒がそっと応援。",
+    lead: "使った金額をタップするだけで記録できる家計簿です。個人の家計簿はiPhoneの中だけに。家族や部活、旅行の仲間と一緒につける「共有家計簿」にも対応しました。",
     cta: "くわしく見る",
     comingSoon: "Coinly 2.0 は App Store で近日公開予定です",
     featuresTitle: "毎日続けられる、ちょうどいい機能",
@@ -195,6 +235,43 @@ const content = {
       { src: "/coinly-shared-home.webp", alt: "家族の共有家計簿のホーム画面" },
       { src: "/coinly-shared-history.webp", alt: "記録したメンバーが表示される共有家計簿の履歴" },
     ],
+    watchTitle: "Apple Watch でも",
+    watchLead: "iPhoneを出さなくても、腕元で残りを確認して、その場で記録できます。",
+    watchShots: [
+      { src: "/coinly-watch-face.webp", alt: "残りの予算を表示するコンプリケーションのある文字盤", label: "文字盤" },
+      { src: "/coinly-watch-amount.webp", alt: "Apple Watchのテンキーで金額を入力する画面", label: "1. 金額 → 次へ" },
+      { src: "/coinly-watch-category.webp", alt: "Apple Watchでカテゴリを選ぶ画面", label: "2. カテゴリ" },
+      { src: "/coinly-watch-done.webp", alt: "記録が完了して犬がよろこぶ画面", label: "3. 記録完了" },
+    ],
+    watchStack: { src: "/coinly-watch-smart-stack-ja.webp", alt: "スマートスタックに表示された残りの予算" },
+    watchPoints: [
+      {
+        icon: Watch,
+        title: "文字盤で残りの予算を確認",
+        body: "コンプリケーションを文字盤に置けば、今月の残りがいつでもひと目でわかります。スマートスタックにも表示できます。",
+      },
+      {
+        icon: Calculator,
+        title: "数タップで記録",
+        body: "金額を入力して「次へ」、カテゴリを選べば完了。記録するたびに相棒がよろこんでくれます。",
+      },
+      {
+        icon: CreditCard,
+        title: "Apple Pay で払ったら、すぐ記録",
+        body: "ショートカットAppで一度オートメーションを設定しておくと、支払った金額がApple Watchに届き、そのまま記録できます。カードや支払い方法によっては使えない場合があります。",
+      },
+      {
+        icon: Mic,
+        title: "Siriで記録",
+        body: "Apple WatchのSiriに話しかけて、支出を記録することもできます。",
+      },
+      {
+        icon: Smartphone,
+        title: "iPhoneと連携して動作",
+        body: "ペアリングしたiPhoneのCoinlyと連携して動くので、サインインは不要です。",
+      },
+    ],
+    watchNote: "watchOS 11 以降に対応。ペアリングしたiPhoneにCoinlyが必要です。",
     pricingTitle: "料金",
     free: {
       name: "無料",
@@ -231,6 +308,19 @@ function PhoneShot({ src, alt, className }: { src: string; alt: string; classNam
       )}
     >
       <Image src={src} alt={alt} width={600} height={1304} className="h-auto w-full" />
+    </div>
+  );
+}
+
+function WatchShot({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  return (
+    <div
+      className={cn(
+        "overflow-hidden rounded-[22%/18%] border-[6px] border-[#2B2F36] bg-black p-[5%] shadow-[0_18px_40px_-18px_rgba(15,42,87,0.45)]",
+        className
+      )}
+    >
+      <Image src={src} alt={alt} width={416} height={496} className="h-auto w-full" />
     </div>
   );
 }
@@ -376,6 +466,57 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
                   <PhoneShot key={s.src} src={s.src} alt={s.alt} className="rounded-2xl border-4 sm:rounded-[2rem]" />
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Apple Watch */}
+        <section id="apple-watch" className="w-full bg-white py-16">
+          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+              {t.watchTitle}
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-coinly-muted">{t.watchLead}</p>
+            <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4 sm:gap-6">
+              {t.watchShots.map((s) => (
+                <li key={s.src} className="flex flex-col items-center gap-3">
+                  <WatchShot src={s.src} alt={s.alt} className="w-full max-w-[11rem]" />
+                  <span className="text-label-md font-bold text-coinly-600">{s.label}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
+              <div className="w-full max-w-sm md:sticky md:top-8 md:w-2/5 md:max-w-none">
+                <div className="relative w-full">
+                  <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-coinly-coin/30" aria-hidden />
+                  <div className="relative overflow-hidden rounded-[2rem] shadow-[0_18px_40px_-18px_rgba(15,42,87,0.45)]">
+                    <Image
+                      src={t.watchStack.src}
+                      alt={t.watchStack.alt}
+                      width={558}
+                      height={276}
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </div>
+              </div>
+              <ul className="flex w-full flex-col gap-4 md:w-3/5">
+                {t.watchPoints.map(({ icon: Icon, title, body }) => (
+                  <li key={title} className="flex gap-4 rounded-3xl border border-coinly-line bg-white p-5">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-coinly-50 text-coinly-500">
+                      <Icon className="h-6 w-6" aria-hidden />
+                    </div>
+                    <div>
+                      <h3 className="text-heading-md font-bold text-coinly-ink">{title}</h3>
+                      <p className="mt-1 text-body-sm text-coinly-muted">{body}</p>
+                    </div>
+                  </li>
+                ))}
+                <li className="flex items-start gap-3 px-2 text-body-sm text-coinly-muted">
+                  <Watch className="mt-0.5 h-4 w-4 shrink-0 text-coinly-500" aria-hidden />
+                  <span>{t.watchNote}</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
