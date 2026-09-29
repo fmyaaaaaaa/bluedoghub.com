@@ -1,8 +1,8 @@
 import { Menu, PawPrint } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Button } from "./ui/button";
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 export default function Header() {
   return (
@@ -44,6 +44,9 @@ export default function Header() {
                       </Button>
                       <Button variant="ghost" asChild className="text-sm font-medium w-full justify-start">
                         <NavigationMenuLink href="/products/ebira">Ebira</NavigationMenuLink>
+                      </Button>
+                      <Button variant="ghost" asChild className="text-sm font-medium w-full justify-start">
+                        <NavigationMenuLink href="/products/coinly">Coinly</NavigationMenuLink>
                       </Button>
                     </div>
                   </NavigationMenuContent>
@@ -82,6 +85,11 @@ export default function Header() {
                           <SheetClose asChild>
                             <Button variant="ghost" asChild className="justify-center">
                               <Link href="/products/ebira">Ebira</Link>
+                            </Button>
+                          </SheetClose>
+                          <SheetClose asChild>
+                            <Button variant="ghost" asChild className="justify-center">
+                              <Link href="/products/coinly">Coinly</Link>
                             </Button>
                           </SheetClose>
                         </div>
