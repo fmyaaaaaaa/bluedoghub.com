@@ -37,7 +37,7 @@ export function LegalDocument({ lang, title, updated, note, otherLang, intro, ch
                   href={lang === "en" ? "/products/coinly" : "/products/coinly/ja"}
                   className="text-blue-600 hover:text-blue-700 underline"
                 >
-                  {lang === "en" ? "Coinly" : "ワンコイン"}
+                  {lang === "en" ? "Coinly" : "アルコイン"}
                 </Link>
               </div>
             </div>

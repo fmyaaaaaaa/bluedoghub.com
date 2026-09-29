@@ -11,8 +11,8 @@ import {
 import { coinlyPaths } from "../../_components/constants";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー - ワンコイン",
-  description: "iOSアプリ「ワンコイン - かんたん家計簿」のプライバシーポリシーです。",
+  title: "プライバシーポリシー - アルコイン",
+  description: "iOSアプリ「アルコイン - かんたん家計簿」のプライバシーポリシーです。",
 };
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
       lang="ja"
       title="プライバシーポリシー"
       updated="最終更新日: 2026年9月29日"
-      note="本ポリシーは、ワンコイン 2.0.0 の配信開始時から適用されます。"
+      note="本ポリシーは、アルコイン 2.0.0 の配信開始時から適用されます。"
       otherLang={{ href: coinlyPaths.privacy.en, label: "English" }}
       intro={
         <>
@@ -31,7 +31,7 @@ export default function Page() {
             </p>
           </Callout>
           <p className="text-body-md text-black-600">
-            Bluedog（以下「運営者」といいます）は、iOSアプリ「ワンコイン -
+            Bluedog（以下「運営者」といいます）は、iOSアプリ「アルコイン -
             かんたん家計簿」（英語表記：Coinly。以下「本アプリ」といいます）および共有家計簿の招待ページにおける利用者の情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
           </p>
         </>
@@ -49,7 +49,7 @@ export default function Page() {
         </p>
         <p>
           「Apple Pay の支払いから記録」を設定した場合、支払いの金額と加盟店名を、記録の候補として iPhone と Apple Watch
-          の端末内にのみ一時的に保存します。記録に使ったとき、または30分を過ぎたあとワンコインが次に動いたときに削除し（30分を過ぎたものは表示しません）、外部には送信しません。カード名は受け取りますが保存しません。
+          の端末内にのみ一時的に保存します。記録に使ったとき、または30分を過ぎたあとアルコインが次に動いたときに削除し（30分を過ぎたものは表示しません）、外部には送信しません。カード名は受け取りますが保存しません。
         </p>
         <p>
           これらのデータが運営者のサーバーに送信されることはありません。個人家計簿だけを使う場合、本アプリが運営者のサーバーと通信することはなく、インターネット接続がなくてもすべての機能を利用できます。
@@ -78,7 +78,7 @@ export default function Page() {
             ほかのメンバーの変更を端末に反映するためのサイレント通知（画面に表示されない通知）に使います
           </li>
           <li>
-            ワンコイン Plus の購入情報: サブスクリプションの状態、App Store
+            アルコイン Plus の購入情報: サブスクリプションの状態、App Store
             のトランザクション識別子（originalTransactionId）、有効期限、購入した商品、環境（本番またはテスト）
           </li>
           <li>
@@ -105,7 +105,7 @@ export default function Page() {
           <li>共有家計簿の提供（保存、メンバー間の同期、招待）</li>
           <li>ほかのメンバーの変更を端末に反映するためのサイレント通知の送信</li>
           <li>
-            ワンコイン Plus の購入の確認、共有家計簿を作成できるかどうかの判定、App Store
+            アルコイン Plus の購入の確認、共有家計簿を作成できるかどうかの判定、App Store
             からの通知（更新・解約・返金など）の処理
           </li>
           <li>不正利用や過剰なアクセスの防止、障害への対応、セキュリティの確保</li>
@@ -151,7 +151,7 @@ export default function Page() {
           </li>
           <li>サーバーのログ（IPアドレスを含みます）: 30日後に削除されます。</li>
           <li>
-            利用者ID、表示名、認証トークンのハッシュ値、デバイストークン、ワンコイン Plus の購入情報:
+            利用者ID、表示名、認証トークンのハッシュ値、デバイストークン、アルコイン Plus の購入情報:
             共有家計簿の機能を提供するために必要な間保存し、削除のご依頼があった場合は削除します。
           </li>
           <li>
@@ -175,7 +175,7 @@ export default function Page() {
         <BulletList>
           <li>共有家計簿を使わなければ、運営者のサーバーに情報が送信されることはありません。</li>
           <li>共有家計簿からは、アプリ内でいつでも抜けることができます。</li>
-          <li>ワンコイン Plus の解約は、iOS の「設定」から行えます。購入履歴は Apple が管理しています。</li>
+          <li>アルコイン Plus の解約は、iOS の「設定」から行えます。購入履歴は Apple が管理しています。</li>
           <li>
             運営者が保有するあなたの情報の開示、訂正、利用停止、削除をご希望の場合は、下記のお問い合わせ先までご連絡ください。アカウントがないため、ご本人の確認と対象データの特定のために、参加している共有家計簿の名前や表示名などをお伺いすることがあります。
           </li>
@@ -205,7 +205,7 @@ export default function Page() {
 
       <LegalSection id="contact" title="11. お問い合わせ">
         <p>本ポリシーに関するご質問やご依頼は、以下までお問い合わせください。</p>
-        <ContactBox emailLabel="メール" appLabel="アプリ" appName="ワンコイン - かんたん家計簿" />
+        <ContactBox emailLabel="メール" appLabel="アプリ" appName="アルコイン - かんたん家計簿" />
         <p>
           関連:{" "}
           <Link href={coinlyPaths.terms.ja} className="text-blue-600 hover:underline">
