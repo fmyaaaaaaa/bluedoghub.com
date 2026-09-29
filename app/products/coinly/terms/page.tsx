@@ -182,8 +182,8 @@ export default function Page() {
       <LegalSection title="9. Ownership">
         <NumberedList>
           <li>
-            The rights to the App&apos;s software, design, character (the Maltese), logo and other content belong to us
-            or their rightful owners.
+            The rights to the App&apos;s software, design, characters, logo and other content belong to us or their
+            rightful owners.
           </li>
           <li>
             Your records belong to the user who recorded them. We handle records only as needed to provide the Service
