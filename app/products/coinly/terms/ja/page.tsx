@@ -13,14 +13,14 @@ export default function Page() {
     <LegalDocument
       lang="ja"
       title="利用規約"
-      updated="最終更新日: 2026年9月29日"
+      updated="最終更新日: 2026年9月30日"
       note="本規約は、アルコイン 2.0.0 の配信開始日から適用されます。"
       otherLang={{ href: coinlyPaths.terms.en, label: "English" }}
       intro={
         <p className="text-body-md text-black-600">
           この利用規約（以下「本規約」といいます）は、Bluedog（以下「運営者」といいます）が提供するiOSアプリ「アルコイン
           -
-          かんたん家計簿」（英語表記：Coinly。以下「本アプリ」といいます）および本アプリに付随するサービス（共有家計簿、招待ページ、アルコイン
+          かんたん家計簿」（英語表記：Alcoin。以下「本アプリ」といいます）および本アプリに付随するサービス（共有家計簿、招待ページ、アルコイン
           Plus
           を含み、以下あわせて「本サービス」といいます）の利用条件を定めるものです。本アプリをダウンロードまたは利用した時点で、本規約に同意したものとみなされます。
         </p>

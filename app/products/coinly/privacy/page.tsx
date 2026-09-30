@@ -11,8 +11,8 @@ import {
 import { coinlyPaths } from "../_components/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Coinly",
-  description: "Privacy Policy for the iOS app Coinly.",
+  title: "Privacy Policy - Alcoin",
+  description: "Privacy Policy for the iOS app Alcoin.",
 };
 
 export default function Page() {
@@ -20,8 +20,8 @@ export default function Page() {
     <LegalDocument
       lang="en"
       title="Privacy Policy"
-      updated="Last updated: September 29, 2026"
-      note="This policy applies from the release of Coinly 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
+      updated="Last updated: September 30, 2026"
+      note="This policy applies from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
       otherLang={{ href: coinlyPaths.privacy.ja, label: "日本語" }}
       intro={
         <>
@@ -34,7 +34,7 @@ export default function Page() {
           </Callout>
           <p className="text-body-md text-black-600">
             This Privacy Policy explains how Bluedog (&quot;we&quot;, &quot;us&quot;) handles information in the iOS app
-            &quot;Coinly&quot; (the &quot;App&quot;) and on the shared book invite page.
+            &quot;Alcoin&quot; (formerly &quot;Coinly&quot;) (the &quot;App&quot;) and on the shared book invite page.
           </p>
         </>
       }
@@ -53,7 +53,7 @@ export default function Page() {
         <p>
           If you set up &quot;Record a payment from Apple Pay&quot;, the payment amount and merchant name are kept
           temporarily on your iPhone and Apple Watch only, as a suggestion for your next record. They are deleted when
-          used, or the next time Coinly runs after 30 minutes (they are no longer shown after 30 minutes), and are never
+          used, or the next time Alcoin runs after 30 minutes (they are no longer shown after 30 minutes), and are never
           sent anywhere. The card name is received but not stored.
         </p>
         <p>
@@ -84,7 +84,7 @@ export default function Page() {
             screen) that bring other members&apos; changes to your device;
           </li>
           <li>
-            Coinly Plus purchase information: subscription status, App Store transaction identifiers
+            Alcoin Plus purchase information: subscription status, App Store transaction identifiers
             (originalTransactionId), expiry date, product and environment (production or test);
           </li>
           <li>
@@ -112,7 +112,7 @@ export default function Page() {
           <li>provide shared books (storage, syncing between members and invitations);</li>
           <li>send silent notifications that bring other members&apos; changes to your device;</li>
           <li>
-            verify Coinly Plus purchases, decide whether you can create shared books, and process App Store
+            verify Alcoin Plus purchases, decide whether you can create shared books, and process App Store
             notifications (renewals, cancellations, refunds, etc.);
           </li>
           <li>prevent abuse and excessive requests, handle incidents and keep the Service secure; and</li>
@@ -159,7 +159,7 @@ export default function Page() {
           </li>
           <li>Server logs (which include IP addresses): deleted after 30 days.</li>
           <li>
-            User ID, display name, token hash, device token and Coinly Plus purchase information: kept as long as needed
+            User ID, display name, token hash, device token and Alcoin Plus purchase information: kept as long as needed
             to provide shared books, and deleted on request.
           </li>
           <li>
@@ -184,7 +184,7 @@ export default function Page() {
         <BulletList>
           <li>If you don&apos;t use shared books, no information is sent to our server.</li>
           <li>You can leave a shared book at any time in the App.</li>
-          <li>You can cancel Coinly Plus in iOS Settings. Your purchase history is managed by Apple.</li>
+          <li>You can cancel Alcoin Plus in iOS Settings. Your purchase history is managed by Apple.</li>
           <li>
             To request access to, correction of, suspension of use of, or deletion of your information that we hold,
             contact us below. Because there are no accounts, we may ask for details such as the names of your shared
@@ -220,7 +220,7 @@ export default function Page() {
 
       <LegalSection id="contact" title="11. Contact us">
         <p>If you have any questions or requests about this Privacy Policy, please contact us:</p>
-        <ContactBox emailLabel="Email" appLabel="App" appName="Coinly - Smart Budget Tracker" />
+        <ContactBox emailLabel="Email" appLabel="App" appName="Alcoin - Smart Budget Tracker" />
         <p>
           See also:{" "}
           <Link href={coinlyPaths.terms.en} className="text-blue-600 hover:underline">

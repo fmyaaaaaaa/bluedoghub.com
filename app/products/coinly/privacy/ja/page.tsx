@@ -20,7 +20,7 @@ export default function Page() {
     <LegalDocument
       lang="ja"
       title="プライバシーポリシー"
-      updated="最終更新日: 2026年9月29日"
+      updated="最終更新日: 2026年9月30日"
       note="本ポリシーは、アルコイン 2.0.0 の配信開始時から適用されます。"
       otherLang={{ href: coinlyPaths.privacy.en, label: "English" }}
       intro={
@@ -32,7 +32,7 @@ export default function Page() {
           </Callout>
           <p className="text-body-md text-black-600">
             Bluedog（以下「運営者」といいます）は、iOSアプリ「アルコイン -
-            かんたん家計簿」（英語表記：Coinly。以下「本アプリ」といいます）および共有家計簿の招待ページにおける利用者の情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
+            かんたん家計簿」（英語表記：Alcoin。以下「本アプリ」といいます）および共有家計簿の招待ページにおける利用者の情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
           </p>
         </>
       }

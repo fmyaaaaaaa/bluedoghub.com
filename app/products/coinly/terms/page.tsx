@@ -4,8 +4,8 @@ import { BulletList, ContactBox, LegalDocument, LegalSection, NumberedList } fro
 import { coinlyPaths } from "../_components/constants";
 
 export const metadata: Metadata = {
-  title: "Terms of Use - Coinly",
-  description: "Terms of Use for the iOS app Coinly.",
+  title: "Terms of Use - Alcoin",
+  description: "Terms of Use for the iOS app Alcoin.",
 };
 
 export default function Page() {
@@ -13,15 +13,15 @@ export default function Page() {
     <LegalDocument
       lang="en"
       title="Terms of Use"
-      updated="Last updated: September 29, 2026"
-      note="These Terms apply from the release of Coinly 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
+      updated="Last updated: September 30, 2026"
+      note="These Terms apply from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
       otherLang={{ href: coinlyPaths.terms.ja, label: "日本語" }}
       intro={
         <p className="text-body-md text-black-600">
-          These Terms of Use (the &quot;Terms&quot;) set out the conditions for using the iOS app &quot;Coinly&quot;
-          (the &quot;App&quot;) and the services that come with it, including shared books, the invite page and Coinly
-          Plus (together, the &quot;Service&quot;), provided by Bluedog (&quot;we&quot;, &quot;us&quot;). By downloading
-          or using the App, you agree to these Terms.
+          These Terms of Use (the &quot;Terms&quot;) set out the conditions for using the iOS app &quot;Alcoin&quot;
+          (formerly &quot;Coinly&quot;) (the &quot;App&quot;) and the services that come with it, including shared
+          books, the invite page and Alcoin Plus (together, the &quot;Service&quot;), provided by Bluedog
+          (&quot;we&quot;, &quot;us&quot;). By downloading or using the App, you agree to these Terms.
         </p>
       }
     >
@@ -54,14 +54,14 @@ export default function Page() {
             &quot;Records&quot; means a book&apos;s name and icon, expenses (amount, category, date and the member who
             recorded them), categories, monthly budgets and any other information you enter into the Service.
           </li>
-          <li>&quot;Coinly Plus&quot; means the auto-renewable subscription required to create shared books.</li>
+          <li>&quot;Alcoin Plus&quot; means the auto-renewable subscription required to create shared books.</li>
         </BulletList>
       </LegalSection>
 
       <LegalSection title="3. The Service">
         <NumberedList>
           <li>The personal book is free. Its data is stored only on your device and is never sent to our server.</li>
-          <li>Creating a shared book requires Coinly Plus. Joining a shared book you are invited to is free.</li>
+          <li>Creating a shared book requires Alcoin Plus. Joining a shared book you are invited to is free.</li>
           <li>
             Shared books need an internet connection. There is no sign-up or sign-in: the first time you create or join
             a shared book, a random user ID is created on your device and used together with the display name you enter.
@@ -113,10 +113,10 @@ export default function Page() {
         </NumberedList>
       </LegalSection>
 
-      <LegalSection title="6. Coinly Plus">
+      <LegalSection title="6. Alcoin Plus">
         <NumberedList>
           <li>
-            Coinly Plus is an auto-renewable subscription offered through Apple&apos;s App Store for ¥100 per month or
+            Alcoin Plus is an auto-renewable subscription offered through Apple&apos;s App Store for ¥100 per month or
             ¥1,000 per year (tax included). The price shown in the App Store at the time of purchase applies.
           </li>
           <li>Payment is charged to your Apple ID when you confirm the purchase.</li>
@@ -130,9 +130,9 @@ export default function Page() {
             Deleting the App does not cancel the subscription.
           </li>
           <li>Refunds are handled by Apple under Apple&apos;s policies. We cannot issue refunds directly.</li>
-          <li>Coinly Plus applies to the one user (user ID) who made the purchase.</li>
+          <li>Alcoin Plus applies to the one user (user ID) who made the purchase.</li>
           <li>
-            If Coinly Plus ends (cancellation, expiry, refund, etc.), you can no longer create new shared books, but the
+            If Alcoin Plus ends (cancellation, expiry, refund, etc.), you can no longer create new shared books, but the
             shared books you already created keep working, and members can still view, record and join them.
           </li>
           <li>If the price changes, you will be notified in advance through Apple&apos;s process.</li>
@@ -151,7 +151,7 @@ export default function Page() {
             codes, or otherwise interfere with the operation of the Service;
           </li>
           <li>modify, reverse engineer, decompile or disassemble the App, except to the extent permitted by law;</li>
-          <li>use, or let others use, Coinly Plus by illegitimate means; or</li>
+          <li>use, or let others use, Alcoin Plus by illegitimate means; or</li>
           <li>do anything else we reasonably consider inappropriate as equivalent to the above.</li>
         </BulletList>
       </LegalSection>
@@ -210,7 +210,7 @@ export default function Page() {
           <li>If you suffer damage caused by our intent or gross negligence, we will compensate you for it.</li>
           <li>
             If you suffer damage caused by our slight negligence, we will compensate you only for direct damage that
-            would ordinarily arise, up to the total you paid for Coinly Plus in the 12 months before the damage occurred
+            would ordinarily arise, up to the total you paid for Alcoin Plus in the 12 months before the damage occurred
             (or ¥1,000 if you paid nothing).
           </li>
         </NumberedList>
@@ -254,7 +254,7 @@ export default function Page() {
 
       <LegalSection title="15. Contact">
         <p>If you have any questions about these Terms, please contact us:</p>
-        <ContactBox emailLabel="Email" appLabel="App" appName="Coinly - Smart Budget Tracker" />
+        <ContactBox emailLabel="Email" appLabel="App" appName="Alcoin - Smart Budget Tracker" />
       </LegalSection>
     </LegalDocument>
   );
