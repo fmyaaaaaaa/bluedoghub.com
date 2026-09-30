@@ -102,7 +102,11 @@ const content = {
     watchTitle: "On Apple Watch",
     watchLead: "Check what's left and record on the spot, right from your wrist.",
     watchShots: [
-      { src: "/coinly-watch-face.webp", alt: "Watch face with the remaining budget complication", label: "Watch face" },
+      {
+        src: "/alcoin-watch-face-en.webp",
+        alt: "Watch face with the remaining budget complication",
+        label: "Watch face",
+      },
       { src: "/coinly-watch-amount.webp", alt: "Entering an amount on the watch keypad", label: "1. Amount → Next" },
       { src: "/coinly-watch-category.webp", alt: "Choosing a category on the watch", label: "2. Category" },
       { src: "/coinly-watch-done.webp", alt: "The dog celebrating a recorded expense", label: "3. Recorded!" },
@@ -240,7 +244,7 @@ const content = {
     watchTitle: "Apple Watch でも",
     watchLead: "iPhoneを出さなくても、腕元で残りを確認して、その場で記録できます。",
     watchShots: [
-      { src: "/coinly-watch-face.webp", alt: "残りの予算を表示するコンプリケーションのある文字盤", label: "文字盤" },
+      { src: "/alcoin-watch-face-ja.webp", alt: "残りの予算を表示するコンプリケーションのある文字盤", label: "文字盤" },
       { src: "/coinly-watch-amount.webp", alt: "Apple Watchのテンキーで金額を入力する画面", label: "1. 金額 → 次へ" },
       { src: "/coinly-watch-category.webp", alt: "Apple Watchでカテゴリを選ぶ画面", label: "2. カテゴリ" },
       { src: "/coinly-watch-done.webp", alt: "記録が完了して犬がよろこぶ画面", label: "3. 記録完了" },
