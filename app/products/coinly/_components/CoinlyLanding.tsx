@@ -369,7 +369,7 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
             <div className="mt-4 flex flex-col items-center gap-10 md:flex-row md:justify-between">
               <div className="flex flex-col items-center gap-5 text-center md:w-3/5 md:items-start md:text-left">
                 <div className="flex items-center gap-3">
-                  <CoinlyDog className="h-20 w-20 md:h-24 md:w-24" />
+                  <CoinlyDog className="w-[3.75rem] md:w-[4.5rem]" />
                   <p className="text-[2.5rem] font-extrabold leading-none tracking-wide text-coinly-ink md:text-6xl">
                     {t.name}
                   </p>
@@ -592,7 +592,7 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         {/* Contact & legal */}
         <section className="w-full bg-coinly-bg py-14">
           <div className="container mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center sm:px-6">
-            <CoinlyDog className="h-16 w-16" />
+            <CoinlyDog className="w-12" />
             <AppStoreBadge alt={t.storeAlt} />
             <h2 className="text-heading-md font-bold text-coinly-ink">{t.contactTitle}</h2>
             <a href={`mailto:${COINLY_SUPPORT_EMAIL}`} className="text-heading-md text-coinly-600 hover:underline">
