@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "アルコイン - かんたん家計簿",
     description,
     locale: "ja_JP",
-    images: [{ url: `${baseUrl}/ogp-coinly.png`, width: 1200, height: 630, alt: "アルコイン" }],
+    images: [{ url: `${baseUrl}/ogp-alcoin-ja.png`, width: 1200, height: 630, alt: "アルコイン" }],
   },
 };
 

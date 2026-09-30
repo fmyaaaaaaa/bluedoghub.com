@@ -24,12 +24,12 @@ import { coinlyRounded } from "./fonts";
 
 const content = {
   en: {
-    name: "Coinly",
+    name: "Alcoin",
     otherLang: { label: "日本語", href: coinlyPaths.home.ja },
     tagline: "A companion that quietly cheers you on.",
-    lead: "Just tap in what you spent. Coinly keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
+    lead: "Just tap in what you spent. Alcoin keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
     cta: "See how it works",
-    comingSoon: "Coinly 2.0 is coming soon to the App Store",
+    comingSoon: "Alcoin 2.0 is coming soon to the App Store",
     featuresTitle: "Everything you need, nothing you don't",
     featuresLead: "Built for recording in seconds, every day.",
     features: [
@@ -127,15 +127,15 @@ const content = {
       {
         icon: Mic,
         title: "Record with Siri",
-        body: "Just ask Siri on your watch to record an expense in Coinly.",
+        body: "Just ask Siri on your watch to record an expense in Alcoin.",
       },
       {
         icon: Smartphone,
         title: "Works through your iPhone",
-        body: "Coinly on your watch works with Coinly on your paired iPhone. No sign-in needed.",
+        body: "Alcoin on your watch works with Alcoin on your paired iPhone. No sign-in needed.",
       },
     ],
-    watchNote: "Requires watchOS 11 or later and an iPhone with Coinly installed.",
+    watchNote: "Requires watchOS 11 or later and an iPhone with Alcoin installed.",
     pricingTitle: "Pricing",
     free: {
       name: "Free",
@@ -144,17 +144,17 @@ const content = {
       items: ["Personal book with every feature", "Widgets & Siri", "Join shared books you're invited to"],
     },
     plus: {
-      name: "Coinly Plus",
+      name: "Alcoin Plus",
       price: "¥100",
       period: "/ month",
       alt: "or ¥1,000 / year",
       items: ["Create your own shared books", "Invite members by QR code, code or link", "Everything in Free"],
     },
     pricingNote:
-      "Coinly Plus is an auto-renewable subscription billed to your Apple ID. It renews unless cancelled at least 24 hours before the end of the current period. Manage or cancel it anytime in iOS Settings. If Plus ends, the shared books you created keep working.",
+      "Alcoin Plus is an auto-renewable subscription billed to your Apple ID. It renews unless cancelled at least 24 hours before the end of the current period. Manage or cancel it anytime in iOS Settings. If Plus ends, the shared books you created keep working.",
     privacyTitle: "Your personal book never leaves your iPhone",
     privacyBody:
-      "If you only use the personal book, Coinly never talks to a server. Shared books are stored on our server in Tokyo (AWS) so members can sync. No ads, no analytics, no selling data.",
+      "If you only use the personal book, Alcoin never talks to a server. Shared books are stored on our server in Tokyo (AWS) so members can sync. No ads, no analytics, no selling data.",
     privacyLink: "Read the Privacy Policy",
     contactTitle: "Questions or feedback?",
     terms: "Terms of Use",
