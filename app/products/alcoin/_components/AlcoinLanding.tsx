@@ -18,14 +18,14 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { CoinlyDog } from "./CoinlyDog";
-import { COINLY_APP_STORE_URL, COINLY_SUPPORT_EMAIL, type CoinlyLang, coinlyPaths } from "./constants";
-import { coinlyRounded } from "./fonts";
+import { AlcoinDog } from "./AlcoinDog";
+import { ALCOIN_APP_STORE_URL, ALCOIN_SUPPORT_EMAIL, type AlcoinLang, alcoinPaths } from "./constants";
+import { alcoinRounded } from "./fonts";
 
 const content = {
   en: {
     name: "Alcoin",
-    otherLang: { label: "日本語", href: coinlyPaths.home.ja },
+    otherLang: { label: "日本語", href: alcoinPaths.home.ja },
     tagline: "A companion that quietly cheers you on.",
     lead: "Just tap in what you spent. Alcoin keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
     cta: "See how it works",
@@ -167,7 +167,7 @@ const content = {
   },
   ja: {
     name: "アルコイン",
-    otherLang: { label: "English", href: coinlyPaths.home.en },
+    otherLang: { label: "English", href: alcoinPaths.home.en },
     tagline: "記録するたび、相棒がそっと応援。",
     lead: "使った金額をタップするだけで記録できる家計簿です。個人の家計簿はiPhoneの中だけに。家族や部活、旅行の仲間と一緒につける「共有家計簿」にも対応しました。",
     cta: "くわしく見る",
@@ -332,36 +332,36 @@ function WatchShot({ src, alt, className }: { src: string; alt: string; classNam
 }
 
 function AppStoreBadge({ alt }: { alt: string }) {
-  if (!COINLY_APP_STORE_URL) return null;
+  if (!ALCOIN_APP_STORE_URL) return null;
   return (
-    <Link href={COINLY_APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
+    <Link href={ALCOIN_APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
       <Image src="/app-store-badge.svg" alt={alt} width={180} height={54} />
     </Link>
   );
 }
 
-export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
+export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
   const t = content[lang];
   return (
     <div
       lang={lang}
       className={cn(
-        coinlyRounded.variable,
-        "mx-auto min-h-screen flex flex-col bg-coinly-bg text-coinly-text",
+        alcoinRounded.variable,
+        "mx-auto min-h-screen flex flex-col bg-alcoin-bg text-alcoin-text",
         lang === "ja" && "[word-break:auto-phrase]"
       )}
-      style={{ fontFamily: "var(--font-coinly), ui-rounded, 'Hiragino Maru Gothic ProN', system-ui, sans-serif" }}
+      style={{ fontFamily: "var(--font-alcoin), ui-rounded, 'Hiragino Maru Gothic ProN', system-ui, sans-serif" }}
     >
       <main className="flex-grow">
         {/* Hero */}
-        <section className="w-full bg-coinly-biscuit">
+        <section className="w-full bg-alcoin-biscuit">
           <div className="container mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-20 lg:px-12">
             <div className="flex justify-end">
               <Link
                 href={t.otherLang.href}
                 hrefLang={lang === "en" ? "ja" : "en"}
                 lang={lang === "en" ? "ja" : "en"}
-                className="text-label-md text-coinly-600 underline underline-offset-4 hover:text-coinly-700"
+                className="text-label-md text-alcoin-600 underline underline-offset-4 hover:text-alcoin-700"
               >
                 {t.otherLang.label}
               </Link>
@@ -369,29 +369,29 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
             <div className="mt-4 flex flex-col items-center gap-10 md:flex-row md:justify-between">
               <div className="flex flex-col items-center gap-5 text-center md:w-3/5 md:items-start md:text-left">
                 <div className="flex items-center gap-3">
-                  <CoinlyDog className="w-[3.75rem] md:w-[4.5rem]" />
-                  <p className="text-[2.5rem] font-extrabold leading-none tracking-wide text-coinly-ink md:text-6xl">
+                  <AlcoinDog className="w-[3.75rem] md:w-[4.5rem]" />
+                  <p className="text-[2.5rem] font-extrabold leading-none tracking-wide text-alcoin-ink md:text-6xl">
                     {t.name}
                   </p>
                 </div>
-                <h1 className="text-balance text-display-xs font-extrabold text-coinly-ink md:text-display-md">
+                <h1 className="text-balance text-display-xs font-extrabold text-alcoin-ink md:text-display-md">
                   {t.tagline}
                 </h1>
-                <p className="max-w-xl text-body-md text-coinly-muted md:text-body-lg">{t.lead}</p>
+                <p className="max-w-xl text-body-md text-alcoin-muted md:text-body-lg">{t.lead}</p>
                 <div className="flex flex-col items-center gap-4 sm:flex-row">
                   <AppStoreBadge alt={t.storeAlt} />
-                  <Button asChild size="lg" variant="coinly" className="rounded-full">
+                  <Button asChild size="lg" variant="alcoin" className="rounded-full">
                     <Link href="#features">{t.cta}</Link>
                   </Button>
                 </div>
-                {!COINLY_APP_STORE_URL && (
-                  <p className="rounded-full bg-white px-4 py-1.5 text-label-md text-coinly-600 shadow-sm">
+                {!ALCOIN_APP_STORE_URL && (
+                  <p className="rounded-full bg-white px-4 py-1.5 text-label-md text-alcoin-600 shadow-sm">
                     {t.comingSoon}
                   </p>
                 )}
               </div>
               <div className="relative w-56 md:w-2/5 md:max-w-[18rem]">
-                <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-coinly-coin/30" aria-hidden />
+                <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-alcoin-coin/30" aria-hidden />
                 <PhoneShot src={t.screenshots[0].src} alt={t.screenshots[0].alt} className="relative" />
               </div>
             </div>
@@ -399,26 +399,26 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         </section>
 
         {/* Features */}
-        <section id="features" className="w-full scroll-mt-4 bg-coinly-bg py-16">
+        <section id="features" className="w-full scroll-mt-4 bg-alcoin-bg py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
               {t.featuresTitle}
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-coinly-muted">{t.featuresLead}</p>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.featuresLead}</p>
             <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {t.features.map(({ icon: Icon, title, body }, i) => (
                 <li
                   key={title}
                   className={cn(
-                    "rounded-3xl border border-coinly-line bg-white p-6",
-                    i === t.features.length - 1 && "border-coinly-biscuit bg-coinly-biscuit sm:col-span-2 lg:col-span-3"
+                    "rounded-3xl border border-alcoin-line bg-white p-6",
+                    i === t.features.length - 1 && "border-alcoin-biscuit bg-alcoin-biscuit sm:col-span-2 lg:col-span-3"
                   )}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-coinly-50 text-coinly-500">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-alcoin-50 text-alcoin-500">
                     <Icon className="h-6 w-6" aria-hidden />
                   </div>
-                  <h3 className="mt-4 text-heading-md font-bold text-coinly-ink">{title}</h3>
-                  <p className="mt-1 text-body-sm text-coinly-muted">{body}</p>
+                  <h3 className="mt-4 text-heading-md font-bold text-alcoin-ink">{title}</h3>
+                  <p className="mt-1 text-body-sm text-alcoin-muted">{body}</p>
                 </li>
               ))}
             </ul>
@@ -428,7 +428,7 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         {/* Screenshots */}
         <section className="w-full bg-white py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
               {t.screenshotsTitle}
             </h2>
             <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-8 md:px-16">
@@ -440,30 +440,30 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         </section>
 
         {/* Shared books */}
-        <section id="shared-books" className="w-full bg-coinly-50 py-16">
+        <section id="shared-books" className="w-full bg-alcoin-50 py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
               {t.sharedTitle}
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-coinly-muted">{t.sharedLead}</p>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.sharedLead}</p>
             <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-start">
               <ol className="flex w-full flex-col gap-4 md:w-1/2">
                 {t.steps.map(({ icon: Icon, title, body }, i) => (
                   <li key={title} className="flex gap-4 rounded-3xl bg-white p-5">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-coinly-500 text-white">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-alcoin-500 text-white">
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <div>
-                      <h3 className="text-heading-md font-bold text-coinly-ink">
-                        <span className="mr-2 text-coinly-500">{i + 1}.</span>
+                      <h3 className="text-heading-md font-bold text-alcoin-ink">
+                        <span className="mr-2 text-alcoin-500">{i + 1}.</span>
                         {title}
                       </h3>
-                      <p className="mt-1 text-body-sm text-coinly-muted">{body}</p>
+                      <p className="mt-1 text-body-sm text-alcoin-muted">{body}</p>
                     </div>
                   </li>
                 ))}
-                <li className="flex items-start gap-3 px-2 text-body-sm text-coinly-muted">
-                  <Link2 className="mt-0.5 h-4 w-4 shrink-0 text-coinly-500" aria-hidden />
+                <li className="flex items-start gap-3 px-2 text-body-sm text-alcoin-muted">
+                  <Link2 className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
                   <span>{t.sharedNote}</span>
                 </li>
               </ol>
@@ -479,22 +479,22 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         {/* Apple Watch */}
         <section id="apple-watch" className="w-full bg-white py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
               {t.watchTitle}
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-coinly-muted">{t.watchLead}</p>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.watchLead}</p>
             <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4 sm:gap-6">
               {t.watchShots.map((s) => (
                 <li key={s.src} className="flex flex-col items-center gap-3">
                   <WatchShot src={s.src} alt={s.alt} className="w-full max-w-[11rem]" />
-                  <span className="text-label-md font-bold text-coinly-600">{s.label}</span>
+                  <span className="text-label-md font-bold text-alcoin-600">{s.label}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
               <div className="w-full max-w-sm md:sticky md:top-8 md:w-2/5 md:max-w-none">
                 <div className="relative w-full">
-                  <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-coinly-coin/30" aria-hidden />
+                  <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-alcoin-coin/30" aria-hidden />
                   <div className="relative overflow-hidden rounded-[2rem] shadow-[0_18px_40px_-18px_rgba(15,42,87,0.45)]">
                     <Image
                       src={t.watchStack.src}
@@ -508,18 +508,18 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
               </div>
               <ul className="flex w-full flex-col gap-4 md:w-3/5">
                 {t.watchPoints.map(({ icon: Icon, title, body }) => (
-                  <li key={title} className="flex gap-4 rounded-3xl border border-coinly-line bg-white p-5">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-coinly-50 text-coinly-500">
+                  <li key={title} className="flex gap-4 rounded-3xl border border-alcoin-line bg-white p-5">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-alcoin-50 text-alcoin-500">
                       <Icon className="h-6 w-6" aria-hidden />
                     </div>
                     <div>
-                      <h3 className="text-heading-md font-bold text-coinly-ink">{title}</h3>
-                      <p className="mt-1 text-body-sm text-coinly-muted">{body}</p>
+                      <h3 className="text-heading-md font-bold text-alcoin-ink">{title}</h3>
+                      <p className="mt-1 text-body-sm text-alcoin-muted">{body}</p>
                     </div>
                   </li>
                 ))}
-                <li className="flex items-start gap-3 px-2 text-body-sm text-coinly-muted">
-                  <Watch className="mt-0.5 h-4 w-4 shrink-0 text-coinly-500" aria-hidden />
+                <li className="flex items-start gap-3 px-2 text-body-sm text-alcoin-muted">
+                  <Watch className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
                   <span>{t.watchNote}</span>
                 </li>
               </ul>
@@ -528,9 +528,9 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="w-full bg-coinly-bg py-16">
+        <section id="pricing" className="w-full bg-alcoin-bg py-16">
           <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-coinly-ink md:text-display-sm">
+            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
               {t.pricingTitle}
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -539,19 +539,19 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
                   key={plan.name}
                   className={cn(
                     "rounded-3xl bg-white p-7",
-                    i === 1 ? "border-2 border-coinly-500" : "border border-coinly-line"
+                    i === 1 ? "border-2 border-alcoin-500" : "border border-alcoin-line"
                   )}
                 >
-                  <h3 className="text-heading-lg font-bold text-coinly-ink">{plan.name}</h3>
+                  <h3 className="text-heading-lg font-bold text-alcoin-ink">{plan.name}</h3>
                   <p className="mt-3 flex items-baseline gap-2">
-                    <span className="text-display-sm font-extrabold text-coinly-ink">{plan.price}</span>
-                    <span className="text-body-md text-coinly-muted">{plan.period}</span>
+                    <span className="text-display-sm font-extrabold text-alcoin-ink">{plan.price}</span>
+                    <span className="text-body-md text-alcoin-muted">{plan.period}</span>
                   </p>
-                  {"alt" in plan && <p className="text-body-sm text-coinly-muted">{plan.alt}</p>}
+                  {"alt" in plan && <p className="text-body-sm text-alcoin-muted">{plan.alt}</p>}
                   <ul className="mt-5 space-y-2">
                     {plan.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-body-md text-coinly-text">
-                        <Check className="mt-1 h-4 w-4 shrink-0 text-coinly-500" aria-hidden />
+                      <li key={item} className="flex items-start gap-2 text-body-md text-alcoin-text">
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
                         {item}
                       </li>
                     ))}
@@ -559,9 +559,9 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
                 </div>
               ))}
             </div>
-            <p className="mx-auto mt-6 max-w-3xl text-caption-lg text-coinly-muted">
+            <p className="mx-auto mt-6 max-w-3xl text-caption-lg text-alcoin-muted">
               {t.pricingNote}{" "}
-              <Link href={coinlyPaths.terms[lang]} className="text-coinly-600 underline underline-offset-4">
+              <Link href={alcoinPaths.terms[lang]} className="text-alcoin-600 underline underline-offset-4">
                 {t.terms}
               </Link>
             </p>
@@ -571,16 +571,16 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         {/* Privacy */}
         <section className="w-full bg-white py-16">
           <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-            <div className="flex flex-col items-center gap-6 rounded-3xl bg-coinly-biscuit p-8 text-center md:flex-row md:text-left">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white text-coinly-500">
+            <div className="flex flex-col items-center gap-6 rounded-3xl bg-alcoin-biscuit p-8 text-center md:flex-row md:text-left">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white text-alcoin-500">
                 <Lock className="h-8 w-8" aria-hidden />
               </div>
               <div>
-                <h2 className="text-heading-xl font-extrabold text-coinly-ink">{t.privacyTitle}</h2>
-                <p className="mt-2 text-body-md text-coinly-muted">{t.privacyBody}</p>
+                <h2 className="text-heading-xl font-extrabold text-alcoin-ink">{t.privacyTitle}</h2>
+                <p className="mt-2 text-body-md text-alcoin-muted">{t.privacyBody}</p>
                 <Link
-                  href={coinlyPaths.privacy[lang]}
-                  className="mt-3 inline-block text-label-lg text-coinly-600 underline underline-offset-4 hover:text-coinly-700"
+                  href={alcoinPaths.privacy[lang]}
+                  className="mt-3 inline-block text-label-lg text-alcoin-600 underline underline-offset-4 hover:text-alcoin-700"
                 >
                   {t.privacyLink}
                 </Link>
@@ -590,26 +590,26 @@ export function CoinlyLanding({ lang }: { lang: CoinlyLang }) {
         </section>
 
         {/* Contact & legal */}
-        <section className="w-full bg-coinly-bg py-14">
+        <section className="w-full bg-alcoin-bg py-14">
           <div className="container mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center sm:px-6">
-            <CoinlyDog className="w-12" />
+            <AlcoinDog className="w-12" />
             <AppStoreBadge alt={t.storeAlt} />
-            <h2 className="text-heading-md font-bold text-coinly-ink">{t.contactTitle}</h2>
-            <a href={`mailto:${COINLY_SUPPORT_EMAIL}`} className="text-heading-md text-coinly-600 hover:underline">
-              {COINLY_SUPPORT_EMAIL}
+            <h2 className="text-heading-md font-bold text-alcoin-ink">{t.contactTitle}</h2>
+            <a href={`mailto:${ALCOIN_SUPPORT_EMAIL}`} className="text-heading-md text-alcoin-600 hover:underline">
+              {ALCOIN_SUPPORT_EMAIL}
             </a>
             <nav aria-label={t.name} className="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-2 text-caption-lg">
-              <Link href={coinlyPaths.terms[lang]} className="text-coinly-600 hover:underline">
+              <Link href={alcoinPaths.terms[lang]} className="text-alcoin-600 hover:underline">
                 {t.terms}
               </Link>
-              <Link href={coinlyPaths.privacy[lang]} className="text-coinly-600 hover:underline">
+              <Link href={alcoinPaths.privacy[lang]} className="text-alcoin-600 hover:underline">
                 {t.privacy}
               </Link>
               <Link
                 href={t.otherLang.href}
                 hrefLang={lang === "en" ? "ja" : "en"}
                 lang={lang === "en" ? "ja" : "en"}
-                className="text-coinly-600 hover:underline"
+                className="text-alcoin-600 hover:underline"
               >
                 {t.otherLang.label}
               </Link>

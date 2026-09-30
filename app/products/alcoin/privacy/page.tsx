@@ -8,11 +8,20 @@ import {
   LegalSection,
   LegalSubheading,
 } from "../_components/LegalDocument";
-import { coinlyPaths } from "../_components/constants";
+import { alcoinAlternates, alcoinPaths, alcoinUrl } from "../_components/constants";
+
+const title = "Privacy Policy - Alcoin";
+const description = "Privacy Policy for the iOS app Alcoin.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Alcoin",
-  description: "Privacy Policy for the iOS app Alcoin.",
+  title,
+  description,
+  alternates: alcoinAlternates("privacy", "en"),
+  openGraph: {
+    title,
+    description,
+    url: alcoinUrl("privacy", "en"),
+  },
 };
 
 export default function Page() {
@@ -22,7 +31,7 @@ export default function Page() {
       title="Privacy Policy"
       updated="Last updated: September 30, 2026"
       note="This policy applies from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
-      otherLang={{ href: coinlyPaths.privacy.ja, label: "日本語" }}
+      otherLang={{ href: alcoinPaths.privacy.ja, label: "日本語" }}
       intro={
         <>
           <Callout title="Your personal book stays on your iPhone">
@@ -223,7 +232,7 @@ export default function Page() {
         <ContactBox emailLabel="Email" appLabel="App" appName="Alcoin - Smart Budget Tracker" />
         <p>
           See also:{" "}
-          <Link href={coinlyPaths.terms.en} className="text-blue-600 hover:underline">
+          <Link href={alcoinPaths.terms.en} className="text-blue-600 hover:underline">
             Terms of Use
           </Link>
         </p>

@@ -21,7 +21,7 @@ const VARIANTS = [
   { file: "public/ogp-alcoin-ja.png", wordmark: "アルコイン", wordmarkSize: 96, wordmarkTop: 196, letterSpacing: 4 },
 ];
 
-// The dog from app/products/coinly/_components/CoinlyDog.tsx at rest: its tail layer (public/alcoin-dog-tail.webp)
+// The dog from app/products/alcoin/_components/AlcoinDog.tsx at rest: its tail layer (public/alcoin-dog-tail.webp)
 // composited under its body (public/alcoin-dog-body.webp) on the same 6:7 canvas. Satori can't read WebP,
 // so the composite is kept as a PNG (240x280) next to this script.
 const DOG_SRC = `data:image/png;base64,${(

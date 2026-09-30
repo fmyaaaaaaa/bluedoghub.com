@@ -46,7 +46,7 @@ export default function Header() {
                         <NavigationMenuLink href="/products/ebira">Ebira</NavigationMenuLink>
                       </Button>
                       <Button variant="ghost" asChild className="text-sm font-medium w-full justify-start">
-                        <NavigationMenuLink href="/products/coinly">Alcoin</NavigationMenuLink>
+                        <NavigationMenuLink href="/products/alcoin">Alcoin</NavigationMenuLink>
                       </Button>
                     </div>
                   </NavigationMenuContent>
@@ -89,7 +89,7 @@ export default function Header() {
                           </SheetClose>
                           <SheetClose asChild>
                             <Button variant="ghost" asChild className="justify-center">
-                              <Link href="/products/coinly">Alcoin</Link>
+                              <Link href="/products/alcoin">Alcoin</Link>
                             </Button>
                           </SheetClose>
                         </div>

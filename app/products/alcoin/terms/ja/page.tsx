@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BulletList, ContactBox, LegalDocument, LegalSection, NumberedList } from "../../_components/LegalDocument";
-import { coinlyPaths } from "../../_components/constants";
+import { alcoinAlternates, alcoinPaths, alcoinUrl } from "../../_components/constants";
+
+const title = "利用規約 - アルコイン";
+const description = "iOSアプリ「アルコイン - かんたん家計簿」の利用規約です。";
 
 export const metadata: Metadata = {
-  title: "利用規約 - アルコイン",
-  description: "iOSアプリ「アルコイン - かんたん家計簿」の利用規約です。",
+  title,
+  description,
+  alternates: alcoinAlternates("terms", "ja"),
+  openGraph: {
+    title,
+    description,
+    url: alcoinUrl("terms", "ja"),
+    locale: "ja_JP",
+  },
 };
 
 export default function Page() {
@@ -15,7 +25,7 @@ export default function Page() {
       title="利用規約"
       updated="最終更新日: 2026年9月30日"
       note="本規約は、アルコイン 2.0.0 の配信開始日から適用されます。"
-      otherLang={{ href: coinlyPaths.terms.en, label: "English" }}
+      otherLang={{ href: alcoinPaths.terms.en, label: "English" }}
       intro={
         <p className="text-body-md text-black-600">
           この利用規約（以下「本規約」といいます）は、Bluedog（以下「運営者」といいます）が提供するiOSアプリ「アルコイン
@@ -35,7 +45,7 @@ export default function Page() {
           </li>
           <li>
             利用者の情報の取扱いについては、別途定める
-            <Link href={coinlyPaths.privacy.ja} className="text-blue-600 hover:underline">
+            <Link href={alcoinPaths.privacy.ja} className="text-blue-600 hover:underline">
               プライバシーポリシー
             </Link>
             によります。

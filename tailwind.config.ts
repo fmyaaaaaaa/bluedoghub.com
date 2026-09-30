@@ -70,7 +70,7 @@ const config: Config = {
           "900": "#0B303E",
           DEFAULT: "#34AADC",
         },
-        coinly: {
+        alcoin: {
           "50": "#EEF5FF",
           "100": "#DCEAFF",
           "500": "#1F6FEB",
@@ -348,7 +348,7 @@ const config: Config = {
             height: "0",
           },
         },
-        "coinly-wag": {
+        "alcoin-wag": {
           "0%, 30%, 60%, 100%": { transform: "rotate(0deg)" },
           "15%, 45%": { transform: "rotate(-20deg)" },
           "76%": { transform: "rotate(-12deg)" },
@@ -357,7 +357,7 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "coinly-wag": "coinly-wag 0.9s ease-in-out 0.6s 2",
+        "alcoin-wag": "alcoin-wag 0.9s ease-in-out 0.6s 2",
       },
     },
   },

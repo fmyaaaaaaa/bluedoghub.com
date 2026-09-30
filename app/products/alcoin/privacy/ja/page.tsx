@@ -8,11 +8,21 @@ import {
   LegalSection,
   LegalSubheading,
 } from "../../_components/LegalDocument";
-import { coinlyPaths } from "../../_components/constants";
+import { alcoinAlternates, alcoinPaths, alcoinUrl } from "../../_components/constants";
+
+const title = "プライバシーポリシー - アルコイン";
+const description = "iOSアプリ「アルコイン - かんたん家計簿」のプライバシーポリシーです。";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー - アルコイン",
-  description: "iOSアプリ「アルコイン - かんたん家計簿」のプライバシーポリシーです。",
+  title,
+  description,
+  alternates: alcoinAlternates("privacy", "ja"),
+  openGraph: {
+    title,
+    description,
+    url: alcoinUrl("privacy", "ja"),
+    locale: "ja_JP",
+  },
 };
 
 export default function Page() {
@@ -22,7 +32,7 @@ export default function Page() {
       title="プライバシーポリシー"
       updated="最終更新日: 2026年9月30日"
       note="本ポリシーは、アルコイン 2.0.0 の配信開始時から適用されます。"
-      otherLang={{ href: coinlyPaths.privacy.en, label: "English" }}
+      otherLang={{ href: alcoinPaths.privacy.en, label: "English" }}
       intro={
         <>
           <Callout title="個人の家計簿は、あなたのiPhoneの中だけに">
@@ -208,7 +218,7 @@ export default function Page() {
         <ContactBox emailLabel="メール" appLabel="アプリ" appName="アルコイン - かんたん家計簿" />
         <p>
           関連:{" "}
-          <Link href={coinlyPaths.terms.ja} className="text-blue-600 hover:underline">
+          <Link href={alcoinPaths.terms.ja} className="text-blue-600 hover:underline">
             利用規約
           </Link>
         </p>

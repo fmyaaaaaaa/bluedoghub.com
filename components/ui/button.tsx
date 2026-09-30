@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "underline-offset-4 hover:underline text-brand",
         littera: "bg-littera-600 text-white hover:bg-littera-700",
         ebira: "bg-ebira-500 text-white hover:bg-ebira-600",
-        coinly: "bg-coinly-500 text-white hover:bg-coinly-600 focus-visible:ring-coinly-500/50",
+        alcoin: "bg-alcoin-500 text-white hover:bg-alcoin-600 focus-visible:ring-alcoin-500/50",
       },
       size: {
         default: "h-10 py-2 px-4",

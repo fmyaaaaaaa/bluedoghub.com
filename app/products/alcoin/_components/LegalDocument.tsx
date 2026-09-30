@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { COINLY_SUPPORT_EMAIL, type CoinlyLang } from "./constants";
+import { ALCOIN_SUPPORT_EMAIL, type AlcoinLang } from "./constants";
 
 type LegalDocumentProps = {
-  lang: CoinlyLang;
+  lang: AlcoinLang;
   title: string;
   updated: string;
   note?: ReactNode;
@@ -12,7 +12,7 @@ type LegalDocumentProps = {
   children: ReactNode;
 };
 
-// Shared frame of the Coinly legal pages (Terms of Use, Privacy Policy).
+// Shared frame of the Alcoin legal pages (Terms of Use, Privacy Policy).
 export function LegalDocument({ lang, title, updated, note, otherLang, intro, children }: LegalDocumentProps) {
   return (
     <div lang={lang} className="mx-auto min-h-screen flex flex-col">
@@ -34,7 +34,7 @@ export function LegalDocument({ lang, title, updated, note, otherLang, intro, ch
                   {otherLang.label}
                 </Link>
                 <Link
-                  href={lang === "en" ? "/products/coinly" : "/products/coinly/ja"}
+                  href={lang === "en" ? "/products/alcoin" : "/products/alcoin/ja"}
                   className="text-blue-600 hover:text-blue-700 underline"
                 >
                   {lang === "en" ? "Alcoin" : "アルコイン"}
@@ -98,8 +98,8 @@ export function ContactBox({
   return (
     <div className="bg-gray-50 p-4 rounded-lg mt-3">
       <p className="font-medium text-black-700">{emailLabel}</p>
-      <a href={`mailto:${COINLY_SUPPORT_EMAIL}`} className="text-blue-600 font-medium hover:underline">
-        {COINLY_SUPPORT_EMAIL}
+      <a href={`mailto:${ALCOIN_SUPPORT_EMAIL}`} className="text-blue-600 font-medium hover:underline">
+        {ALCOIN_SUPPORT_EMAIL}
       </a>
       <p className="font-medium text-black-700 mt-3">{appLabel}</p>
       <p className="text-black-600">{appName}</p>

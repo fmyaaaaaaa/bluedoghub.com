@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BulletList, ContactBox, LegalDocument, LegalSection, NumberedList } from "../_components/LegalDocument";
-import { coinlyPaths } from "../_components/constants";
+import { alcoinAlternates, alcoinPaths, alcoinUrl } from "../_components/constants";
+
+const title = "Terms of Use - Alcoin";
+const description = "Terms of Use for the iOS app Alcoin.";
 
 export const metadata: Metadata = {
-  title: "Terms of Use - Alcoin",
-  description: "Terms of Use for the iOS app Alcoin.",
+  title,
+  description,
+  alternates: alcoinAlternates("terms", "en"),
+  openGraph: {
+    title,
+    description,
+    url: alcoinUrl("terms", "en"),
+  },
 };
 
 export default function Page() {
@@ -15,7 +24,7 @@ export default function Page() {
       title="Terms of Use"
       updated="Last updated: September 30, 2026"
       note="These Terms apply from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
-      otherLang={{ href: coinlyPaths.terms.ja, label: "日本語" }}
+      otherLang={{ href: alcoinPaths.terms.ja, label: "日本語" }}
       intro={
         <p className="text-body-md text-black-600">
           These Terms of Use (the &quot;Terms&quot;) set out the conditions for using the iOS app &quot;Alcoin&quot;
@@ -35,7 +44,7 @@ export default function Page() {
           </li>
           <li>
             How we handle your information is described in our separate{" "}
-            <Link href={coinlyPaths.privacy.en} className="text-blue-600 hover:underline">
+            <Link href={alcoinPaths.privacy.en} className="text-blue-600 hover:underline">
               Privacy Policy
             </Link>
             .

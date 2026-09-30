@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CoinlyLanding } from "./_components/CoinlyLanding";
+import { AlcoinLanding } from "./_components/AlcoinLanding";
+import { alcoinAlternates, alcoinUrl } from "./_components/constants";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL
@@ -12,13 +13,15 @@ const description =
 export const metadata: Metadata = {
   title: "Alcoin - A companion that quietly cheers you on",
   description,
+  alternates: alcoinAlternates("home", "en"),
   openGraph: {
     title: "Alcoin",
     description,
+    url: alcoinUrl("home", "en"),
     images: [{ url: `${baseUrl}/ogp-alcoin-en.png`, width: 1200, height: 630, alt: "Alcoin" }],
   },
 };
 
 export default function Page() {
-  return <CoinlyLanding lang="en" />;
+  return <AlcoinLanding lang="en" />;
 }
