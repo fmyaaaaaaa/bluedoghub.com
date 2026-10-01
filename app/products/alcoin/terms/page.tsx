@@ -22,7 +22,7 @@ export default function Page() {
     <LegalDocument
       lang="en"
       title="Terms of Use"
-      updated="Last updated: September 30, 2026"
+      updated="Last updated: October 1, 2026"
       note="These Terms apply from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
       otherLang={{ href: alcoinPaths.terms.ja, label: "日本語" }}
       intro={
@@ -60,20 +60,60 @@ export default function Page() {
           </li>
           <li>&quot;Member&quot; means a user who has joined a shared book.</li>
           <li>
-            &quot;Records&quot; means a book&apos;s name and icon, expenses (amount, category, date and the member who
-            recorded them), categories, monthly budgets and any other information you enter into the Service.
+            &quot;Creator&quot; means the member who created a shared book (or, after the creator leaves, the member who
+            took over the role under Section 5).
           </li>
-          <li>&quot;Alcoin Plus&quot; means the auto-renewable subscription required to create shared books.</li>
+          <li>
+            &quot;Payer&quot; means the member, set for each shared book, whose Alcoin Plus keeps that book recordable.
+            When a shared book is created, its creator is the payer.
+          </li>
+          <li>
+            &quot;Travel book&quot; means a book for a set period, such as a trip, with one budget for the whole period.
+            A travel book used alone (a &quot;solo trip&quot;) is stored only on your device, like the personal book; a
+            travel book used with members (a &quot;shared trip&quot;) is treated as a shared book.
+          </li>
+          <li>
+            &quot;Merging&quot; means adding a travel book&apos;s total spending to another book as a single entry.
+          </li>
+          <li>
+            &quot;Transfer code&quot; means the 12-character code the App issues to move your personal book data and
+            your use of shared books to a new device when you change devices.
+          </li>
+          <li>
+            &quot;Records&quot; means a book&apos;s name, icon, currency and period, expenses (amount, category, date,
+            the member who recorded them and conversion details), categories, budgets, copies of the details of merged
+            trips and any other information you enter into the Service.
+          </li>
+          <li>
+            &quot;Alcoin Plus&quot; means the auto-renewable subscription required to create shared books, to keep
+            shared books recordable as their payer, and to use a second or further solo trip at the same time.
+          </li>
         </BulletList>
       </LegalSection>
 
       <LegalSection title="3. The Service">
         <NumberedList>
-          <li>The personal book is free. Its data is stored only on your device and is never sent to our server.</li>
-          <li>Creating a shared book requires Alcoin Plus. Joining a shared book you are invited to is free.</li>
+          <li>
+            The personal book is free. Its data is stored only on your device and is never sent to our server (except
+            that, when you use a transfer code under Section 4, we briefly hold it encrypted in a form we cannot read).
+          </li>
+          <li>
+            Creating a shared book (including a shared trip) requires Alcoin Plus. Joining a shared book you are invited
+            to is free.
+          </li>
+          <li>
+            You can use one solo trip at a time (one that has been neither merged nor put away) for free. Using a second
+            or further solo trip at the same time (creating a new one, or restoring one you put away) requires Alcoin
+            Plus.
+          </li>
+          <li>
+            Each book has its own currency. Conversions from other currencies use rates you enter. The App never fetches
+            or provides exchange rates, and changing a book&apos;s currency does not convert amounts already recorded.
+          </li>
           <li>
             Shared books need an internet connection. There is no sign-up or sign-in: the first time you create or join
-            a shared book, a random user ID is created on your device and used together with the display name you enter.
+            a shared book, or when you issue a transfer code, a random user ID is created on your device and used
+            together with the display name you enter.
           </li>
           <li>
             We may change or add features. If a change would significantly disadvantage you, we will try to announce it
@@ -90,6 +130,21 @@ export default function Page() {
             because your device is lost, broken or reset, you may lose access to the shared books you were in. We do not
             guarantee that a lost user ID can be recovered.
           </li>
+          <li>
+            When you change devices, you can issue a transfer code on your old device and enter it on the new one to
+            move your personal book data (records, categories, budgets, etc.) and settings, your user ID, your shared
+            book memberships and your Alcoin Plus status to the new device. A transfer code is valid for 24 hours, and
+            stops working once the transfer is completed or you issue a new code.
+          </li>
+          <li>
+            Anyone who has your transfer code can take over that data. Do not show it to anyone, and keep it safe at
+            your own responsibility. We do not store transfer codes, so a code cannot be shown again.
+          </li>
+          <li>
+            Once a transfer is completed, the old device can no longer use shared books. The personal book data on the
+            old device stays there until you delete it. Anything recorded on the old device after the code was issued is
+            not transferred, and any personal book data already on the new device is replaced by the transferred data.
+          </li>
         </NumberedList>
       </LegalSection>
 
@@ -97,7 +152,9 @@ export default function Page() {
         <NumberedList>
           <li>
             Members can view a shared book&apos;s records, and add, edit and delete expenses and otherwise change the
-            book. This includes expenses recorded by other members.
+            book. This includes expenses recorded by other members (except merged entries, which only the member who
+            merged them can change or delete). While a shared book is view-only, recording and editing are not possible,
+            as described in Section 6.
           </li>
           <li>
             A shared book&apos;s records and members&apos; display names are visible to every member. You are
@@ -105,8 +162,30 @@ export default function Page() {
             information that does not need to be shared.
           </li>
           <li>
+            Display names are set for each shared book and can be changed at any time. The new display name is shown to
+            every member of that book.
+          </li>
+          <li>
             You can leave a shared book at any time. After you leave, the expenses you recorded and your display name
             remain visible to the other members until the book is deleted.
+          </li>
+          <li>
+            The creator can remove other members from a shared book. A removed member can no longer view the book, but
+            the expenses they recorded and their display name stay in the book, and the remaining members can edit or
+            delete them. Removing a member invalidates the book&apos;s current invite code. If the creator leaves, the
+            remaining member who joined first becomes the creator.
+          </li>
+          <li>
+            When a member adds a record to a shared book, the other members who allow notifications receive a
+            notification with the book&apos;s name, the recorder&apos;s display name, the category and the amount (for a
+            merged trip, the trip&apos;s name and total). Each member can turn these notifications on or off for each
+            shared book. Notifications may appear on your device&apos;s lock screen.
+          </li>
+          <li>
+            When a travel book is merged into a shared book, a copy of the trip&apos;s details (dates, categories,
+            amounts, notes, the display names of those who recorded them, etc.) is stored in that shared book together
+            with the merged entry, and is visible to every member, including members who were not on the trip. Later
+            changes to the travel book do not update the copy automatically.
           </li>
           <li>
             When the last member leaves, the shared book and its records are deleted from our server and cannot be
@@ -141,8 +220,25 @@ export default function Page() {
           <li>Refunds are handled by Apple under Apple&apos;s policies. We cannot issue refunds directly.</li>
           <li>Alcoin Plus applies to the one user (user ID) who made the purchase.</li>
           <li>
-            If Alcoin Plus ends (cancellation, expiry, refund, etc.), you can no longer create new shared books, but the
-            shared books you already created keep working, and members can still view, record and join them.
+            If Alcoin Plus ends (cancellation, expiry, refund, etc.), you can no longer create new shared books, or
+            create a second or further solo trip or restore one you put away. A solo trip you are already using stays
+            usable.
+          </li>
+          <li>
+            If the payer&apos;s Alcoin Plus ends, the shared book becomes view-only for every member: expenses can no
+            longer be recorded, edited or deleted, and budgets, categories and book settings can no longer be changed.
+            Viewing, the member list and invites, joining, changing your display name, leaving and removing members
+            remain possible.
+          </li>
+          <li>
+            Notwithstanding the preceding paragraph, every member can keep recording in a shared trip until the earlier
+            of 30 days after the payer&apos;s Alcoin Plus ended and the end of the trip&apos;s last day. After that it
+            becomes view-only, but it can still be merged into another book.
+          </li>
+          <li>
+            A member with Alcoin Plus can take over as a shared book&apos;s payer at any time, which makes the book
+            recordable again. If the payer leaves or is removed, the member with Alcoin Plus who joined first (or, if
+            there is none, the creator) becomes the payer.
           </li>
           <li>If the price changes, you will be notified in advance through Apple&apos;s process.</li>
         </NumberedList>
@@ -157,8 +253,9 @@ export default function Page() {
           <li>harass other members or impersonate anyone;</li>
           <li>
             place an excessive load on our servers or network, access them without authorization, try to guess invite
-            codes, or otherwise interfere with the operation of the Service;
+            codes or transfer codes, or otherwise interfere with the operation of the Service;
           </li>
+          <li>use another person&apos;s transfer code without their consent;</li>
           <li>modify, reverse engineer, decompile or disassemble the App, except to the extent permitted by law;</li>
           <li>use, or let others use, Alcoin Plus by illegitimate means; or</li>
           <li>do anything else we reasonably consider inappropriate as equivalent to the above.</li>
@@ -196,7 +293,7 @@ export default function Page() {
           </li>
           <li>
             Your records belong to the user who recorded them. We handle records only as needed to provide the Service
-            (storage, syncing between members and display).
+            (storage, syncing between members, display and record notifications).
           </li>
         </NumberedList>
       </LegalSection>
@@ -209,12 +306,20 @@ export default function Page() {
           </li>
           <li>The App helps you keep track of spending. It does not give financial, tax or investment advice.</li>
           <li>
+            Currency conversions are based on rates you enter. We do not guarantee that a conversion matches actual
+            exchange rates or amounts charged.
+          </li>
+          <li>
             Personal book data is stored only on your device. We cannot restore data lost because a device is broken or
             lost, the App is deleted, or similar.
           </li>
           <li>
             In shared books, syncing may be delayed by network conditions, and simultaneous edits by several members may
-            give unexpected results.
+            give unexpected results. Record notifications may arrive late or not at all.
+          </li>
+          <li>
+            Except where caused by our intent or negligence, we are not responsible for the consequences of a transfer
+            code expiring or becoming known to others.
           </li>
           <li>If you suffer damage caused by our intent or gross negligence, we will compensate you for it.</li>
           <li>
