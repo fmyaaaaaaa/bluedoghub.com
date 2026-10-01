@@ -68,25 +68,25 @@ export default function Page() {
             When a shared book is created, its creator is the payer.
           </li>
           <li>
-            &quot;Travel book&quot; means a book for a set period, such as a trip, with one budget for the whole period.
-            A travel book used alone (a &quot;solo trip&quot;) is stored only on your device, like the personal book; a
-            travel book used with members (a &quot;shared trip&quot;) is treated as a shared book.
+            &quot;Period book&quot; means a book for a set period, such as a trip, with one budget for the whole period.
+            A period book used alone (a &quot;solo period book&quot;) is stored only on your device, like the personal
+            book; a period book used with members (a &quot;shared period book&quot;) is treated as a shared book.
           </li>
           <li>
-            &quot;Merging&quot; means adding a travel book&apos;s total spending to another book as a single entry.
+            &quot;Merging&quot; means adding a period book&apos;s total spending to another book as a single entry.
           </li>
           <li>
-            &quot;Transfer code&quot; means the 12-character code the App issues to move your personal book data and
-            your use of shared books to a new device when you change devices.
+            &quot;Transfer code&quot; means the 12-character code the App issues to move your personal book and solo
+            period book data and your use of shared books to a new device when you change devices.
           </li>
           <li>
             &quot;Records&quot; means a book&apos;s name, icon, currency and period, expenses (amount, category, date,
             the member who recorded them and conversion details), categories, budgets, copies of the details of merged
-            trips and any other information you enter into the Service.
+            period books and any other information you enter into the Service.
           </li>
           <li>
             &quot;Alcoin Plus&quot; means the auto-renewable subscription required to create shared books, to keep
-            shared books recordable as their payer, and to use a second or further solo trip at the same time.
+            shared books recordable as their payer, and to use a second or further solo period book at the same time.
           </li>
         </BulletList>
       </LegalSection>
@@ -98,13 +98,13 @@ export default function Page() {
             that, when you use a transfer code under Section 4, we briefly hold it encrypted in a form we cannot read).
           </li>
           <li>
-            Creating a shared book (including a shared trip) requires Alcoin Plus. Joining a shared book you are invited
-            to is free.
+            Creating a shared book (including a shared period book) requires Alcoin Plus. Joining a shared book you are
+            invited to is free.
           </li>
           <li>
-            You can use one solo trip at a time (one that has been neither merged nor put away) for free. Using a second
-            or further solo trip at the same time (creating a new one, or restoring one you put away) requires Alcoin
-            Plus.
+            You can use one solo period book at a time (one that has been neither merged nor put away) for free. Using a
+            second or further solo period book at the same time (creating a new one, or restoring one you put away)
+            requires Alcoin Plus.
           </li>
           <li>
             Each book has its own currency. Conversions from other currencies use rates you enter. The App never fetches
@@ -132,18 +132,20 @@ export default function Page() {
           </li>
           <li>
             When you change devices, you can issue a transfer code on your old device and enter it on the new one to
-            move your personal book data (records, categories, budgets, etc.) and settings, your user ID, your shared
-            book memberships and your Alcoin Plus status to the new device. A transfer code is valid for 24 hours, and
-            stops working once the transfer is completed or you issue a new code.
+            move your personal book and solo period book data (records, categories, budgets, periods, etc.) and
+            settings, your user ID, your shared book memberships and your Alcoin Plus status to the new device. A
+            transfer code is valid for 24 hours, and stops working once the transfer is completed or you issue a new
+            code.
           </li>
           <li>
             Anyone who has your transfer code can take over that data. Do not show it to anyone, and keep it safe at
             your own responsibility. We do not store transfer codes, so a code cannot be shown again.
           </li>
           <li>
-            Once a transfer is completed, the old device can no longer use shared books. The personal book data on the
-            old device stays there until you delete it. Anything recorded on the old device after the code was issued is
-            not transferred, and any personal book data already on the new device is replaced by the transferred data.
+            Once a transfer is completed, the old device can no longer use shared books. The personal book and solo
+            period book data on the old device stays there until you delete it. Anything recorded on the old device
+            after the code was issued is not transferred, and any personal book data already on the new device is
+            replaced by the transferred data.
           </li>
         </NumberedList>
       </LegalSection>
@@ -178,14 +180,14 @@ export default function Page() {
           <li>
             When a member adds a record to a shared book, the other members who allow notifications receive a
             notification with the book&apos;s name, the recorder&apos;s display name, the category and the amount (for a
-            merged trip, the trip&apos;s name and total). Each member can turn these notifications on or off for each
-            shared book. Notifications may appear on your device&apos;s lock screen.
+            merged period book, its name and total). Each member can turn these notifications on or off for each shared
+            book. Notifications may appear on your device&apos;s lock screen.
           </li>
           <li>
-            When a travel book is merged into a shared book, a copy of the trip&apos;s details (dates, categories,
-            amounts, notes, the display names of those who recorded them, etc.) is stored in that shared book together
-            with the merged entry, and is visible to every member, including members who were not on the trip. Later
-            changes to the travel book do not update the copy automatically.
+            When a period book is merged into a shared book, a copy of its details (dates, categories, amounts, notes,
+            the display names of those who recorded them, etc.) is stored in that shared book together with the merged
+            entry, and is visible to every member, including members who were not in that period book. Later changes to
+            the period book do not update the copy automatically.
           </li>
           <li>
             When the last member leaves, the shared book and its records are deleted from our server and cannot be
@@ -221,8 +223,8 @@ export default function Page() {
           <li>Alcoin Plus applies to the one user (user ID) who made the purchase.</li>
           <li>
             If Alcoin Plus ends (cancellation, expiry, refund, etc.), you can no longer create new shared books, or
-            create a second or further solo trip or restore one you put away. A solo trip you are already using stays
-            usable.
+            create a second or further solo period book or restore one you put away. A solo period book you are already
+            using stays usable.
           </li>
           <li>
             If the payer&apos;s Alcoin Plus ends, the shared book becomes view-only for every member: expenses can no
@@ -231,9 +233,9 @@ export default function Page() {
             remain possible.
           </li>
           <li>
-            Notwithstanding the preceding paragraph, every member can keep recording in a shared trip until the earlier
-            of 30 days after the payer&apos;s Alcoin Plus ended and the end of the trip&apos;s last day. After that it
-            becomes view-only, but it can still be merged into another book.
+            Notwithstanding the preceding paragraph, every member can keep recording in a shared period book until the
+            earlier of 30 days after the payer&apos;s Alcoin Plus ended and the end of the period&apos;s last day. After
+            that it becomes view-only, but it can still be merged into another book.
           </li>
           <li>
             A member with Alcoin Plus can take over as a shared book&apos;s payer at any time, which makes the book

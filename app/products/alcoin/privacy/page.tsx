@@ -36,10 +36,10 @@ export default function Page() {
         <>
           <Callout title="Your personal book stays on your iPhone">
             <p>
-              Personal book data is stored only on your device and is never sent to our server (when you use a transfer
-              code, we briefly hold data encrypted on your device, which we cannot read). Only when you use shared books
-              do we handle the information needed to share them on our server. We use no ads, no analytics and no
-              tracking, and we never sell your data.
+              Personal book and solo period book data is stored only on your device and is never sent to our server
+              (when you use a transfer code, we briefly hold data encrypted on your device, which we cannot read). Only
+              when you use shared books do we handle the information needed to share them on our server. We use no ads,
+              no analytics and no tracking, and we never sell your data.
             </p>
           </Callout>
           <p className="text-body-md text-black-600">
@@ -52,15 +52,15 @@ export default function Page() {
       <LegalSection id="personal-book" title="1. Personal book (on your device only)">
         <p>
           Your personal book data, including expenses, budgets, categories, monthly summaries and savings, is stored on
-          your device using Apple&apos;s SwiftData. So are solo trips (their period, budget and records) and each
-          book&apos;s currency and conversion details (the original amount, currency and the rate you entered). Settings
-          such as language and the day your month starts are also stored on your device (UserDefaults). Information
-          shown or recorded through widgets and Siri (Shortcuts) is also handled on your device. The Apple Watch app
-          receives a summary of your books from your iPhone and sends its records back to your iPhone (device-to-device
-          via Apple&apos;s WatchConnectivity, never through our server). The Apple Watch stores a summary of the book
-          you are viewing (book and category names, budget, amount spent) and records not yet delivered to your iPhone
-          (for up to 45 days). Your iPhone keeps the IDs of records received from the Apple Watch for 60 days so they
-          are never saved twice.
+          your device using Apple&apos;s SwiftData. So are solo period books such as trips (their period, budget and
+          records) and each book&apos;s currency and conversion details (the original amount, currency and the rate you
+          entered). Settings such as language and the day your month starts are also stored on your device
+          (UserDefaults). Information shown or recorded through widgets and Siri (Shortcuts) is also handled on your
+          device. The Apple Watch app receives a summary of your books from your iPhone and sends its records back to
+          your iPhone (device-to-device via Apple&apos;s WatchConnectivity, never through our server). The Apple Watch
+          stores a summary of the book you are viewing (book and category names, budget, amount spent) and records not
+          yet delivered to your iPhone (for up to 45 days). Your iPhone keeps the IDs of records received from the Apple
+          Watch for 60 days so they are never saved twice.
         </p>
         <p>
           If you set up &quot;Record a payment from Apple Pay&quot;, the payment amount and merchant name are kept
@@ -92,11 +92,11 @@ export default function Page() {
           <li>an authentication token (our server stores only its hash, never the token itself);</li>
           <li>the App&apos;s language (used to write record notifications in the recipient&apos;s language);</li>
           <li>
-            the content of your shared books: book name, icon and currency, a trip&apos;s period and budget,
+            the content of your shared books: book name, icon and currency, a period book&apos;s period and budget,
             members&apos; display names, the creator and the payer, expenses (amount, category, date, the member who
             recorded them and, if converted, the original amount, currency and rate), categories, budgets, copies of the
-            details of merged trips (dates, categories, amounts, notes, the display names of those who recorded them,
-            etc.) and invite codes;
+            details of merged period books (dates, categories, amounts, notes, the display names of those who recorded
+            them, etc.) and invite codes;
           </li>
           <li>whether record notifications are on or off for each shared book;</li>
           <li>
@@ -116,18 +116,18 @@ export default function Page() {
         <LegalSubheading>What members of a shared book can see</LegalSubheading>
         <p>
           The content of a shared book and members&apos; display names are visible to every member of that book. Copies
-          of the details of merged trips are visible to members who were not on the trip too. So that members can be
-          told before a shared book stops being recordable, whether the payer&apos;s Alcoin Plus has auto-renew turned
-          off, and the date until which a shared trip can be recorded, may be shown to its members (the payer&apos;s
-          expiry date itself is not shown).
+          of the details of merged period books are visible to members who were not in that period book too. So that
+          members can be told before a shared book stops being recordable, whether the payer&apos;s Alcoin Plus has
+          auto-renew turned off, and the date until which a shared period book can be recorded, may be shown to its
+          members (the payer&apos;s expiry date itself is not shown).
         </p>
         <LegalSubheading>When you use a transfer code</LegalSubheading>
         <p>
-          When you issue a transfer code, your personal book data (records, categories, budgets, monthly summaries,
-          etc.) and settings are encrypted on your device with a key derived from the code, and the ciphertext and a
-          hash derived from the code are sent to our server. The server stores the ciphertext in cloud storage, and a
-          hash of that hash in its database. The code and the key are never sent to our server or stored by the App, so
-          we cannot read the content.
+          When you issue a transfer code, your personal book and solo period books (such as trips) — records,
+          categories, budgets, periods, monthly summaries, etc. — and settings are encrypted on your device with a key
+          derived from the code, and the ciphertext and a hash derived from the code are sent to our server. The server
+          stores the ciphertext in cloud storage, and a hash of that hash in its database. The code and the key are
+          never sent to our server or stored by the App, so we cannot read the content.
         </p>
         <LegalSubheading>What we do not collect</LegalSubheading>
         <BulletList>
@@ -136,8 +136,8 @@ export default function Page() {
           <li>the advertising identifier (IDFA);</li>
           <li>payment details such as card numbers (payments are processed by Apple);</li>
           <li>
-            your personal book data (except that, when you use a transfer code, we briefly hold it encrypted in a form
-            we cannot read).
+            your personal book and solo period book data (except that, when you use a transfer code, we briefly hold it
+            encrypted in a form we cannot read).
           </li>
         </BulletList>
         <p>
@@ -192,9 +192,9 @@ export default function Page() {
       <LegalSection id="retention" title="5. Retention">
         <BulletList>
           <li>
-            Shared book content (including copies of the details of merged trips): kept while the book has members, and
-            deleted from our server when the last member leaves. After a member leaves or is removed, the expenses they
-            recorded and their display name remain until the book is deleted.
+            Shared book content (including copies of the details of merged period books): kept while the book has
+            members, and deleted from our server when the last member leaves. After a member leaves or is removed, the
+            expenses they recorded and their display name remain until the book is deleted.
           </li>
           <li>
             Data encrypted for a transfer code and its hash: deleted when the new device confirms the transfer, or when
@@ -246,8 +246,8 @@ export default function Page() {
           </li>
           <li>
             Issue a transfer code only when you use it, and do not show it to anyone: anyone who has the code can take
-            over your data. After a transfer, you can delete the personal book data left on the old device in the App on
-            that device.
+            over your data. After a transfer, you can delete the personal book and solo period book data left on the old
+            device in the App on that device.
           </li>
           <li>You can cancel Alcoin Plus in iOS Settings. Your purchase history is managed by Apple.</li>
           <li>
