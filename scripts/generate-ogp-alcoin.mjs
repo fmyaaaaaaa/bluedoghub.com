@@ -13,12 +13,25 @@ const COLORS = {
   gray: "#5B6677",
 };
 
-const TAGLINE = "記録するたび、相棒がそっと応援。";
-const SUBLINE = "かんたん家計簿 ・ 共有家計簿 ・ Apple Watch";
-
 const VARIANTS = [
-  { file: "public/ogp-alcoin-en.png", wordmark: "Alcoin", wordmarkSize: 120, wordmarkTop: 180, letterSpacing: 3 },
-  { file: "public/ogp-alcoin-ja.png", wordmark: "アルコイン", wordmarkSize: 96, wordmarkTop: 196, letterSpacing: 4 },
+  {
+    file: "public/ogp-alcoin-en.png",
+    wordmark: "Alcoin",
+    wordmarkSize: 120,
+    wordmarkTop: 180,
+    letterSpacing: 3,
+    tagline: "One tap. That's your budget.",
+    subline: "Quick budgeting · Shared books · Apple Watch",
+  },
+  {
+    file: "public/ogp-alcoin-ja.png",
+    wordmark: "アルコイン",
+    wordmarkSize: 96,
+    wordmarkTop: 196,
+    letterSpacing: 4,
+    tagline: "ポチッと、家計簿。",
+    subline: "かんたん家計簿 ・ 共有家計簿 ・ Apple Watch",
+  },
 ];
 
 // The dog from app/products/alcoin/_components/AlcoinDog.tsx at rest: its tail layer (public/alcoin-dog-tail.webp)
@@ -48,11 +61,11 @@ function text(content, style) {
   );
 }
 
-async function render({ file, wordmark, wordmarkSize, wordmarkTop, letterSpacing }) {
+async function render({ file, wordmark, wordmarkSize, wordmarkTop, letterSpacing, tagline, subline }) {
   const fonts = [
     { name: "Rounded", weight: 800, style: "normal", data: await loadFont(800, wordmark) },
-    { name: "Rounded", weight: 700, style: "normal", data: await loadFont(700, TAGLINE) },
-    { name: "Rounded", weight: 400, style: "normal", data: await loadFont(400, SUBLINE) },
+    { name: "Rounded", weight: 700, style: "normal", data: await loadFont(700, tagline) },
+    { name: "Rounded", weight: 400, style: "normal", data: await loadFont(400, subline) },
   ];
   const tree = h(
     "div",
@@ -92,8 +105,8 @@ async function render({ file, wordmark, wordmarkSize, wordmarkTop, letterSpacing
       letterSpacing,
       lineHeight: 1.2,
     }),
-    text(TAGLINE, { left: 457, top: 356, fontSize: 40, fontWeight: 700, color: COLORS.blue, lineHeight: 1.2 }),
-    text(SUBLINE, { left: 458, top: 432, fontSize: 26, fontWeight: 400, color: COLORS.gray, lineHeight: 1.2 })
+    text(tagline, { left: 457, top: 356, fontSize: 40, fontWeight: 700, color: COLORS.blue, lineHeight: 1.2 }),
+    text(subline, { left: 458, top: 432, fontSize: 26, fontWeight: 400, color: COLORS.gray, lineHeight: 1.2 })
   );
   const image = new ImageResponse(tree, { width: 1200, height: 630, fonts });
   await writeFile(new URL(`../${file}`, import.meta.url), Buffer.from(await image.arrayBuffer()));

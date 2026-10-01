@@ -11,7 +11,7 @@ const description =
   "Alcoin is the fastest budget app for iPhone: type an amount, tap a category, done. Share a book with family, keep period books for trips in 17 currencies, and record from Apple Watch, Siri or widgets. Your personal book is free forever.";
 
 export const metadata: Metadata = {
-  title: "Alcoin - A companion that quietly cheers you on",
+  title: "Alcoin - One tap. That's your budget.",
   description,
   alternates: alcoinAlternates("home", "en"),
   openGraph: {

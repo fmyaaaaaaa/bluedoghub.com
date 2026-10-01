@@ -40,7 +40,7 @@ const content = {
   en: {
     name: "Alcoin",
     otherLang: { label: "日本語", href: alcoinPaths.home.ja },
-    tagline: "A companion that quietly cheers you on.",
+    tagline: "One tap. That's your budget.",
     lead: "Type an amount, tap a category, done. The fastest way to track your spending, with a little dog that wags its tail every time you record. Share a book with family, keep period books for trips and events, record in 17 currencies, and use Apple Watch, Siri and widgets. Your personal book is free forever.",
     heroShot: { src: "/alcoin-home-en.webp", alt: "Home screen with the budget ring, the dog and the keypad" },
     cta: "See how it works",
@@ -302,7 +302,7 @@ const content = {
   ja: {
     name: "アルコイン",
     otherLang: { label: "English", href: alcoinPaths.home.en },
-    tagline: "記録するたび、相棒がそっと応援。",
+    tagline: "ポチッと、家計簿。",
     lead: "金額を打って、カテゴリを押すだけ。最速で記録できる家計簿です。記録するたびに、相棒の犬がしっぽをふって応援してくれます。家族との共有家計簿、旅行やイベントの「期間の家計簿」、17の通貨、Apple Watch・Siri・ウィジェットにも対応。個人の家計簿はずっと無料です。",
     heroShot: { src: "/alcoin-home-ja.webp", alt: "予算リングと犬、テンキーのあるホーム画面" },
     cta: "くわしく見る",
@@ -716,7 +716,7 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
                 )}
               </div>
               <div className="relative w-56 md:w-2/5 md:max-w-[18rem]">
-                <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-alcoin-coin/30" aria-hidden />
+                <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-alcoin-coin/30" aria-hidden />
                 <PhoneShot src={t.heroShot.src} alt={t.heroShot.alt} className="relative" />
               </div>
             </div>
