@@ -8,7 +8,7 @@ const baseUrl =
     : "http://localhost:3030";
 
 const description =
-  "アルコインは、タップするだけで記録できるiPhoneの家計簿アプリ。個人の家計簿はiPhoneの中だけに。家族・部費・旅行の共有家計簿やApple Watchにも対応。";
+  "アルコインは、金額を打ってカテゴリを押すだけの最速の家計簿アプリ。家族との共有家計簿、旅行やイベントの期間の家計簿、17の通貨、Apple Watch・Siri・ウィジェットに対応。個人の家計簿はずっと無料。";
 
 export const metadata: Metadata = {
   title: "アルコイン - かんたん家計簿",

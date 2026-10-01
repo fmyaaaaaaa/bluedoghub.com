@@ -1,18 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
+  ArrowRightLeft,
+  Bell,
   Calculator,
   CalendarDays,
+  CalendarRange,
   Check,
   CircleDashed,
+  Coins,
+  Contact,
   CreditCard,
+  Dog,
+  KeyRound,
+  LayoutGrid,
   Link2,
   Lock,
+  type LucideIcon,
+  Merge,
   Mic,
   PenLine,
   PiggyBank,
   QrCode,
   Smartphone,
+  UserMinus,
   Users,
   Watch,
 } from "lucide-react";
@@ -22,12 +33,16 @@ import { AlcoinDog } from "./AlcoinDog";
 import { ALCOIN_APP_STORE_URL, ALCOIN_SUPPORT_EMAIL, type AlcoinLang, alcoinPaths } from "./constants";
 import { alcoinRounded } from "./fonts";
 
+type Shot = { src: string; alt: string };
+type Point = { icon: LucideIcon; title: string; body: string };
+
 const content = {
   en: {
     name: "Alcoin",
     otherLang: { label: "日本語", href: alcoinPaths.home.ja },
     tagline: "A companion that quietly cheers you on.",
-    lead: "Just tap in what you spent. Alcoin keeps your personal budget on your iPhone, and lets you share a book with family, your club or travel buddies when you want to.",
+    lead: "Type an amount, tap a category, done. The fastest way to track your spending, with a little dog that wags its tail every time you record. Share a book with family, keep period books for trips and events, record in 17 currencies, and use Apple Watch, Siri and widgets. Your personal book is free forever.",
+    heroShot: { src: "/alcoin-home-en.webp", alt: "Home screen with the budget ring, the dog and the keypad" },
     cta: "See how it works",
     comingSoon: "Alcoin 2.0 is coming soon to the App Store",
     featuresTitle: "Everything you need, nothing you don't",
@@ -35,58 +50,61 @@ const content = {
     features: [
       {
         icon: Calculator,
-        title: "One-tap recording",
-        body: "Pick a category, type the amount on the big keypad, done. No forms, no fuss.",
+        title: "The fastest input",
+        body: "Alcoin opens straight to the keypad. Type the amount, tap a category, and it's saved in two taps.",
+      },
+      {
+        icon: Dog,
+        title: "A buddy that cheers you on",
+        body: "A coin flies over and your little dog wags its tail every time you record.",
       },
       {
         icon: CircleDashed,
         title: "Budget ring",
-        body: "Set a monthly budget and see what's left at a glance on the home screen.",
+        body: "See what's left this month at a glance. Start your month on payday if you like.",
       },
       {
         icon: PiggyBank,
         title: "Dashboard & savings",
-        body: "Spending by category, month by month. Whatever you don't spend becomes savings.",
+        body: "Spending by month and category, your total savings and progress toward a savings goal.",
       },
       {
         icon: CalendarDays,
         title: "History as a list or calendar",
-        body: "Look back day by day, filter by category, and edit any record.",
+        body: "Look back day by day, filter by category and edit any record. Record for past dates, too.",
       },
       {
-        icon: Mic,
-        title: "Widgets & Siri",
-        body: "Check your remaining budget from the home screen and record with your voice.",
-      },
-      {
-        icon: Users,
-        title: "Shared books",
-        body: "Keep one book together with family, a club's budget or a trip's expenses.",
+        icon: KeyRound,
+        title: "Transfer code for a new iPhone",
+        body: "Issue a code on your old iPhone and enter it on the new one. Your books, settings and Plus come with you.",
       },
       {
         icon: Lock,
-        title: "Private by design",
-        body: "Your personal book stays on your iPhone and works fully offline. No ads, no tracking.",
+        title: "No sign-up, private by design",
+        body: "No email or phone number needed. Your personal book stays on your iPhone and works fully offline. No ads, no tracking. In English and Japanese.",
       },
     ],
     screenshotsTitle: "A closer look",
     screenshots: [
-      { src: "/coinly-home.webp", alt: "Home screen with the budget ring and the keypad" },
-      { src: "/coinly-dashboard.webp", alt: "Dashboard with savings and monthly spending by category" },
-      { src: "/coinly-history.webp", alt: "History shown as a calendar" },
+      { src: "/alcoin-celebration-en.webp", alt: "A coin flying to the dog right after recording an expense" },
+      {
+        src: "/alcoin-dashboard-en.webp",
+        alt: "Dashboard with total savings, a savings goal and spending by category",
+      },
+      { src: "/alcoin-history-calendar-en.webp", alt: "History shown as a calendar with daily totals" },
     ],
-    sharedTitle: "Shared books, in three steps",
-    sharedLead: "For households, club funds, trips, anything you pay for together.",
+    sharedTitle: "Shared books with family and friends",
+    sharedLead: "For couples, families, clubs and shared houses: one book, kept together.",
     steps: [
       {
         icon: PenLine,
         title: "Create a book",
-        body: "Give it a name and an icon: “Family”, “Tennis club”, “Okinawa trip”.",
+        body: "Give it a name and an icon: “Family”, “Tennis club”, “Shared house”.",
       },
       {
         icon: QrCode,
         title: "Invite",
-        body: "Share a QR code, a short code or a link. Invites expire after 48 hours.",
+        body: "Share a code, a QR code or a link. Invites expire after 48 hours. Joining is free.",
       },
       {
         icon: Users,
@@ -94,24 +112,101 @@ const content = {
         body: "Every member can add and edit expenses. Changes sync to everyone's iPhone automatically.",
       },
     ],
-    sharedNote: "No sign-up needed. You just choose a display name the first time you create or join a shared book.",
+    sharedPoints: [
+      {
+        icon: Bell,
+        title: "Record notifications",
+        body: "Get notified when someone else records. Turn it on or off for each book.",
+      },
+      {
+        icon: Users,
+        title: "See who recorded what",
+        body: "Every record in the history shows the member who added it.",
+      },
+      {
+        icon: Contact,
+        title: "A name for each book",
+        body: "Choose a display name for each shared book and change it anytime. No sign-up needed.",
+      },
+      {
+        icon: UserMinus,
+        title: "Manage members",
+        body: "The creator can remove members, and anyone can leave a book at any time.",
+      },
+    ],
+    sharedNote:
+      "Creating a shared book needs Alcoin Plus; joining one is free. Make as many books as you like and switch between them from Home.",
     sharedShots: [
-      { src: "/coinly-shared-home.webp", alt: "Home screen of a shared family book" },
-      { src: "/coinly-shared-history.webp", alt: "Shared book history with the member who recorded each expense" },
+      { src: "/alcoin-shared-history-en.webp", alt: "Family book history showing which member recorded each expense" },
+      {
+        src: "/alcoin-shared-members-en.webp",
+        alt: "Family book settings with record notifications, three members and an Invite members button",
+      },
+    ],
+    periodTitle: "Period books for trips and events",
+    periodLead: "Set the dates and a budget, and keep a book just for that time.",
+    periodPoints: [
+      {
+        icon: CalendarRange,
+        title: "What's left, and days to go",
+        body: "During a trip, Home shows what's left for the period and how many days remain.",
+      },
+      {
+        icon: Merge,
+        title: "Merge it as one entry",
+        body: "When it ends, add it to your usual book as a single entry. The details stay in the period book.",
+      },
+      {
+        icon: Users,
+        title: "Solo or together",
+        body: "One solo period book at a time is free. Make it a shared book to record with your travel buddies.",
+      },
+    ],
+    periodShots: [
+      { src: "/alcoin-period-book-en.webp", alt: "Hawaii Trip period book with what's left and 3 days to go" },
+      {
+        src: "/alcoin-period-merge-en.webp",
+        alt: "After the Hawaii Trip ends, a prompt to add its $1,846.50 total to the personal book",
+      },
+    ],
+    currencyTitle: "17 currencies",
+    currencyLead: "Record abroad in the local currency, and convert when you're home.",
+    currencyPoints: [
+      {
+        icon: Coins,
+        title: "A currency for each book",
+        body: "Yen, dollars, euros, pounds, won, baht and more. Choose from 17 currencies per book.",
+      },
+      {
+        icon: ArrowRightLeft,
+        title: "Convert later, at your rate",
+        body: "Convert records in another currency at the rate you enter, say from your card statement. The original amount and rate are kept.",
+      },
+    ],
+    currencyShots: [
+      { src: "/alcoin-currency-book-en.webp", alt: "Paris Trip period book recorded in euros" },
+      {
+        src: "/alcoin-currency-convert-en.webp",
+        alt: "Converting the Paris Trip's €1,126.40 into dollars at a rate you enter before adding it to the personal book",
+      },
     ],
     watchTitle: "On Apple Watch",
     watchLead: "Check what's left and record on the spot, right from your wrist.",
     watchShots: [
       {
-        src: "/alcoin-watch-face-en.webp",
+        src: "/alcoin-watch-complication-en.webp",
         alt: "Watch face with the remaining budget complication",
         label: "Watch face",
       },
-      { src: "/coinly-watch-amount.webp", alt: "Entering an amount on the watch keypad", label: "1. Amount → Next" },
-      { src: "/coinly-watch-category.webp", alt: "Choosing a category on the watch", label: "2. Category" },
-      { src: "/coinly-watch-done.webp", alt: "The dog celebrating a recorded expense", label: "3. Recorded!" },
+      { src: "/alcoin-watch-keypad-en.webp", alt: "Entering $12.80 on the watch keypad", label: "1. Amount → Next" },
+      { src: "/alcoin-watch-category-en.webp", alt: "Choosing a category on the watch", label: "2. Category" },
+      { src: "/alcoin-watch-done-en.webp", alt: "The dog celebrating a recorded expense", label: "3. Recorded!" },
+      {
+        src: "/alcoin-watch-smart-stack-en.webp",
+        alt: "What's left in the personal and family books in the Smart Stack",
+        label: "Smart Stack",
+      },
     ],
-    watchStack: { src: "/coinly-watch-smart-stack-en.webp", alt: "Remaining budget in the Smart Stack" },
     watchPoints: [
       {
         icon: Watch,
@@ -121,7 +216,7 @@ const content = {
       {
         icon: Calculator,
         title: "Record in a few taps",
-        body: "Enter the amount, tap Next and pick a category. Your companion celebrates every record.",
+        body: "Enter the amount, tap Next and pick a category. Your buddy celebrates every record.",
       },
       {
         icon: CreditCard,
@@ -139,26 +234,65 @@ const content = {
         body: "Alcoin on your watch works with Alcoin on your paired iPhone. No sign-in needed.",
       },
     ],
-    watchNote: "Requires watchOS 11 or later and an iPhone with Alcoin installed.",
+    watchNote: "Requires watchOS 11 or later and an iPhone with Alcoin installed. The Apple Watch app is free.",
+    widgetsTitle: "Widgets & Siri",
+    widgetsLead: "Check what's left and start recording without opening the app.",
+    widgetsPoints: [
+      {
+        icon: LayoutGrid,
+        title: "Home Screen",
+        body: "Small, medium and large widgets: what's left in each book, recent records and the last 7 days.",
+      },
+      {
+        icon: Smartphone,
+        title: "Lock Screen & StandBy",
+        body: "See this month's remaining budget without unlocking your iPhone.",
+      },
+      {
+        icon: Mic,
+        title: "Siri & Shortcuts",
+        body: "Say “Record an expense in Alcoin” or “How much is left in Alcoin”. There's an Apple Pay automation, too.",
+      },
+    ],
+    widgetsShot: {
+      src: "/alcoin-widgets-home-en.webp",
+      alt: "Home Screen with Alcoin's large, small and medium widgets",
+    },
+    lockWidgets: {
+      label: "Lock Screen",
+      rect: { src: "/alcoin-widget-lock-rect-en.webp", alt: "Lock Screen widget: $1,104.81 left" },
+      circle: { src: "/alcoin-widget-lock-circle-en.webp", alt: "Round Lock Screen widget: $1.1K left" },
+    },
     pricingTitle: "Pricing",
+    pricingLead: "Your personal book is free forever.",
     free: {
       name: "Free",
       price: "¥0",
       period: "forever",
-      items: ["Personal book with every feature", "Widgets & Siri", "Join shared books you're invited to"],
+      items: [
+        "Personal book with every feature",
+        "Apple Watch, widgets & Siri",
+        "One solo period book at a time",
+        "Join shared books you're invited to",
+      ],
     },
     plus: {
       name: "Alcoin Plus",
       price: "¥100",
       period: "/ month",
       alt: "or ¥1,000 / year",
-      items: ["Create your own shared books", "Invite members by QR code, code or link", "Everything in Free"],
+      items: [
+        "Create shared books, as many as you like",
+        "Use two or more solo period books at the same time",
+        "Everything in Free",
+      ],
+      note: "If the paying member's Plus ends, the shared book becomes view-only for everyone. Any member with Plus can take over as the payer to keep recording.",
     },
     pricingNote:
-      "Alcoin Plus is an auto-renewable subscription billed to your Apple ID. It renews unless cancelled at least 24 hours before the end of the current period. Manage or cancel it anytime in iOS Settings. If Plus ends, the shared books you created keep working.",
-    privacyTitle: "Your personal book never leaves your iPhone",
+      "Alcoin Plus is an auto-renewable subscription. Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Manage or cancel it anytime in your App Store account settings. Prices shown are for Japan, tax included; prices in other countries or regions may differ and are shown in the app.",
+    privacyTitle: "Your personal book stays on your iPhone",
     privacyBody:
-      "If you only use the personal book, Alcoin never talks to a server. Shared books are stored on our server in Tokyo (AWS) so members can sync. No ads, no analytics, no selling data.",
+      "Your personal book and solo period books are stored only on your iPhone and never sent to our server (when you use a transfer code, we briefly hold the data encrypted, in a form we can't read). Shared books are stored on our server in Tokyo (AWS) so members can sync. No ads, no analytics, no tracking, and we never sell your data.",
     privacyLink: "Read the Privacy Policy",
     contactTitle: "Questions or feedback?",
     terms: "Terms of Use",
@@ -169,7 +303,8 @@ const content = {
     name: "アルコイン",
     otherLang: { label: "English", href: alcoinPaths.home.en },
     tagline: "記録するたび、相棒がそっと応援。",
-    lead: "使った金額をタップするだけで記録できる家計簿です。個人の家計簿はiPhoneの中だけに。家族や部活、旅行の仲間と一緒につける「共有家計簿」にも対応しました。",
+    lead: "金額を打って、カテゴリを押すだけ。最速で記録できる家計簿です。記録するたびに、相棒の犬がしっぽをふって応援してくれます。家族との共有家計簿、旅行やイベントの「期間の家計簿」、17の通貨、Apple Watch・Siri・ウィジェットにも対応。個人の家計簿はずっと無料です。",
+    heroShot: { src: "/alcoin-home-ja.webp", alt: "予算リングと犬、テンキーのあるホーム画面" },
     cta: "くわしく見る",
     comingSoon: "アルコイン 2.0 は App Store で近日公開予定です",
     featuresTitle: "毎日続けられる、ちょうどいい機能",
@@ -177,58 +312,58 @@ const content = {
     features: [
       {
         icon: Calculator,
-        title: "テンキーでワンタップ記録",
-        body: "カテゴリを選んで金額を入力するだけ。大きなキーで、迷わず記録できます。",
+        title: "最速の入力",
+        body: "開いたらすぐテンキー。金額を打ってカテゴリを押せば、2タップで記録完了です。",
+      },
+      {
+        icon: Dog,
+        title: "相棒の犬が応援",
+        body: "記録するとコインが飛んで、相棒の犬がしっぽをふって応援してくれます。",
       },
       {
         icon: CircleDashed,
         title: "予算リング",
-        body: "月の予算を決めれば、残りがホーム画面のリングでひと目でわかります。",
+        body: "今月の「残り」がひと目でわかります。給料日に合わせて月の始まりも設定できます。",
       },
       {
         icon: PiggyBank,
         title: "ダッシュボードと貯金",
-        body: "カテゴリ別・月ごとの支出を確認。予算より少なく使えた分は貯金として貯まります。",
+        body: "月ごと・カテゴリ別の支出に、これまでの貯金と貯金目標までの道のり。",
       },
       {
         icon: CalendarDays,
         title: "履歴はリストとカレンダーで",
-        body: "日ごとにふり返り、カテゴリで絞り込み。記録はあとから編集できます。",
+        body: "日ごとにふり返り、カテゴリで絞り込み。日付をさかのぼっての記録や編集もできます。",
       },
       {
-        icon: Mic,
-        title: "ウィジェットとSiri",
-        body: "ホーム画面で残りの予算を確認。Siriに話しかけて記録することもできます。",
-      },
-      {
-        icon: Users,
-        title: "共有家計簿",
-        body: "家族の家計、部費、旅行の割り勘など、みんなでひとつの家計簿をつけられます。",
+        icon: KeyRound,
+        title: "機種変更は引き継ぎコードで",
+        body: "古いiPhoneでコードを発行して、新しいiPhoneで入力するだけ。家計簿も設定もPlusも引き継げます。",
       },
       {
         icon: Lock,
-        title: "プライバシーを大切に",
-        body: "個人の家計簿はiPhoneの中だけに保存。オフラインでも使えます。広告もトラッキングもありません。",
+        title: "ログイン不要、プライバシーを大切に",
+        body: "メールアドレスや電話番号の登録はありません。個人の家計簿はiPhoneの中だけに保存され、オフラインでも使えます。広告もトラッキングもなし。日本語と英語に対応しています。",
       },
     ],
     screenshotsTitle: "アプリの画面",
     screenshots: [
-      { src: "/coinly-home.webp", alt: "予算リングとテンキーのあるホーム画面" },
-      { src: "/coinly-dashboard.webp", alt: "貯金とカテゴリ別の支出を表示するダッシュボード" },
-      { src: "/coinly-history.webp", alt: "カレンダー表示の履歴画面" },
+      { src: "/alcoin-celebration-ja.webp", alt: "記録した直後、コインが犬のところへ飛んでいく画面" },
+      { src: "/alcoin-dashboard-ja.webp", alt: "これまでの貯金、貯金目標、カテゴリ別の支出を表示するダッシュボード" },
+      { src: "/alcoin-history-calendar-ja.webp", alt: "日ごとの合計を表示するカレンダー表示の履歴" },
     ],
-    sharedTitle: "共有家計簿は3ステップ",
-    sharedLead: "家族の家計、部費、旅行など、みんなでお金を使う場面に。",
+    sharedTitle: "家族や仲間と、共有家計簿",
+    sharedLead: "夫婦・家族・サークル・シェアハウスなど、みんなで1つの家計簿を。",
     steps: [
       {
         icon: PenLine,
         title: "家計簿をつくる",
-        body: "「家族」「テニス部」「沖縄旅行」など、名前とアイコンを決めます。",
+        body: "「家族」「テニス部」「シェアハウス」など、名前とアイコンを決めます。",
       },
       {
         icon: QrCode,
         title: "招待する",
-        body: "QRコード・招待コード・リンクで招待。招待は48時間で期限切れになります。",
+        body: "コード・QRコード・リンクで招待。招待は48時間で期限切れになります。参加は無料です。",
       },
       {
         icon: Users,
@@ -236,20 +371,105 @@ const content = {
         body: "メンバー全員が記録・編集できます。変更はみんなのiPhoneに自動で反映されます。",
       },
     ],
-    sharedNote: "会員登録は不要です。はじめて共有家計簿をつくる・参加するときに、表示名を決めるだけ。",
+    sharedPoints: [
+      {
+        icon: Bell,
+        title: "記録の通知",
+        body: "ほかのメンバーが記録すると通知でお知らせ。家計簿ごとにオン・オフできます。",
+      },
+      {
+        icon: Users,
+        title: "だれが記録したかひと目で",
+        body: "履歴には、記録したメンバーが表示されます。",
+      },
+      {
+        icon: Contact,
+        title: "家計簿ごとの表示名",
+        body: "表示名は家計簿ごとに決められて、いつでも変更できます。会員登録は不要です。",
+      },
+      {
+        icon: UserMinus,
+        title: "メンバーの管理",
+        body: "作成した人はメンバーを外せます。自分から抜けることもいつでもできます。",
+      },
+    ],
+    sharedNote:
+      "共有家計簿をつくるにはアルコイン Plus が必要です（参加は無料）。家計簿はいくつでも作れて、ホームの家計簿名からすぐ切り替えられます。",
     sharedShots: [
-      { src: "/coinly-shared-home.webp", alt: "家族の共有家計簿のホーム画面" },
-      { src: "/coinly-shared-history.webp", alt: "記録したメンバーが表示される共有家計簿の履歴" },
+      { src: "/alcoin-shared-history-ja.webp", alt: "記録したメンバーが表示される家族の家計簿の履歴" },
+      {
+        src: "/alcoin-shared-members-ja.webp",
+        alt: "記録の通知、3人のメンバー、メンバーを招待ボタンがある家族の家計簿の設定",
+      },
+    ],
+    periodTitle: "旅行やイベントは「期間の家計簿」",
+    periodLead: "日付と予算を決めて、その期間だけの家計簿に。",
+    periodPoints: [
+      {
+        icon: CalendarRange,
+        title: "期間の残りと「あと◯日」",
+        body: "旅行中は、ホームに期間の残りと終わるまでの日数を表示します。",
+      },
+      {
+        icon: Merge,
+        title: "終わったら1件にまとめる",
+        body: "ふだんの家計簿に1件でまとめて入れられます。明細は期間の家計簿に残ります。",
+      },
+      {
+        icon: Users,
+        title: "1人でも、みんなでも",
+        body: "1人で使う期間の家計簿は、同時に1つまで無料。共有家計簿にすれば、旅の仲間と一緒に記録できます。",
+      },
+    ],
+    periodShots: [
+      { src: "/alcoin-period-book-ja.webp", alt: "期間の残りと「あと3日」を表示する沖縄旅行の家計簿" },
+      {
+        src: "/alcoin-period-merge-ja.webp",
+        alt: "沖縄旅行が終わり、合計¥52,400を個人の家計簿に入れるか確認する画面",
+      },
+    ],
+    currencyTitle: "17の通貨に対応",
+    currencyLead: "海外旅行では現地の通貨のまま記録して、あとでまとめて換算。",
+    currencyPoints: [
+      {
+        icon: Coins,
+        title: "家計簿ごとに通貨を選べる",
+        body: "円・ドル・ユーロ・ウォン・台湾ドル・バーツなど、17の通貨から選べます。",
+      },
+      {
+        icon: ArrowRightLeft,
+        title: "あとから自分のレートで換算",
+        body: "別の通貨で記録した分は、カードの明細などを見て入れたレートでまとめて換算。元の金額とレートも残ります。",
+      },
+    ],
+    currencyShots: [
+      { src: "/alcoin-currency-book-ja.webp", alt: "ドルで記録しているハワイ旅行の期間の家計簿" },
+      {
+        src: "/alcoin-currency-convert-ja.webp",
+        alt: "ハワイ旅行の$1,284.50を、入力したレートで円に換算して個人の家計簿に入れる画面",
+      },
     ],
     watchTitle: "Apple Watch でも",
     watchLead: "iPhoneを出さなくても、腕元で残りを確認して、その場で記録できます。",
     watchShots: [
-      { src: "/alcoin-watch-face-ja.webp", alt: "残りの予算を表示するコンプリケーションのある文字盤", label: "文字盤" },
-      { src: "/coinly-watch-amount.webp", alt: "Apple Watchのテンキーで金額を入力する画面", label: "1. 金額 → 次へ" },
-      { src: "/coinly-watch-category.webp", alt: "Apple Watchでカテゴリを選ぶ画面", label: "2. カテゴリ" },
-      { src: "/coinly-watch-done.webp", alt: "記録が完了して犬がよろこぶ画面", label: "3. 記録完了" },
+      {
+        src: "/alcoin-watch-complication-ja.webp",
+        alt: "残りの予算を表示するコンプリケーションのある文字盤",
+        label: "文字盤",
+      },
+      {
+        src: "/alcoin-watch-keypad-ja.webp",
+        alt: "Apple Watchのテンキーで¥1,280を入力する画面",
+        label: "1. 金額 → 次へ",
+      },
+      { src: "/alcoin-watch-category-ja.webp", alt: "Apple Watchでカテゴリを選ぶ画面", label: "2. カテゴリ" },
+      { src: "/alcoin-watch-done-ja.webp", alt: "記録が完了して犬がよろこぶ画面", label: "3. 記録完了" },
+      {
+        src: "/alcoin-watch-smart-stack-ja.webp",
+        alt: "スマートスタックに表示された個人と家族の家計簿の残り",
+        label: "スマートスタック",
+      },
     ],
-    watchStack: { src: "/coinly-watch-smart-stack-ja.webp", alt: "スマートスタックに表示された残りの予算" },
     watchPoints: [
       {
         icon: Watch,
@@ -277,26 +497,62 @@ const content = {
         body: "ペアリングしたiPhoneのアルコインと連携して動くので、サインインは不要です。",
       },
     ],
-    watchNote: "watchOS 11 以降に対応。ペアリングしたiPhoneにアルコインが必要です。",
+    watchNote:
+      "watchOS 11 以降に対応。ペアリングしたiPhoneにアルコインが必要です。Apple Watch アプリは無料で使えます。",
+    widgetsTitle: "ウィジェットとSiri",
+    widgetsLead: "アプリを開かなくても、残りの確認と記録ができます。",
+    widgetsPoints: [
+      {
+        icon: LayoutGrid,
+        title: "ホーム画面",
+        body: "小・中・大のウィジェット。家計簿ごとの残りや、最近の記録・この7日間の支出も。",
+      },
+      {
+        icon: Smartphone,
+        title: "ロック画面とスタンバイ",
+        body: "iPhoneのロックを解除しなくても、今月の残りをひと目で確認できます。",
+      },
+      {
+        icon: Mic,
+        title: "Siriとショートカット",
+        body: "「アルコインで支出を記録」「アルコインの残りはいくら」と話しかけるだけ。Apple Pay の支払いを記録するオートメーションにも対応。",
+      },
+    ],
+    widgetsShot: {
+      src: "/alcoin-widgets-home-ja.webp",
+      alt: "アルコインの大・小・中のウィジェットを置いたホーム画面",
+    },
+    lockWidgets: {
+      label: "ロック画面",
+      rect: { src: "/alcoin-widget-lock-rect-ja.webp", alt: "ロック画面のウィジェット：残り¥51,530" },
+      circle: { src: "/alcoin-widget-lock-circle-ja.webp", alt: "ロック画面の円形ウィジェット：残り5.1万" },
+    },
     pricingTitle: "料金",
+    pricingLead: "個人の家計簿は、ずっと無料です。",
     free: {
       name: "無料",
       price: "¥0",
       period: "ずっと無料",
-      items: ["個人の家計簿のすべての機能", "ウィジェットとSiri", "招待された共有家計簿への参加"],
+      items: [
+        "個人の家計簿のすべての機能",
+        "Apple Watch・ウィジェット・Siri",
+        "1人で使う期間の家計簿（同時に1つまで）",
+        "招待された共有家計簿への参加",
+      ],
     },
     plus: {
       name: "アルコイン Plus",
       price: "¥100",
       period: "/ 月",
       alt: "または ¥1,000 / 年",
-      items: ["共有家計簿をつくれる", "QR・コード・リンクでメンバーを招待", "無料プランのすべての機能"],
+      items: ["共有家計簿をつくれる（いくつでも）", "1人で使う期間の家計簿を同時に2つ以上", "無料プランのすべての機能"],
+      note: "支払う人の Plus が終了すると、その共有家計簿は全員が閲覧のみになります。Plus を持つメンバーが支払いを引き継げば、また記録できます。",
     },
     pricingNote:
-      "アルコイン Plus は自動更新のサブスクリプションで、Apple ID に請求されます。現在の期間が終わる24時間前までに解約しない限り自動で更新されます。管理・解約は iOS の「設定」からいつでも行えます。Plus が終了しても、作成済みの共有家計簿はそのまま使えます。",
-    privacyTitle: "個人の家計簿は、iPhoneの外に出ません",
+      "アルコイン Plus は自動更新のサブスクリプションです。お支払いは購入の確認時に Apple ID に請求され、期間終了の24時間以上前に自動更新をオフにしない限り、自動的に更新されます。管理・解約は App Store のアカウント設定からいつでも行えます。価格は日本での税込価格です。国や地域によって異なる場合があります。",
+    privacyTitle: "個人の家計簿は、iPhoneの中だけに",
     privacyBody:
-      "個人の家計簿だけを使う場合、アルコインがサーバーと通信することはありません。共有家計簿は、メンバー間で同期するために東京リージョン（AWS）のサーバーに保存されます。広告・アナリティクス・データの販売は一切ありません。",
+      "個人の家計簿と1人で使う期間の家計簿は、iPhoneの中だけに保存され、サーバーには送られません（引き継ぎコードを使うときだけ、暗号化したデータを短い間お預かりします。中身を読むことはできません）。共有家計簿は、メンバー間で同期するために東京リージョン（AWS）のサーバーに保存されます。広告・アナリティクス・トラッキングはなく、データを販売することもありません。",
     privacyLink: "プライバシーポリシーを読む",
     contactTitle: "ご質問・ご意見はこちら",
     terms: "利用規約",
@@ -337,6 +593,75 @@ function AppStoreBadge({ alt }: { alt: string }) {
     <Link href={ALCOIN_APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
       <Image src="/app-store-badge.svg" alt={alt} width={180} height={54} />
     </Link>
+  );
+}
+
+function SectionHeading({ title, lead }: { title: string; lead?: string }) {
+  return (
+    <>
+      <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
+        {title}
+      </h2>
+      {lead && <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{lead}</p>}
+    </>
+  );
+}
+
+function PointList({ points, className }: { points: readonly Point[]; className?: string }) {
+  return (
+    <ul className={cn("flex flex-col gap-4", className)}>
+      {points.map(({ icon: Icon, title, body }) => (
+        <li key={title} className="flex gap-4 rounded-3xl border border-alcoin-line bg-white p-5">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-alcoin-50 text-alcoin-500">
+            <Icon className="h-6 w-6" aria-hidden />
+          </div>
+          <div>
+            <h3 className="text-heading-md font-bold text-alcoin-ink">{title}</h3>
+            <p className="mt-1 text-body-sm text-alcoin-muted">{body}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Two phone shots beside a list of points; `reverse` puts the shots first on wide screens.
+function SplitSection({
+  id,
+  title,
+  lead,
+  points,
+  shots,
+  reverse,
+  className,
+}: {
+  id: string;
+  title: string;
+  lead: string;
+  points: readonly Point[];
+  shots: readonly Shot[];
+  reverse?: boolean;
+  className?: string;
+}) {
+  return (
+    <section id={id} className={cn("w-full py-16", className)}>
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
+        <SectionHeading title={title} lead={lead} />
+        <div
+          className={cn(
+            "mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center",
+            reverse && "md:flex-row-reverse"
+          )}
+        >
+          <PointList points={points} className="w-full md:w-1/2" />
+          <div className="grid w-full max-w-md grid-cols-2 gap-4 md:w-1/2">
+            {shots.map((s) => (
+              <PhoneShot key={s.src} src={s.src} alt={s.alt} className="rounded-2xl border-4 sm:rounded-[2rem]" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -392,7 +717,7 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
               </div>
               <div className="relative w-56 md:w-2/5 md:max-w-[18rem]">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-alcoin-coin/30" aria-hidden />
-                <PhoneShot src={t.screenshots[0].src} alt={t.screenshots[0].alt} className="relative" />
+                <PhoneShot src={t.heroShot.src} alt={t.heroShot.alt} className="relative" />
               </div>
             </div>
           </div>
@@ -401,10 +726,7 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
         {/* Features */}
         <section id="features" className="w-full scroll-mt-4 bg-alcoin-bg py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
-              {t.featuresTitle}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.featuresLead}</p>
+            <SectionHeading title={t.featuresTitle} lead={t.featuresLead} />
             <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {t.features.map(({ icon: Icon, title, body }, i) => (
                 <li
@@ -428,9 +750,7 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
         {/* Screenshots */}
         <section className="w-full bg-white py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
-              {t.screenshotsTitle}
-            </h2>
+            <SectionHeading title={t.screenshotsTitle} />
             <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-8 md:px-16">
               {t.screenshots.map((s) => (
                 <PhoneShot key={s.src} src={s.src} alt={s.alt} className="rounded-2xl border-4 sm:rounded-[2rem]" />
@@ -442,11 +762,8 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
         {/* Shared books */}
         <section id="shared-books" className="w-full bg-alcoin-50 py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
-              {t.sharedTitle}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.sharedLead}</p>
-            <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-start">
+            <SectionHeading title={t.sharedTitle} lead={t.sharedLead} />
+            <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center">
               <ol className="flex w-full flex-col gap-4 md:w-1/2">
                 {t.steps.map(({ icon: Icon, title, body }, i) => (
                   <li key={title} className="flex gap-4 rounded-3xl bg-white p-5">
@@ -462,10 +779,6 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
                     </div>
                   </li>
                 ))}
-                <li className="flex items-start gap-3 px-2 text-body-sm text-alcoin-muted">
-                  <Link2 className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
-                  <span>{t.sharedNote}</span>
-                </li>
               </ol>
               <div className="grid w-full max-w-md grid-cols-2 gap-4 md:w-1/2">
                 {t.sharedShots.map((s) => (
@@ -473,56 +786,97 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
                 ))}
               </div>
             </div>
+            <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {t.sharedPoints.map(({ icon: Icon, title, body }) => (
+                <li key={title} className="rounded-3xl bg-white p-5">
+                  <div className="flex items-center gap-3">
+                    <Icon className="h-5 w-5 shrink-0 text-alcoin-500" aria-hidden />
+                    <h3 className="text-heading-sm font-bold text-alcoin-ink">{title}</h3>
+                  </div>
+                  <p className="mt-2 text-body-sm text-alcoin-muted">{body}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-6 flex max-w-3xl items-start gap-3 px-2 text-body-sm text-alcoin-muted">
+              <Link2 className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
+              <span>{t.sharedNote}</span>
+            </p>
           </div>
         </section>
 
+        {/* Period books */}
+        <SplitSection
+          id="period-books"
+          title={t.periodTitle}
+          lead={t.periodLead}
+          points={t.periodPoints}
+          shots={t.periodShots}
+          reverse
+          className="bg-alcoin-bg"
+        />
+
+        {/* Currencies */}
+        <SplitSection
+          id="currencies"
+          title={t.currencyTitle}
+          lead={t.currencyLead}
+          points={t.currencyPoints}
+          shots={t.currencyShots}
+          className="bg-white"
+        />
+
         {/* Apple Watch */}
-        <section id="apple-watch" className="w-full bg-white py-16">
+        <section id="apple-watch" className="w-full bg-alcoin-bg py-16">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
-              {t.watchTitle}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-body-md text-alcoin-muted">{t.watchLead}</p>
-            <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4 sm:gap-6">
+            <SectionHeading title={t.watchTitle} lead={t.watchLead} />
+            <ul className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-x-4 gap-y-6 sm:gap-6">
               {t.watchShots.map((s) => (
-                <li key={s.src} className="flex flex-col items-center gap-3">
+                <li
+                  key={s.src}
+                  className="flex w-[calc(50%-0.5rem)] flex-col items-center gap-3 sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)]"
+                >
                   <WatchShot src={s.src} alt={s.alt} className="w-full max-w-[11rem]" />
                   <span className="text-label-md font-bold text-alcoin-600">{s.label}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:items-start">
-              <div className="w-full max-w-sm md:sticky md:top-8 md:w-2/5 md:max-w-none">
-                <div className="relative w-full">
-                  <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-alcoin-coin/30" aria-hidden />
-                  <div className="relative overflow-hidden rounded-[2rem] shadow-[0_18px_40px_-18px_rgba(15,42,87,0.45)]">
-                    <Image
-                      src={t.watchStack.src}
-                      alt={t.watchStack.alt}
-                      width={558}
-                      height={276}
-                      className="h-auto w-full"
-                    />
-                  </div>
-                </div>
+            <PointList points={t.watchPoints} className="mx-auto mt-12 grid max-w-5xl md:grid-cols-2" />
+            <p className="mx-auto mt-6 flex max-w-5xl items-start gap-3 px-2 text-body-sm text-alcoin-muted">
+              <Watch className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
+              <span>{t.watchNote}</span>
+            </p>
+          </div>
+        </section>
+
+        {/* Widgets & Siri */}
+        <section id="widgets" className="w-full bg-white py-16">
+          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
+            <SectionHeading title={t.widgetsTitle} lead={t.widgetsLead} />
+            <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center">
+              <div className="relative w-56 shrink-0 md:w-64">
+                <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-alcoin-coin/30" aria-hidden />
+                <PhoneShot src={t.widgetsShot.src} alt={t.widgetsShot.alt} className="relative" />
               </div>
-              <ul className="flex w-full flex-col gap-4 md:w-3/5">
-                {t.watchPoints.map(({ icon: Icon, title, body }) => (
-                  <li key={title} className="flex gap-4 rounded-3xl border border-alcoin-line bg-white p-5">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-alcoin-50 text-alcoin-500">
-                      <Icon className="h-6 w-6" aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className="text-heading-md font-bold text-alcoin-ink">{title}</h3>
-                      <p className="mt-1 text-body-sm text-alcoin-muted">{body}</p>
-                    </div>
-                  </li>
-                ))}
-                <li className="flex items-start gap-3 px-2 text-body-sm text-alcoin-muted">
-                  <Watch className="mt-0.5 h-4 w-4 shrink-0 text-alcoin-500" aria-hidden />
-                  <span>{t.watchNote}</span>
-                </li>
-              </ul>
+              <div className="flex w-full flex-col gap-4 md:max-w-lg">
+                <PointList points={t.widgetsPoints} />
+                <figure className="flex items-center justify-center gap-5 rounded-3xl bg-gradient-to-br from-[#2B4C8C] to-[#14284F] px-6 py-5">
+                  <Image
+                    src={t.lockWidgets.rect.src}
+                    alt={t.lockWidgets.rect.alt}
+                    width={516}
+                    height={228}
+                    className="h-auto w-44"
+                  />
+                  <Image
+                    src={t.lockWidgets.circle.src}
+                    alt={t.lockWidgets.circle.alt}
+                    width={228}
+                    height={228}
+                    className="h-auto w-20"
+                  />
+                  <figcaption className="sr-only">{t.lockWidgets.label}</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </section>
@@ -530,9 +884,7 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
         {/* Pricing */}
         <section id="pricing" className="w-full bg-alcoin-bg py-16">
           <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-            <h2 className="text-balance text-center text-display-xs font-extrabold text-alcoin-ink md:text-display-sm">
-              {t.pricingTitle}
-            </h2>
+            <SectionHeading title={t.pricingTitle} lead={t.pricingLead} />
             <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
               {[t.free, t.plus].map((plan, i) => (
                 <div
@@ -556,6 +908,9 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
                       </li>
                     ))}
                   </ul>
+                  {"note" in plan && (
+                    <p className="mt-5 rounded-2xl bg-alcoin-50 p-4 text-body-sm text-alcoin-muted">{plan.note}</p>
+                  )}
                 </div>
               ))}
             </div>
@@ -563,6 +918,10 @@ export function AlcoinLanding({ lang }: { lang: AlcoinLang }) {
               {t.pricingNote}{" "}
               <Link href={alcoinPaths.terms[lang]} className="text-alcoin-600 underline underline-offset-4">
                 {t.terms}
+              </Link>
+              {" / "}
+              <Link href={alcoinPaths.privacy[lang]} className="text-alcoin-600 underline underline-offset-4">
+                {t.privacy}
               </Link>
             </p>
           </div>
