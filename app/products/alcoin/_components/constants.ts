@@ -1,5 +1,5 @@
-// TODO: set the App Store URL once Alcoin 2.0.0 is live again (e.g. "https://apps.apple.com/jp/app/id..."). While null, the App Store badge is hidden.
-export const ALCOIN_APP_STORE_URL: string | null = null;
+// The App Store page (no storefront in the path: Apple opens the visitor's own). While null, the App Store badge is hidden.
+export const ALCOIN_APP_STORE_URL: string | null = "https://apps.apple.com/app/id6755078551";
 
 export const ALCOIN_SUPPORT_EMAIL = "support@bluedoghub.com";
 
