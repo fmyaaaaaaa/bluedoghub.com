@@ -16,6 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-black-50 hover:text-brand",
         link: "underline-offset-4 hover:underline text-brand",
         littera: "bg-littera-600 text-white hover:bg-littera-700",
+        bloomone: "bg-bloomone-600 text-white hover:bg-bloomone-700 focus-visible:ring-bloomone-500/50",
         alcoin: "bg-alcoin-500 text-white hover:bg-alcoin-600 focus-visible:ring-alcoin-500/50",
       },
       size: {

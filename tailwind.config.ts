@@ -56,6 +56,20 @@ const config: Config = {
           "900": "#112A1C",
           DEFAULT: "#2C6A46",
         },
+        // BloomOne's own palette, taken from the app's design tokens: moss for the brand, paper for the page.
+        bloomone: {
+          "10": "#FFFDF8",
+          "50": "#E8F0EB",
+          "100": "#D3E3D9",
+          "300": "#6FB894",
+          "500": "#2A6249",
+          "600": "#21503D",
+          "700": "#1A4031",
+          "800": "#133025",
+          paper: "#F6F4EE",
+          ink: "#3A362A",
+          DEFAULT: "#21503D",
+        },
         alcoin: {
           "50": "#EEF5FF",
           "100": "#DCEAFF",
