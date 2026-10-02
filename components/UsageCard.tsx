@@ -1,59 +1,28 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "./ui/card";
-import { cn } from "@/lib/utils";
 
 export type UsageCardProps = {
   head: string;
   title?: string;
   description: string;
   imagePath: string;
-  variant: "littera" | "ebira";
 };
 
-export function UsageCard({ head, title, description, imagePath, variant }: UsageCardProps) {
+// Littera is the only product that walks through its screens this way, so the card wears its colours.
+export function UsageCard({ head, title, description, imagePath }: UsageCardProps) {
   return (
-    <Card
-      className={cn(
-        "w-full md:w-[20rem]",
-        variant === "littera" && "bg-littera-10",
-        variant === "ebira" && "bg-ebira-10"
-      )}
-    >
+    <Card className="w-full md:w-[20rem] bg-littera-10">
       <CardHeader>
-        <p
-          className={cn(
-            "text-heading-md",
-            variant === "littera" && "text-littera-800",
-            variant === "ebira" && "text-ebira-800"
-          )}
-        >
+        <p className="text-heading-md text-littera-800">
           <strong>{head}</strong>
         </p>
       </CardHeader>
       <CardContent>
         <div className="flex flex-row gap-2">
-          <Image src={imagePath} alt={variant} width={100} height={100} />
+          <Image src={imagePath} alt={title ?? head} width={100} height={100} />
           <div className="px-2 space-y-2">
-            {title && (
-              <p
-                className={cn(
-                  "text-heading-xs",
-                  variant === "littera" && "text-littera-800",
-                  variant === "ebira" && "text-ebira-800"
-                )}
-              >
-                {title}
-              </p>
-            )}
-            <p
-              className={cn(
-                "text-body-sm",
-                variant === "littera" && "text-littera-800",
-                variant === "ebira" && "text-ebira-800"
-              )}
-            >
-              {description}
-            </p>
+            {title && <p className="text-heading-xs text-littera-800">{title}</p>}
+            <p className="text-body-sm text-littera-800">{description}</p>
           </div>
         </div>
       </CardContent>
