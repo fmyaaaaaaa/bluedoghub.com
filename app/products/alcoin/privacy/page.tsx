@@ -29,7 +29,7 @@ export default function Page() {
     <LegalDocument
       lang="en"
       title="Privacy Policy"
-      updated="Last updated: October 1, 2026"
+      updated="Last updated: October 3, 2026"
       note="This policy applies from the release of Alcoin 2.0.0. This English version is a translation for reference; the Japanese version is the governing text."
       otherLang={{ href: alcoinPaths.privacy.ja, label: "日本語" }}
       intro={
@@ -63,10 +63,10 @@ export default function Page() {
           Watch for 60 days so they are never saved twice.
         </p>
         <p>
-          If you set up &quot;Record a payment from Apple Pay&quot;, the payment amount and merchant name are kept
-          temporarily on your iPhone and Apple Watch only, as a suggestion for your next record. They are deleted when
-          used, or the next time Alcoin runs after 30 minutes (they are no longer shown after 30 minutes), and are never
-          sent anywhere. The card name is received but not stored.
+          If you use the Shortcuts action &quot;Record a payment in Alcoin&quot; (for example in an automation after an
+          Apple Pay payment), the payment amount is kept temporarily on your iPhone and Apple Watch only, as a
+          suggestion for your next record. It is deleted when used, or the next time Alcoin runs after an hour (it is no
+          longer shown after an hour), and is never sent anywhere. The merchant name and the card are not received.
         </p>
         <p>
           This data is never sent to our server (if you use a transfer code, we hold it only in encrypted form for a
