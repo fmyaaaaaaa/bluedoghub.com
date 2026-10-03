@@ -21,7 +21,7 @@ const content = {
     moreEnglishOnly: "Learn more",
     developerTitle: "About the Developer",
     developerLead:
-      "With 7 years of software development experience, I specialize in full-stack app development and cloud infrastructure architecture.",
+      "Now in my tenth year of building apps, I specialize in full-stack app development and cloud infrastructure architecture.",
   },
   ja: {
     headline: "小さく作って、ちゃんと届ける。",
@@ -32,7 +32,7 @@ const content = {
     more: "詳しく見る",
     moreEnglishOnly: "詳しく見る（English）",
     developerTitle: "開発者について",
-    developerLead: "ソフトウェア開発の経験は 7 年。フルスタックのアプリ開発と、クラウド基盤の設計を得意としています。",
+    developerLead: "アプリ開発は 10 年目。画面からサーバーまで通しで作ることと、クラウド基盤の設計を得意としています。",
   },
 } satisfies Record<Lang, Record<string, string>>;
 
