@@ -10,7 +10,6 @@ import {
   CircleDashed,
   Coins,
   Contact,
-  CreditCard,
   Dog,
   KeyRound,
   LayoutGrid,
@@ -219,11 +218,6 @@ const content = {
         body: "Enter the amount, tap Next and pick a category. Your buddy celebrates every record.",
       },
       {
-        icon: CreditCard,
-        title: "Record right after paying with Apple Pay",
-        body: "Set up an automation once in the Shortcuts app, and the amount you just paid comes to your watch, ready to record. Availability depends on your card and payment method.",
-      },
-      {
         icon: Mic,
         title: "Record with Siri",
         body: "Just ask Siri on your watch to record an expense in Alcoin.",
@@ -251,7 +245,7 @@ const content = {
       {
         icon: Mic,
         title: "Siri & Shortcuts",
-        body: "Say “Record an expense in Alcoin” or “How much is left in Alcoin”. There's an Apple Pay automation, too.",
+        body: "Say “Record an expense in Alcoin” or “How much is left in Alcoin”.",
       },
     ],
     widgetsShot: {
@@ -482,11 +476,6 @@ const content = {
         body: "金額を入力して「次へ」、カテゴリを選べば完了。記録するたびに相棒がよろこんでくれます。",
       },
       {
-        icon: CreditCard,
-        title: "Apple Pay で払ったら、すぐ記録",
-        body: "ショートカットAppで一度オートメーションを設定しておくと、支払った金額がApple Watchに届き、そのまま記録できます。カードや支払い方法によっては使えない場合があります。",
-      },
-      {
         icon: Mic,
         title: "Siriで記録",
         body: "Apple WatchのSiriに話しかけて、支出を記録することもできます。",
@@ -515,7 +504,7 @@ const content = {
       {
         icon: Mic,
         title: "Siriとショートカット",
-        body: "「アルコインで支出を記録」「アルコインの残りはいくら」と話しかけるだけ。Apple Pay の支払いを記録するオートメーションにも対応。",
+        body: "「アルコインで支出を記録」「アルコインの残りはいくら」と話しかけるだけ。",
       },
     ],
     widgetsShot: {
