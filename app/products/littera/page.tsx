@@ -12,6 +12,8 @@ const baseUrl =
 
 export const metadata: Metadata = {
   title: "Littera",
+  // On hold and unlisted: reachable by its URL, kept out of search.
+  robots: { index: false },
   description:
     "Littera is a mobile app that helps you clean up litter in your area and stay motivated to keep the streets clean.",
   openGraph: {

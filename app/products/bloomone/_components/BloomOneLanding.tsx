@@ -114,9 +114,6 @@ const content = {
     monitorBody:
       "Five shops, first come. A shop that sees the round through pays no monthly fee for BloomOne, ever. I also build it a home page — opening hours, a map, a phone number, photos of the shop — and keep that running free too, because most shops on these streets don't have one. The first setup is mine to do: shop details, hours, the flowers you carry, the staff.",
     monitorCta: "Read the terms and apply",
-    builtTitle: "How it's built",
-    builtBody:
-      "A modular monolith on Java 21 and Spring Boot 4, with PostgreSQL split into a schema per module and every change made through Flyway. The screens are React 19 and TypeScript. Authentication and file storage go through Supabase; the page you'd apply from sits on Cloudflare. Every write two people could race goes through optimistic locking, each domain has exactly one entry point rather than several, and the whole thing is held by more than 2,000 automated tests — with mutation testing where the logic is worth the paranoia.",
     nextTitle: "What's next",
     nextBody:
       "BloomGo: a marketplace for the flowers that would otherwise be thrown out at closing. BloomOne's stock side already records what gets rescued; the marketplace itself isn't built yet.",
@@ -137,9 +134,6 @@ const content = {
     monitorBody:
       "先着 5 店舗。最後までご協力いただいた店舗は、BloomOne の月額利用料が永年無料です。あわせて、営業時間・地図・お電話・お店の写真をまとめたお店のホームページもお作りし、続けるのも無料にします。はじめの設定——店の情報、営業時間、扱う花、スタッフの登録——は、こちらで一緒に進めます。",
     monitorCta: "条件を見て申し込む",
-    builtTitle: "どう作っているか",
-    builtBody:
-      "Java 21 と Spring Boot 4 のモジュラモノリスです。PostgreSQL はモジュールごとにスキーマを分け、変更はすべて Flyway を通します。画面は React 19 と TypeScript。認証とファイル保管は Supabase、申し込みページは Cloudflare に置いています。同時に触られうる更新はすべて楽観ロックを通し、ドメインごとに入口はひとつだけ。全体は 2,000 を超える自動テストで押さえていて、大事なところには変異テストもかけています。",
     nextTitle: "このあと",
     nextBody:
       "BloomGo。閉店のときに捨てられてしまう花を、必要な人に届けるマーケットプレイスです。BloomOne の在庫側は救われた本数を記録できるようになっていますが、マーケットプレイスそのものはまだ作っていません。",
@@ -259,13 +253,9 @@ export function BloomOneLanding({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        {/* How it's built, and what's next */}
+        {/* What's next */}
         <section className="w-full py-14 px-4 bg-bloomone-paper">
           <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-3xl flex flex-col gap-10">
-            <div className="flex flex-col gap-4">
-              <h2 className="text-display-sm md:text-display-md text-bloomone-800">{t.builtTitle}</h2>
-              <p className="text-body-md text-bloomone-ink/80">{t.builtBody}</p>
-            </div>
             <div className="flex flex-col gap-4">
               <h2 className="text-display-sm md:text-display-md text-bloomone-800">{t.nextTitle}</h2>
               <p className="text-body-md text-bloomone-ink/80">{t.nextBody}</p>

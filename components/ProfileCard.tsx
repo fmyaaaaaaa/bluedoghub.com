@@ -14,8 +14,8 @@ export default function ProfileCard({ lang }: { lang: Lang }) {
     <Card className="w-full max-w-lg bg-white py-4">
       <CardContent className="flex flex-col items-center gap-2 pb-2">
         <Image
-          src="/logo-profile.svg"
-          alt="BlueDog Tech Illustration"
+          src="/logo-bluedog-fill.svg"
+          alt="Bluedog"
           width={250}
           height={250}
           className="rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-4"

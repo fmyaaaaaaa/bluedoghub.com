@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Bluedog",
   description:
-    "Bluedog is dedicated to developing solutions that make a meaningful impact for the planet and society using cutting-edge IT technology.",
+    "Bluedog builds small apps and carries each one all the way to the people who use it: a household budget for iPhone, and a business app for the flower shop on your street.",
 };
 
 export default function RootLayout({

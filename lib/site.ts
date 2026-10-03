@@ -60,6 +60,7 @@ export type Product = {
   englishOnly?: true;
 };
 
+// Littera is left out while it is on hold; its page still answers at /products/littera.
 export const PRODUCTS: readonly Product[] = [
   {
     key: "bloomone",
@@ -80,17 +81,6 @@ export const PRODUCTS: readonly Product[] = [
     },
     status: { en: "On the App Store", ja: "App Store で配信中" },
     href: sitePaths.alcoin,
-  },
-  {
-    key: "littera",
-    name: { en: "Littera", ja: "Littera" },
-    summary: {
-      en: "A map of the litter around you, and a reason to pick it up — so the next generation grows up on streets without it.",
-      ja: "街に落ちているごみの地図と、拾いにいく理由。次の世代が、ごみのない道を歩けるように。",
-    },
-    status: { en: "In beta", ja: "ベータ版" },
-    href: { en: "/products/littera", ja: "/products/littera" },
-    englishOnly: true,
   },
 ];
 

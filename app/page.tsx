@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { HomeLanding } from "./_components/HomeLanding";
 
 const description =
-  "Bluedog is dedicated to developing solutions that make a meaningful impact for the planet and society using cutting-edge IT technology.";
+  "Bluedog builds small apps and carries each one all the way to the people who use it: a household budget for iPhone, and a business app for the flower shop on your street.";
 
 export const metadata: Metadata = {
   title: "Bluedog",

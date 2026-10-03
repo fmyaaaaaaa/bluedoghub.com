@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 import { HomeLanding } from "../_components/HomeLanding";
 
 const description =
-  "Bluedog は、地球と社会をお客さまだと考えています。いまの技術を使って、ほんとうに意味のある変化を起こせるものを作っています。";
+  "Bluedog は、小さなアプリをひとつずつ作って、使う人のところまで届けています。iPhone の家計簿アプリと、街の花屋さんのための業務アプリ。";
 
 export const metadata: Metadata = {
-  title: "Bluedog - 技術で、すこし良い明日を。",
+  title: "Bluedog - 小さく作って、ちゃんと届ける。",
   description,
   alternates: alternates(sitePaths.home, "ja"),
   openGraph: {
-    title: "Bluedog - 技術で、すこし良い明日を。",
+    title: "Bluedog - 小さく作って、ちゃんと届ける。",
     description,
     url: siteUrl(sitePaths.home.ja),
     locale: "ja_JP",

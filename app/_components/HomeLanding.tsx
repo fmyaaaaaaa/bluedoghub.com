@@ -12,11 +12,11 @@ import Link from "next/link";
 
 const content = {
   en: {
-    headline: "Technology for a Better Tomorrow",
-    lead: "At Bluedog, I see the planet and society as my customers. Using cutting-edge IT technology, I am dedicated to developing solutions that make a meaningful impact.",
-    heroCta: "Get To Know Me",
+    headline: "Small things, carried all the way.",
+    lead: "A household budget, a flower shop's day. I build apps that take one small chore off someone's hands, and see each one through to the people who use it.",
+    heroCta: "See what I'm building",
     productsTitle: "What I'm Building",
-    productsLead: "One app at a time, each carried all the way to the people who use it — rather than left as an idea.",
+    productsLead: "Each one starts from someone I can picture using it, and the chore they would rather not do.",
     more: "Learn more",
     moreEnglishOnly: "Learn more",
     developerTitle: "About the Developer",
@@ -24,12 +24,11 @@ const content = {
       "With 7 years of software development experience, I specialize in full-stack app development and cloud infrastructure architecture.",
   },
   ja: {
-    headline: "技術で、すこし良い明日を。",
-    lead: "Bluedog では、地球と社会をお客さまだと考えています。いまの技術を使って、ほんとうに意味のある変化を起こせるものを作っています。",
-    heroCta: "開発者について",
+    headline: "小さく作って、ちゃんと届ける。",
+    lead: "家計簿をつける人、花屋さん。身近な誰かの毎日の小さな手間を、アプリでひとつずつ軽くしています。",
+    heroCta: "作っているものを見る",
     productsTitle: "作っているもの",
-    productsLead:
-      "ひとつずつ作って、使ってくれる人のところまで届ける。アイデアのままで終わらせないことを大切にしています。",
+    productsLead: "どれも、使う人の顔と、その人が減らしたい手間から作り始めています。",
     more: "詳しく見る",
     moreEnglishOnly: "詳しく見る（English）",
     developerTitle: "開発者について",
@@ -54,7 +53,7 @@ export function HomeLanding({ lang }: { lang: Lang }) {
                 <p className="text-body-lg text-white/90 mt-6">{t.lead}</p>
                 <div className="flex mt-8 mx-auto justify-center md:justify-start">
                   <Button asChild size="lg" variant="secondary">
-                    <Link href="#about-developer">{t.heroCta}</Link>
+                    <Link href="#products">{t.heroCta}</Link>
                   </Button>
                 </div>
               </div>
@@ -70,14 +69,14 @@ export function HomeLanding({ lang }: { lang: Lang }) {
         </section>
 
         {/* Products Section */}
-        <section className="w-full py-16 bg-white">
+        <section id="products" className="w-full py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-24 max-w-7xl flex flex-col items-center gap-4">
             <h2 className="text-display-sm md:text-display-md text-center text-black-700">{t.productsTitle}</h2>
             <p className="text-body-md md:text-body-lg text-black-700 text-center mb-12 max-w-3xl mx-auto">
               {t.productsLead}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               {PRODUCTS.map((product) => (
                 <Card key={product.key} className="bg-brand-10 flex flex-col">
                   <CardHeader className="gap-3">
@@ -89,7 +88,7 @@ export function HomeLanding({ lang }: { lang: Lang }) {
                   <CardContent className="flex flex-col gap-6 flex-grow justify-between">
                     <p className="text-body-sm text-black-700">{product.summary[lang]}</p>
                     <Button asChild variant="default" className="self-start">
-                      {/* Littera has no Japanese page: the Japanese label says so rather than surprising the reader. */}
+                      {/* A product with no Japanese page says so on its Japanese label rather than surprising the reader. */}
                       <Link
                         href={product.href[lang]}
                         hrefLang={product.englishOnly ? "en" : undefined}
