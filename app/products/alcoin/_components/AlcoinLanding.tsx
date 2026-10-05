@@ -65,7 +65,7 @@ const content = {
       {
         icon: PiggyBank,
         title: "Dashboard & savings",
-        body: "Spending by month and category, your total savings and progress toward a savings goal.",
+        body: "This month by category as a chart, any period at a glance (last 3 months, this year, the past 12 months), your total savings and progress toward a savings goal.",
       },
       {
         icon: CalendarDays,
@@ -88,7 +88,7 @@ const content = {
       { src: "/alcoin-celebration-en.webp", alt: "A coin flying to the dog right after recording an expense" },
       {
         src: "/alcoin-dashboard-en.webp",
-        alt: "Dashboard with total savings, a savings goal and spending by category",
+        alt: "Dashboard with total savings, a savings goal, this month's budget and a chart of spending by category",
       },
       { src: "/alcoin-history-calendar-en.webp", alt: "History shown as a calendar with daily totals" },
     ],
@@ -322,7 +322,7 @@ const content = {
       {
         icon: PiggyBank,
         title: "ダッシュボードと貯金",
-        body: "月ごと・カテゴリ別の支出に、これまでの貯金と貯金目標までの道のり。",
+        body: "今月のカテゴリ別を円グラフで。過去3か月・今年・過去1年など、好きな期間の支出もまとめて見られます。これまでの貯金と貯金目標までの道のりも。",
       },
       {
         icon: CalendarDays,
@@ -343,7 +343,7 @@ const content = {
     screenshotsTitle: "アプリの画面",
     screenshots: [
       { src: "/alcoin-celebration-ja.webp", alt: "記録した直後、コインが犬のところへ飛んでいく画面" },
-      { src: "/alcoin-dashboard-ja.webp", alt: "これまでの貯金、貯金目標、カテゴリ別の支出を表示するダッシュボード" },
+      { src: "/alcoin-dashboard-ja.webp", alt: "これまでの貯金、貯金目標、今月の予算、カテゴリ別の円グラフを表示するダッシュボード" },
       { src: "/alcoin-history-calendar-ja.webp", alt: "日ごとの合計を表示するカレンダー表示の履歴" },
     ],
     sharedTitle: "家族や仲間と、共有家計簿",
