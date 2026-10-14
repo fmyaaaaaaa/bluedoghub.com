@@ -14,6 +14,9 @@ export const sitePaths = {
   alcoin: { en: "/products/alcoin", ja: "/products/alcoin/ja" },
   alcoinTerms: { en: "/products/alcoin/terms", ja: "/products/alcoin/terms/ja" },
   alcoinPrivacy: { en: "/products/alcoin/privacy", ja: "/products/alcoin/privacy/ja" },
+  alcook: { en: "/products/alcook", ja: "/products/alcook/ja" },
+  alcookTerms: { en: "/products/alcook/terms", ja: "/products/alcook/terms/ja" },
+  alcookPrivacy: { en: "/products/alcook/privacy", ja: "/products/alcook/privacy/ja" },
 } as const satisfies Record<string, LocalizedPath>;
 
 const PAIRS: readonly LocalizedPath[] = Object.values(sitePaths);
