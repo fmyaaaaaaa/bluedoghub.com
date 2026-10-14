@@ -18,6 +18,7 @@ const buttonVariants = cva(
         littera: "bg-littera-600 text-white hover:bg-littera-700",
         bloomone: "bg-bloomone-600 text-white hover:bg-bloomone-700 focus-visible:ring-bloomone-500/50",
         alcoin: "bg-alcoin-500 text-white hover:bg-alcoin-600 focus-visible:ring-alcoin-500/50",
+        alcook: "bg-alcook-500 text-white hover:bg-alcook-600 focus-visible:ring-alcook-500/50",
       },
       size: {
         default: "h-10 py-2 px-4",

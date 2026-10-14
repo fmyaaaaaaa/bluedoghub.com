@@ -14,6 +14,9 @@ export const sitePaths = {
   alcoin: { en: "/products/alcoin", ja: "/products/alcoin/ja" },
   alcoinTerms: { en: "/products/alcoin/terms", ja: "/products/alcoin/terms/ja" },
   alcoinPrivacy: { en: "/products/alcoin/privacy", ja: "/products/alcoin/privacy/ja" },
+  alcook: { en: "/products/alcook", ja: "/products/alcook/ja" },
+  alcookTerms: { en: "/products/alcook/terms", ja: "/products/alcook/terms/ja" },
+  alcookPrivacy: { en: "/products/alcook/privacy", ja: "/products/alcook/privacy/ja" },
 } as const satisfies Record<string, LocalizedPath>;
 
 const PAIRS: readonly LocalizedPath[] = Object.values(sitePaths);
@@ -81,6 +84,16 @@ export const PRODUCTS: readonly Product[] = [
     },
     status: { en: "On the App Store", ja: "App Store で配信中" },
     href: sitePaths.alcoin,
+  },
+  {
+    key: "alcook",
+    name: { en: "Alcook", ja: "アルクック" },
+    summary: {
+      en: "A recipe book and meal planner for iPhone: save recipes from screenshots, the web, Instagram or LINE, and it plans this week's dinners and the shopping list. Share it with your family.",
+      ja: "スクショやウェブ、Instagram、LINE のレシピを保存すると、今週の晩ご飯と買い物リストができる献立アプリ。家族で使えるレシピ本も。",
+    },
+    status: { en: "Coming soon to the App Store", ja: "App Store で近日公開" },
+    href: sitePaths.alcook,
   },
 ];
 
