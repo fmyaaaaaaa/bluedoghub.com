@@ -97,7 +97,7 @@ const content = {
       },
       {
         src: "/alcook-made-en.webp",
-        alt: "The dog celebrating right after tapping Made it!, with the 13th time recorded",
+        alt: "The dog celebrating right after tapping Made it!, with the 12th time recorded",
       },
       { src: "/alcook-share-week-en.webp", alt: "This week's dinners as a story-sized picture to share" },
     ],
@@ -124,7 +124,7 @@ const content = {
       { src: "/alcook-book-en.webp", alt: "The recipe book as a two-column grid with All, New dishes and Often made" },
       {
         src: "/alcook-share-extension-en.webp",
-        alt: "Saving a recipe from Safari's share menu to Want to make, with the page's title and a screenshot",
+        alt: "Saving a recipe from Safari's share menu to Want to make, with the dish name taken from the page's title",
       },
     ],
     weekTitle: "This week's dinners: just choose how",
@@ -242,7 +242,7 @@ const content = {
     familyShots: [
       {
         src: "/alcook-family-switch-en.webp",
-        alt: "Switching between My recipe book and the family's Our recipe book",
+        alt: "Switching between My recipe book and the family's book, Our family recipes",
       },
       { src: "/alcook-family-invite-en.webp", alt: "Inviting family with an invite code and a link" },
     ],
@@ -402,7 +402,7 @@ const content = {
     screenshotsTitle: "アプリの画面",
     screenshots: [
       { src: "/alcook-recipe-ja.webp", alt: "料理の写真、作った回数、材料、わが家のメモがあるレシピの画面" },
-      { src: "/alcook-made-ja.webp", alt: "「作った！」を押した直後、犬がよろこび13回目を記録した画面" },
+      { src: "/alcook-made-ja.webp", alt: "「作った！」を押した直後、犬がよろこび12回目を記録した画面" },
       { src: "/alcook-share-week-ja.webp", alt: "今週の晩ご飯をストーリーの大きさの画像にして共有する画面" },
     ],
     saveTitle: "レシピは、見つけたところから保存",
@@ -428,7 +428,7 @@ const content = {
       { src: "/alcook-book-ja.webp", alt: "すべて・新しい料理・よく作るで絞り込める2列のレシピ本" },
       {
         src: "/alcook-share-extension-ja.webp",
-        alt: "Safari の共有メニューから、ページのタイトルとスクショつきで「作りたい」に保存する画面",
+        alt: "Safari の共有メニューから、ページのタイトルから料理名を入れて「作りたい」に保存する画面",
       },
     ],
     weekTitle: "今週の晩ご飯は、決め方を選ぶだけ",

@@ -1,11 +1,19 @@
 # Alcook: screenshots and OGP images to make
 
-The Alcook pages (`/products/alcook`, `/products/alcook/ja`) are built with placeholder images: tomato-tinted
-cards that say which picture belongs there, made by `scripts/generate-placeholders-alcook.sh`. Replace each file in
-`public/` with the real picture **under the same name and at the same size**; no code changes are needed. Every image
-exists in English (`-en`) and Japanese (`-ja`): take each from the app in that language, with sample data in that
-language (the Japanese copy uses 肉じゃが, 鶏の甘酢, ¥; the English copy English dish names). Don't run the
-placeholder script again once real pictures are in.
+The Alcook pages (`/products/alcook`, `/products/alcook/ja`) now use real pictures from the app (October 14, 2026).
+They were first built with placeholder cards made by `scripts/generate-placeholders-alcook.sh`; don't run it again.
+
+To take them again, in the Alcook repository (they land in `build/marketing/`):
+
+- `make marketing-shots` — the iPhone screens on the demo dishes with real dish photos and a decided week (ja, en)
+- `make marketing-family-shots` — the book switch and invite sheets (needs `make server-up` and `make server-run`)
+- `make marketing-share` — Safari's share menu with Alcook's save sheet (serves a recipe page on the Mac)
+- `make marketing-widgets` — the Home Screen widgets, the Lock Screen widgets (white on clear) and the dog for the OGP
+- `make marketing-watch` — the Apple Watch screens and a watch face sample (the Watch simulator's clock is redrawn as 9:41)
+
+Then resize the iPhone screens to 600 × 1304 WebP (quality 80) under the same names; the Lock Screen and Watch images
+come out at their final sizes. The OGP images come from `node scripts/generate-ogp-alcook.mjs` (the dog in
+`scripts/assets/alcook-dog-ogp.png`). The list below says what each picture is for.
 
 Formats follow Alcoin's images: WebP for screenshots (quality around 80), PNG for OGP.
 
